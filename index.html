@@ -1,841 +1,318 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Henry Barrios Thornhill · Data Analyst</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #080c10;
-      --surface: #0f1419;
-      --border: #1e2730;
-      --accent: #00d4aa;
-      --accent2: #f0a500;
-      --text: #e8edf2;
-      --muted: #6b7a8d;
-      --card: #111820;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hbtdata · Datos de Canarias</title>
+<meta name="description" content="Datos explicados con cosas de aquí. Proyectos reales con datos de Canarias, hechos y contados por Henry Barrios Thornhill.">
+<meta property="og:title" content="hbtdata · Datos de Canarias">
+<meta property="og:description" content="Datos explicados con cosas de aquí: gasolina, fútbol, islas. Herramientas propias y cómo están hechas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A3440">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230A3440'/%3E%3Cg fill='%23F7F3EC'%3E%3Crect x='6' y='32' width='5' height='8'/%3E%3Crect x='13' y='26' width='5' height='14'/%3E%3Crect x='20' y='18' width='8' height='22' fill='%23F0A840'/%3E%3Crect x='30' y='26' width='5' height='14'/%3E%3Crect x='37' y='32' width='5' height='8'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oscuro:#0A3440;
+    --claro:#F7F3EC;
+    --ocre:#F0A840;      /* resaltado sobre oscuro */
+    --ocre-claro:#C46E14;/* resaltado sobre claro */
+    --suave:#96D6D6;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',system-ui,sans-serif;background:var(--claro);color:var(--oscuro);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  section{padding:84px 0}
+  .oscuro{background:var(--oscuro);color:var(--claro)}
+  .claro{background:var(--claro);color:var(--oscuro)}
+  .etiqueta{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  .oscuro .etiqueta{color:var(--ocre)}
+  .claro .etiqueta{color:var(--ocre-claro)}
+  h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
+  h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:12px}
+  .intro{max-width:620px;margin-bottom:44px;opacity:.9}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;background:var(--oscuro);color:var(--claro);border-bottom:1px solid rgba(247,243,236,.12)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.25rem;letter-spacing:-.01em}
+  .logo svg{height:30px;width:auto}
+  .logo b{color:var(--ocre);font-weight:700}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:.9rem}
+  nav ul a{text-decoration:none;opacity:.85}
+  nav ul a:hover{opacity:1;color:var(--ocre)}
+  @media(max-width:680px){nav ul li:not(:last-child){display:none}}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Outfit', sans-serif;
-      overflow-x: hidden;
-      cursor: none;
-    }
+  /* BANNER ABRE TU SOBRE (solo 23 oct - 4 dic) */
+  #banner-sobre{display:none;background:var(--ocre);color:var(--oscuro);font-size:.92rem}
+  #banner-sobre .wrap{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;text-align:center}
+  #banner-sobre a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
 
-    /* Custom cursor */
-    .cursor {
-      width: 8px; height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.1s ease;
-    }
-    .cursor-ring {
-      width: 32px; height: 32px;
-      border: 1px solid rgba(0,212,170,0.4);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transition: all 0.2s ease;
-    }
+  /* HERO */
+  .hero{padding:92px 0 84px}
+  .hero h1{font-size:clamp(2.4rem,7vw,4.6rem);max-width:820px}
+  .hero h1 em{font-style:normal;color:var(--ocre)}
+  .hero p{max-width:600px;margin:26px 0 34px;font-size:1.1rem;opacity:.92}
+  .botones{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-ocre{background:var(--ocre);color:var(--oscuro)}
+  .btn-borde{border-color:rgba(247,243,236,.5);color:var(--claro)}
+  .btn-borde:hover{border-color:var(--ocre);color:var(--ocre)}
+  .btn-oscuro{background:var(--oscuro);color:var(--claro)}
+  .btn-borde-claro{border-color:var(--oscuro);color:var(--oscuro)}
 
-    /* Noise texture overlay */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
+  /* PROYECTOS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:28px}
+  .proyecto{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 0 rgba(10,52,64,.08),0 14px 34px -20px rgba(10,52,64,.35);display:flex;flex-direction:column}
+  .proyecto .visual{background:var(--oscuro);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .proyecto .visual img{width:100%;height:100%;object-fit:cover;object-position:top left}
+  .proyecto .visual.ancha{background:#F2F4F5}
+  .proyecto .visual.ancha img{object-fit:contain;object-position:center}
+  .proyecto .cuerpo{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .pilar{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ocre-claro)}
+  .proyecto h3{font-size:1.3rem}
+  .proyecto p{font-size:.95rem}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .stack span{font-size:.74rem;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(150,214,214,.4)}
+  .enlaces{margin-top:auto;padding-top:6px;display:flex;gap:18px;font-weight:600;font-size:.92rem}
+  .enlaces a{color:var(--ocre-claro);text-underline-offset:3px}
+  .visual-texto{padding:24px;text-align:center;color:var(--claro)}
+  .visual-texto svg{height:64px;width:auto;margin-bottom:10px}
+  .visual-texto strong{display:block;font-size:1.05rem;color:var(--ocre)}
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  /* PILARES */
+  .pilares{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .pilares div{border:1px solid rgba(247,243,236,.22);border-radius:16px;padding:26px}
+  .pilares h3{font-size:1.15rem;color:var(--ocre);margin-bottom:8px}
+  .pilares p{font-size:.94rem;opacity:.9}
+  .reglas{margin-top:40px;max-width:720px;font-size:.92rem;opacity:.85;border-left:3px solid var(--ocre);padding-left:16px}
 
-    /* Animations */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-20px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes pulse-ring {
-      0%   { transform: scale(1); opacity: 0.5; }
-      100% { transform: scale(1.6); opacity: 0; }
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; } 50% { opacity: 0; }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes scanline {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100vh); }
-    }
+  /* SOBRE MI */
+  .sobre{display:grid;grid-template-columns:1.1fr 1fr;gap:56px}
+  @media(max-width:820px){.sobre{grid-template-columns:1fr;gap:36px}}
+  .sobre p{margin-bottom:16px}
+  .hitos{list-style:none;display:flex;flex-direction:column;gap:20px}
+  .hitos li{padding-left:18px;border-left:3px solid var(--suave)}
+  .hitos li:first-child{border-left-color:var(--ocre-claro)}
+  .hitos small{display:block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+  .hitos strong{display:block;font-size:1.02rem}
+  .hitos span{font-size:.9rem;opacity:.85}
+  .herr{margin-top:36px}
+  .herr h3{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ocre-claro);margin-bottom:10px}
+  .herr .stack span{background:var(--oscuro);color:var(--claro)}
 
-    .fade-up { animation: fadeUp 0.8s ease forwards; }
-    .slide-in { animation: slideIn 0.6s ease forwards; }
+  /* CONTACTO */
+  .contacto h2{max-width:640px}
+  .contacto p{max-width:560px;margin-bottom:28px;opacity:.92}
+  .redes{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:34px;font-size:.95rem}
+  .redes a{text-underline-offset:4px}
+  .redes a:hover{color:var(--ocre)}
+  footer{background:var(--oscuro);color:var(--claro);border-top:1px solid rgba(247,243,236,.12);padding:24px 0;font-size:.82rem;opacity:.95}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+  footer span{opacity:.7}
 
-    .delay-1 { animation-delay: 0.1s; opacity: 0; }
-    .delay-2 { animation-delay: 0.2s; opacity: 0; }
-    .delay-3 { animation-delay: 0.3s; opacity: 0; }
-    .delay-4 { animation-delay: 0.4s; opacity: 0; }
-    .delay-5 { animation-delay: 0.5s; opacity: 0; }
-    .delay-6 { animation-delay: 0.6s; opacity: 0; }
-    .delay-7 { animation-delay: 0.7s; opacity: 0; }
-    .delay-8 { animation-delay: 0.8s; opacity: 0; }
-
-    .cursor-blink { animation: blink 1s step-end infinite; }
-    .float-anim { animation: float 4s ease-in-out infinite; }
-
-    /* Section transitions */
-    .section-reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .section-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Nav */
-    nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-
-    /* Accent line */
-    .accent-line {
-      width: 40px; height: 2px;
-      background: var(--accent);
-      display: inline-block;
-      margin-bottom: 4px;
-      vertical-align: middle;
-      margin-right: 12px;
-    }
-
-    /* Cards */
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    .project-card:hover::before { transform: scaleX(1); }
-    .project-card:hover {
-      border-color: rgba(0,212,170,0.2);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    /* Skill pill */
-    .skill-pill {
-      background: rgba(0,212,170,0.06);
-      border: 1px solid rgba(0,212,170,0.15);
-      color: var(--accent);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      padding: 4px 12px;
-      border-radius: 2px;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-    .skill-pill:hover {
-      background: rgba(0,212,170,0.12);
-      border-color: rgba(0,212,170,0.4);
-    }
-
-    /* Timeline */
-    .timeline-item {
-      border-left: 1px solid var(--border);
-      padding-left: 24px;
-      position: relative;
-    }
-    .timeline-item::before {
-      content: '';
-      width: 8px; height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      position: absolute;
-      left: -4.5px;
-      top: 6px;
-      box-shadow: 0 0 0 0 rgba(0,212,170,0.5);
-      animation: pulse-ring 2s ease-out infinite;
-    }
-    .timeline-item:not(:last-child) { margin-bottom: 40px; }
-
-    /* Hero grid bg */
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(0,212,170,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,170,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-
-    /* Glow orbs */
-    .orb {
-      border-radius: 50%;
-      filter: blur(80px);
-      position: absolute;
-      pointer-events: none;
-    }
-
-    /* Section header */
-    .section-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent);
-      letter-spacing: 0.2em;
-    }
-
-    /* Nav link */
-    .nav-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 1px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover { color: var(--accent); }
-    .nav-link:hover::after { width: 100%; }
-
-    /* Scanline effect for hero */
-    .scanline {
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(transparent, rgba(0,212,170,0.05), transparent);
-      animation: scanline 6s linear infinite;
-      pointer-events: none;
-    }
-
-    /* Tag */
-    .lang-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      padding: 2px 8px;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-    }
-
-    /* Section divider */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      margin: 0;
-    }
-
-    /* Btn */
-    .btn-primary {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      padding: 10px 24px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-primary:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      padding: 10px 24px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-ghost:hover {
-      border-color: var(--muted);
-      color: var(--text);
-    }
-
-    /* Experience card */
-    .exp-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      transition: border-color 0.3s ease;
-    }
-    .exp-card:hover { border-color: rgba(0,212,170,0.15); }
-
-    /* Mobile cursor hide */
-    @media (max-width: 768px) {
-      body { cursor: auto; }
-      .cursor, .cursor-ring { display: none; }
-    }
-
-    /* DM Serif for display */
-    .display-font { font-family: 'DM Serif Display', serif; }
-    .mono-font { font-family: 'DM Mono', monospace; }
-  </style>
+  @media(max-width:560px){section{padding:64px 0}.hero{padding:64px 0}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
 </head>
 <body>
 
-<div id="root"></div>
+<!-- Logo A: volcán de barras -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="volcan" viewBox="0 0 48 40">
+    <rect x="0.5"  y="30" width="4.5" height="10" fill="currentColor"/>
+    <rect x="7"    y="23" width="4.5" height="17" fill="currentColor"/>
+    <rect x="13.5" y="14" width="4.5" height="26" fill="currentColor"/>
+    <rect x="20"   y="2"  width="8"   height="38" fill="#F0A840"/>
+    <rect x="30"   y="14" width="4.5" height="26" fill="currentColor"/>
+    <rect x="36.5" y="23" width="4.5" height="17" fill="currentColor"/>
+    <rect x="43"   y="30" width="4.5" height="10" fill="currentColor"/>
+  </symbol>
+</svg>
 
-<script type="text/babel">
-const { useState, useEffect, useRef } = React;
+<div id="banner-sobre">
+  <div class="wrap">
+    <span>Hasta el 4 de diciembre: un test de cromos hecho con datos.</span>
+    <a href="https://www.abretusobre.es/?utm_source=web">Abre tu sobre →</a>
+  </div>
+</div>
 
-/* ── DATA ── */
-const DATA = {
-  name: "Henry Barrios Thornhill",
-  role: "Data Analyst & BI Developer",
-  location: "Las Palmas de Gran Canaria, España",
-  email: "henry1994bt@gmail.com",
-  phone: "+34 696 163 557",
-  github: "https://github.com/henry94bt",
-  linkedin: "https://linkedin.com/in/henry-data-analyst-",
-  bio: "Graduado en ADE con Máster en Big Data & Analytics. Transformo datos en decisiones estratégicas usando Python, SQL y herramientas de visualización. Finalista en el Datathon 5G Beach Challenge (SPEGC) 2023.",
-  experience: [
-    {
-      company: "Salescaling",
-      role: "Analista de Datos",
-      period: "JUL 2025 – DIC 2025",
-      tech: ["Python", "SQL", "LLMs", "SEO"],
-      bullets: [
-        "Procesamiento de datos en CSV, JSON y JSONL para fine-tuning de LLMs.",
-        "Desarrollo de pipelines y automatización de procesos con Python.",
-        "EDA para identificación de patrones y oportunidades de mejora.",
-        "Generación de dashboards y visualizaciones para soporte a decisiones.",
-      ]
-    },
-    {
-      company: "The Wise Dreams",
-      role: "Analista de Datos",
-      period: "ENE 2024 – ENE 2025",
-      tech: ["Python", "SQL", "Power BI", "Folium"],
-      bullets: [
-        "Mapas interactivos con Folium para optimizar rutas del equipo.",
-        "Dashboards en Power BI para monitoreo de KPIs en tiempo real.",
-        "EDA con Python y SQL para generar insights estratégicos.",
-        "Limpieza y georreferenciación de datos con técnicas avanzadas.",
-      ]
-    },
-    {
-      company: "Marcelasa SL",
-      role: "Asistente Administrativo",
-      period: "FEB 2022 – DIC 2022",
-      tech: ["Excel", "Análisis", "Logística"],
-      bullets: [
-        "Análisis de precios de proveedores para optimización de costos.",
-        "Optimización logística asignando conductores según eficiencia.",
-        "Gestión de proveedores, seguros y documentación.",
-      ]
-    }
-  ],
-  projects: [
-    {
-      name: "canarias-gas-tracker",
-      desc: "Tracker de precios de gasolineras en Canarias. Visualización de datos en tiempo real con HTML y APIs públicas.",
-      tech: ["HTML", "JavaScript", "API"],
-      color: "#f0a500",
-      url: "https://github.com/henry94bt/canarias-gas-tracker",
-      updated: "Ayer"
-    },
-    {
-      name: "Proyecto Pérez Moreno",
-      desc: "Análisis de datos del sector construcción usando Python. Procesamiento, limpieza y visualización de métricas clave.",
-      tech: ["Python", "Pandas", "Matplotlib"],
-      color: "#00d4aa",
-      url: "https://github.com/henry94bt/Proyecto_Perez_Moreno",
-      updated: "Feb 26"
-    },
-    {
-      name: "analisis-construccion-perez-moreno",
-      desc: "Análisis de obras de construcción con datos simulados. EDA completo e informes de rendimiento.",
-      tech: ["Python", "EDA", "Seaborn"],
-      color: "#7c6af7",
-      url: "https://github.com/henry94bt/analisis-construccion-perez-moreno",
-      updated: "Feb 25"
-    },
-    {
-      name: "meetings-api",
-      desc: "API REST desarrollada en TypeScript para gestión de reuniones. Backend moderno con endpoints documentados.",
-      tech: ["TypeScript", "API REST", "Node.js"],
-      color: "#3178c6",
-      url: "https://github.com/henry94bt/meetings-api",
-      updated: "Ago 2025"
-    }
-  ],
-  skills: {
-    "Lenguajes & Datos": ["Python", "SQL", "TypeScript", "R (básico)"],
-    "BI & Visualización": ["Power BI", "Tableau", "Qlik Sense", "Folium"],
-    "Machine Learning": ["Scikit-learn", "EDA", "Fine-tuning LLMs", "SPSS"],
-    "Herramientas": ["Excel Avanzado", "PowerPivot", "Git", "Access"],
-    "Idiomas": ["Español (Nativo)", "Inglés C1 (Cambridge)"],
-  }
-};
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="hbtdata, inicio">
+      <svg viewBox="0 0 48 40" style="color:var(--claro)"><use href="#volcan"/></svg>
+      <span>hbt<b>data</b></span>
+    </a>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#como">Cómo trabajo</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
 
-/* ── COMPONENTS ── */
+<header id="inicio" class="oscuro hero">
+  <div class="wrap">
+    <p class="etiqueta">Datos de Canarias</p>
+    <h1>Datos explicados con <em>cosas de aquí.</em></h1>
+    <p>Soy Henry. Construyo mis propias herramientas con datos de Canarias (gasolina, fútbol, islas) y enseño cómo están hechas, con el código y las capturas delante.</p>
+    <div class="botones">
+      <a class="btn btn-ocre" href="#proyectos">Ver proyectos</a>
+      <a class="btn btn-borde" href="https://instagram.com/hbtdata">Instagram @hbtdata</a>
+    </div>
+  </div>
+</header>
 
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', h);
-    return () => window.removeEventListener('scroll', h);
-  }, []);
+<section id="proyectos" class="claro">
+  <div class="wrap">
+    <p class="etiqueta">Proyectos</p>
+    <h2>Lo que he construido</h2>
+    <p class="intro">Proyectos reales con datos públicos. Cada uno funciona hoy y se puede abrir.</p>
 
-  return (
-    <nav style={{
-      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-      background: scrolled ? 'rgba(8,12,16,0.92)' : 'transparent',
-      borderBottom: scrolled ? '1px solid #1e2730' : '1px solid transparent',
-      transition: 'all 0.3s ease',
-      padding: '16px 0'
-    }}>
-      <div style={{maxWidth: 1100, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-        <span className="mono-font" style={{fontSize: '0.78rem', color: 'var(--accent)', letterSpacing: '0.15em'}}>
-          HBT<span style={{color: 'var(--muted)'}}>·DATA</span>
-        </span>
-        <div style={{display: 'flex', gap: 32}}>
-          {['Experiencia','Proyectos','Habilidades','Contacto'].map(s => (
-            <a key={s} href={`#${s.toLowerCase()}`} className="nav-link">{s}</a>
-          ))}
-        </div>
-      </div>
-    </nav>
-  );
-}
+    <div class="grid">
 
-function Hero() {
-  const [typed, setTyped] = useState('');
-  const roles = ['Data Analyst', 'BI Developer', 'Python · SQL · Power BI'];
-  const [ri, setRi] = useState(0);
-
-  useEffect(() => {
-    let i = 0, current = roles[ri], timeout;
-    const type = () => {
-      if (i <= current.length) {
-        setTyped(current.slice(0, i));
-        i++;
-        timeout = setTimeout(type, 80);
-      } else {
-        timeout = setTimeout(() => {
-          let del = current.length;
-          const erase = () => {
-            if (del >= 0) {
-              setTyped(current.slice(0, del));
-              del--;
-              timeout = setTimeout(erase, 40);
-            } else {
-              setRi(p => (p + 1) % roles.length);
-            }
-          };
-          erase();
-        }, 2000);
-      }
-    };
-    type();
-    return () => clearTimeout(timeout);
-  }, [ri]);
-
-  return (
-    <section style={{minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden'}} className="grid-bg">
-      {/* Orbs */}
-      <div className="orb" style={{width: 500, height: 500, background: 'rgba(0,212,170,0.06)', top: -100, right: -150}} />
-      <div className="orb" style={{width: 300, height: 300, background: 'rgba(240,165,0,0.04)', bottom: 50, left: -80}} />
-      <div className="scanline" />
-
-      <div style={{maxWidth: 1100, margin: '0 auto', padding: '120px 32px 80px', position: 'relative', zIndex: 1, width: '100%'}}>
-        <div style={{display: 'grid', gridTemplateColumns: '1fr auto', gap: 60, alignItems: 'center'}}>
-          <div>
-            <p className="mono-font fade-up delay-1" style={{fontSize: '0.75rem', color: 'var(--accent)', letterSpacing: '0.25em', marginBottom: 20}}>
-              DISPONIBLE · LAS PALMAS, ES
-            </p>
-            <h1 className="display-font fade-up delay-2" style={{fontSize: 'clamp(3rem, 6vw, 5.5rem)', lineHeight: 1.05, marginBottom: 16, color: 'var(--text)'}}>
-              Henry<br/>
-              <span style={{fontStyle: 'italic', color: 'var(--muted)'}}>Barrios</span><br/>
-              Thornhill
-            </h1>
-            <div className="fade-up delay-3" style={{height: 2, width: 60, background: 'linear-gradient(90deg,var(--accent),var(--accent2))', marginBottom: 24}} />
-            <div className="mono-font fade-up delay-4" style={{fontSize: '1.1rem', color: 'var(--accent)', marginBottom: 24, minHeight: 32}}>
-              {typed}<span className="cursor-blink" style={{borderRight: '2px solid var(--accent)', marginLeft: 2}}>&nbsp;</span>
-            </div>
-            <p className="fade-up delay-5" style={{color: 'var(--muted)', lineHeight: 1.75, maxWidth: 520, fontSize: '0.95rem', marginBottom: 40}}>
-              {DATA.bio}
-            </p>
-            <div className="fade-up delay-6" style={{display: 'flex', gap: 16, flexWrap: 'wrap'}}>
-              <a href={DATA.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                → GitHub
-              </a>
-              <a href="#proyectos" className="btn-ghost">Ver proyectos</a>
-              <a href="#contacto" className="btn-ghost">Contacto</a>
-            </div>
-          </div>
-
-          {/* Stats box */}
-          <div className="float-anim fade-up delay-7" style={{
-            border: '1px solid var(--border)',
-            background: 'rgba(15,20,25,0.8)',
-            padding: '32px 28px',
-            minWidth: 200,
-            backdropFilter: 'blur(10px)',
-          }}>
-            {[
-              {num: '3+', label: 'Años de exp.'},
-              {num: '4+', label: 'Proyectos GitHub'},
-              {num: 'C1', label: 'Inglés Cambridge'},
-              {num: 'MSc', label: 'Big Data & Analytics'},
-            ].map(({num, label}, i) => (
-              <div key={i} style={{marginBottom: i < 3 ? 28 : 0}}>
-                <div className="display-font" style={{fontSize: '2rem', color: i % 2 === 0 ? 'var(--accent)' : 'var(--accent2)', lineHeight: 1}}>
-                  {num}
-                </div>
-                <div className="mono-font" style={{fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em', marginTop: 4}}>
-                  {label}
-                </div>
-              </div>
-            ))}
+      <article class="proyecto">
+        <div class="visual ancha"><img src="assets/gas-tracker.png" alt="Tabla con las 10 gasolineras más baratas de Canarias en el Canarias Gas Tracker" loading="lazy"></div>
+        <div class="cuerpo">
+          <span class="pilar">Canarias en datos</span>
+          <h3>Canarias Gas Tracker</h3>
+          <p>Las gasolineras más baratas de las islas, con filtro por isla y por combustible. Se alimenta de la API de precios del Ministerio y se actualiza solo.</p>
+          <div class="stack"><span>HTML</span><span>JavaScript</span><span>API pública</span><span>GitHub Actions</span></div>
+          <div class="enlaces">
+            <a href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir la web</a>
+            <a href="https://github.com/henry94bt/canarias-gas-tracker">Código</a>
           </div>
         </div>
+      </article>
 
-        {/* Scroll cue */}
-        <div className="fade-up delay-8 mono-font" style={{
-          position: 'absolute', bottom: 32, left: 32,
-          fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.2em',
-          display: 'flex', alignItems: 'center', gap: 12
-        }}>
-          <div style={{width: 30, height: 1, background: 'var(--muted)'}} />
-          SCROLL
+      <article class="proyecto">
+        <div class="visual"><img src="assets/moleiro-dashboard.png" alt="Dashboard de Power BI que compara la producción de Alberto Moleiro con otros jugadores" loading="lazy"></div>
+        <div class="cuerpo">
+          <span class="pilar">Canarias en datos</span>
+          <h3>Moleiro frente al resto del Mundial</h3>
+          <p>¿Cuánto produce Alberto Moleiro comparado con otros jugadores de las cinco grandes ligas? Un pipeline en Python que baja los datos de FBref y un dashboard en Power BI para leerlos.</p>
+          <div class="stack"><span>Python</span><span>FBref</span><span>Power BI</span></div>
+          <div class="enlaces">
+            <a href="https://github.com/henry94bt/moleiro-mundial-2026">Código y dashboard</a>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </article>
 
-function SectionHeader({ num, title }) {
-  return (
-    <div style={{marginBottom: 60}}>
-      <p className="section-num" style={{marginBottom: 10}}>{num}</p>
-      <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
-        <div style={{width: 50, height: 1, background: 'var(--accent)'}} />
-        <h2 className="display-font" style={{fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--text)'}}>
-          {title}
-        </h2>
+      <article class="proyecto">
+        <div class="visual">
+          <div class="visual-texto">
+            <svg viewBox="0 0 48 40" style="color:var(--claro)"><use href="#volcan"/></svg>
+            <strong>Fábrica de contenido</strong>
+            <span style="font-size:.85rem;opacity:.85">Python · Pillow · matplotlib · ffmpeg</span>
+          </div>
+        </div>
+        <div class="cuerpo">
+          <span class="pilar">Por dentro</span>
+          <h3>Los carruseles se generan con código</h3>
+          <p>Los carruseles, reels y stories de @hbtdata no se maquetan a mano: salen de un conjunto de scripts con la identidad de la marca, gráficos propios y las reglas de siempre (barras desde cero, medianas, fecha y fuente).</p>
+          <div class="stack"><span>Python</span><span>Pillow</span><span>matplotlib</span><span>ffmpeg</span></div>
+          <div class="enlaces">
+            <a href="https://instagram.com/hbtdata">Verlo en Instagram</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="como" class="oscuro">
+  <div class="wrap">
+    <p class="etiqueta">Cómo trabajo</p>
+    <h2>Cuatro cosas que cuento</h2>
+    <p class="intro">Todo lo que publico entra en uno de estos cuatro cajones.</p>
+    <div class="pilares">
+      <div>
+        <h3>Canarias en datos</h3>
+        <p>Datos locales que se comparten por aquí: gasolina, fútbol, islas.</p>
+      </div>
+      <div>
+        <h3>Por dentro</h3>
+        <p>Cómo está hecho un proyecto real, con capturas y código.</p>
+      </div>
+      <div>
+        <h3>Aprende datos</h3>
+        <p>Un concepto explicado con un ejemplo de todos los días.</p>
+      </div>
+      <div>
+        <h3>Herramientas</h3>
+        <p>Automatizar e IA aplicada a datos, gratis o casi.</p>
       </div>
     </div>
-  );
-}
+    <p class="reglas">Reglas fijas: las barras empiezan en cero, para los precios uso medianas, y todo gráfico con datos lleva fecha y fuente.</p>
+  </div>
+</section>
 
-function Experience() {
-  return (
-    <section id="experiencia" style={{padding: '120px 0', position: 'relative', zIndex: 1}}>
-      <div style={{maxWidth: 1100, margin: '0 auto', padding: '0 32px'}}>
-        <SectionHeader num="01 · EXPERIENCIA" title="Trayectoria" />
-        <div style={{display: 'flex', flexDirection: 'column', gap: 24}}>
-          {DATA.experience.map((exp, i) => (
-            <div key={i} className="exp-card section-reveal" style={{padding: '32px'}}>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 12, marginBottom: 20}}>
-                <div>
-                  <h3 className="display-font" style={{fontSize: '1.5rem', marginBottom: 4}}>{exp.company}</h3>
-                  <p style={{color: 'var(--accent)', fontSize: '0.88rem'}}>{exp.role}</p>
-                </div>
-                <span className="mono-font" style={{
-                  fontSize: '0.7rem', color: 'var(--muted)', letterSpacing: '0.1em',
-                  border: '1px solid var(--border)', padding: '4px 12px', whiteSpace: 'nowrap'
-                }}>
-                  {exp.period}
-                </span>
-              </div>
-              <ul style={{listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20}}>
-                {exp.bullets.map((b, j) => (
-                  <li key={j} style={{display: 'flex', gap: 10, alignItems: 'flex-start'}}>
-                    <span style={{color: 'var(--accent)', marginTop: 2, flexShrink: 0}}>›</span>
-                    <span style={{color: 'var(--muted)', fontSize: '0.9rem', lineHeight: 1.6}}>{b}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
-                {exp.tech.map(t => (
-                  <span key={t} className="skill-pill">{t}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Education strip */}
-        <div className="section-reveal" style={{marginTop: 60, padding: '28px 32px', border: '1px solid var(--border)', background: 'rgba(0,212,170,0.03)'}}>
-          <p className="mono-font" style={{fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: 16}}>FORMACIÓN</p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24}}>
-            {[
-              {school: 'INESDI Business School', degree: 'Máster en Big Data & Analytics', period: '2023–2024'},
-              {school: 'ULPGC', degree: 'Grado en ADE', period: '2012–2018'},
-              {school: 'Erasmus — Wrocław, Polonia', degree: 'Programa de intercambio', period: '2016–2017'},
-            ].map((e, i) => (
-              <div key={i}>
-                <p style={{color: 'var(--text)', fontSize: '0.9rem', fontWeight: 500, marginBottom: 4}}>{e.school}</p>
-                <p style={{color: 'var(--muted)', fontSize: '0.8rem', marginBottom: 2}}>{e.degree}</p>
-                <p className="mono-font" style={{color: 'var(--accent)', fontSize: '0.7rem'}}>{e.period}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+<section id="sobre-mi" class="claro">
+  <div class="wrap sobre">
+    <div>
+      <p class="etiqueta">Sobre mí</p>
+      <h2>Henry Barrios Thornhill</h2>
+      <p>Soy de Las Palmas de Gran Canaria. Estudié ADE y un máster en Big Data, y trabajo con datos desde hace unos años: análisis, automatización de informes y dashboards.</p>
+      <p>Hoy lo hago en una agencia de comunicación de Gran Canaria, y en mi tiempo libre construyo lo que ves arriba. Me gusta que un dato se entienda a la primera y que lo que hago se pueda abrir, tocar y comprobar.</p>
+      <div class="herr">
+        <h3>Con qué trabajo</h3>
+        <div class="stack"><span>Python</span><span>SQL</span><span>Power BI</span><span>Pandas</span><span>Folium</span><span>Git y GitHub</span><span>Excel avanzado</span><span>Inglés C1</span></div>
       </div>
-    </section>
-  );
-}
+    </div>
+    <ul class="hitos">
+      <li><small>Actualidad</small><strong>La Pepa Studio</strong><span>Datos, automatización e informes.</span></li>
+      <li><small>2025</small><strong>Salescaling · Analista de datos</strong><span>Pipelines en Python y preparación de datos para LLMs.</span></li>
+      <li><small>2024</small><strong>The Wise Dreams · Analista de datos</strong><span>Mapas interactivos y dashboards de KPIs.</span></li>
+      <li><small>2023–2024</small><strong>Máster en Big Data &amp; Analytics</strong><span>INESDI Business School.</span></li>
+      <li><small>2023</small><strong>Finalista del Datathon 5G Beach Challenge</strong><span>SPEGC.</span></li>
+      <li><small>2012–2018</small><strong>Grado en ADE</strong><span>ULPGC, con Erasmus en Wrocław.</span></li>
+    </ul>
+  </div>
+</section>
 
-function Projects() {
-  return (
-    <section id="proyectos" style={{padding: '120px 0', position: 'relative', zIndex: 1, background: 'rgba(15,20,25,0.5)'}}>
-      <div style={{maxWidth: 1100, margin: '0 auto', padding: '0 32px'}}>
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 60}}>
-          <SectionHeader num="02 · PROYECTOS" title="GitHub" />
-          <a href={DATA.github} target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{marginBottom: 60}}>
-            Ver todos →
-          </a>
-        </div>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 20}}>
-          {DATA.projects.map((p, i) => (
-            <a key={i} href={p.url} target="_blank" rel="noopener noreferrer"
-               className="project-card section-reveal"
-               style={{padding: '28px', textDecoration: 'none', display: 'block'}}>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16}}>
-                <span style={{fontSize: '1.4rem'}}>📁</span>
-                <span className="mono-font" style={{fontSize: '0.65rem', color: 'var(--muted)'}}>Updated {p.updated}</span>
-              </div>
-              <h3 className="mono-font" style={{fontSize: '0.9rem', color: p.color, marginBottom: 10, wordBreak: 'break-all'}}>
-                {p.name}
-              </h3>
-              <p style={{color: 'var(--muted)', fontSize: '0.85rem', lineHeight: 1.65, marginBottom: 20}}>
-                {p.desc}
-              </p>
-              <div style={{display: 'flex', gap: 6, flexWrap: 'wrap'}}>
-                {p.tech.map(t => (
-                  <span key={t} style={{
-                    background: `${p.color}10`, border: `1px solid ${p.color}25`,
-                    color: p.color,
-                    fontFamily: 'DM Mono, monospace', fontSize: '0.65rem',
-                    padding: '2px 8px', borderRadius: 2
-                  }}>{t}</span>
-                ))}
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+<section id="contacto" class="oscuro contacto">
+  <div class="wrap">
+    <p class="etiqueta">Contacto</p>
+    <h2>¿Tienes unos datos y una pregunta?</h2>
+    <p>Escríbeme si quieres comentar un proyecto, proponer un dato de aquí que merezca contarse, o encargar un análisis o un dashboard.</p>
+    <div class="botones">
+      <a class="btn btn-ocre" href="mailto:henry1994bt@gmail.com">Escríbeme</a>
+      <a class="btn btn-borde" href="https://linkedin.com/in/henry-data-analyst-">LinkedIn</a>
+    </div>
+    <div class="redes">
+      <a href="https://instagram.com/hbtdata">Instagram · @hbtdata</a>
+      <a href="https://github.com/henry94bt">GitHub · henry94bt</a>
+      <a href="https://linkedin.com/in/henry-data-analyst-">LinkedIn</a>
+    </div>
+  </div>
+</section>
 
-function Skills() {
-  return (
-    <section id="habilidades" style={{padding: '120px 0', position: 'relative', zIndex: 1}}>
-      <div style={{maxWidth: 1100, margin: '0 auto', padding: '0 32px'}}>
-        <SectionHeader num="03 · HABILIDADES" title="Stack Técnico" />
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20}}>
-          {Object.entries(DATA.skills).map(([cat, items], i) => (
-            <div key={i} className="section-reveal exp-card" style={{padding: '28px'}}>
-              <p className="mono-font" style={{fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: 16}}>
-                {cat.toUpperCase()}
-              </p>
-              <div style={{display: 'flex', flexWrap: 'wrap', gap: 8}}>
-                {items.map(s => (
-                  <span key={s} className="skill-pill">{s}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+<footer>
+  <div class="wrap">
+    <div>hbt<b style="color:var(--ocre)">data</b> · Datos de Canarias</div>
+    <span>© 2026 Henry Barrios Thornhill · Las Palmas de Gran Canaria</span>
+  </div>
+</footer>
 
-        {/* Certs */}
-        <div className="section-reveal" style={{marginTop: 40, padding: '28px 32px', border: '1px dashed var(--border)'}}>
-          <p className="mono-font" style={{fontSize: '0.65rem', color: 'var(--accent2)', letterSpacing: '0.2em', marginBottom: 16}}>CERTIFICACIONES</p>
-          <div style={{display: 'flex', flexWrap: 'wrap', gap: 12}}>
-            {[
-              'Ciencia de Datos con Python (2025)',
-              'Excel Avanzado & Power BI – SEPE 165h',
-              'Big Data – red.es 265h',
-              'Diginnova – FULP 200h',
-              'Excel Skills – Macquarie 120h',
-              'Finalista Datathon 5G Beach Challenge 2023',
-            ].map(c => (
-              <span key={c} style={{
-                background: 'rgba(240,165,0,0.06)', border: '1px solid rgba(240,165,0,0.15)',
-                color: 'var(--accent2)',
-                fontFamily: 'DM Mono, monospace', fontSize: '0.72rem',
-                padding: '4px 12px', borderRadius: 2
-              }}>{c}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Contact() {
-  return (
-    <section id="contacto" style={{padding: '120px 0 80px', position: 'relative', zIndex: 1, background: 'rgba(15,20,25,0.5)'}}>
-      <div style={{maxWidth: 1100, margin: '0 auto', padding: '0 32px'}}>
-        <SectionHeader num="04 · CONTACTO" title="Trabajemos juntos" />
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center'}}>
-          <div className="section-reveal">
-            <p style={{color: 'var(--muted)', lineHeight: 1.8, fontSize: '1rem', marginBottom: 40}}>
-              Estoy disponible para nuevas oportunidades como analista de datos o BI developer. También abierto a proyectos freelance y colaboraciones.
-            </p>
-            <a href={`mailto:${DATA.email}`} className="btn-primary" style={{marginRight: 16}}>
-              Enviar email →
-            </a>
-          </div>
-          <div className="section-reveal" style={{display: 'flex', flexDirection: 'column', gap: 16}}>
-            {[
-              {label: 'Email', val: DATA.email, href: `mailto:${DATA.email}`},
-              {label: 'GitHub', val: 'github.com/henry94bt', href: DATA.github},
-              {label: 'LinkedIn', val: 'in/henry-data-analyst-', href: DATA.linkedin},
-              {label: 'Ubicación', val: DATA.location, href: null},
-            ].map(({label, val, href}) => (
-              <div key={label} style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 20px', border: '1px solid var(--border)'}}>
-                <span className="mono-font" style={{fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.15em', minWidth: 80}}>{label}</span>
-                {href
-                  ? <a href={href} target="_blank" rel="noopener noreferrer" style={{color: 'var(--text)', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s'}}
-                       onMouseEnter={e => e.target.style.color='var(--accent)'}
-                       onMouseLeave={e => e.target.style.color='var(--text)'}>{val}</a>
-                  : <span style={{color: 'var(--muted)', fontSize: '0.85rem'}}>{val}</span>
-                }
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer style={{borderTop: '1px solid var(--border)', padding: '24px 32px', position: 'relative', zIndex: 1}}>
-      <div style={{maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12}}>
-        <span className="mono-font" style={{fontSize: '0.7rem', color: 'var(--muted)'}}>
-          © 2025 Henry Barrios Thornhill
-        </span>
-        <span className="mono-font" style={{fontSize: '0.7rem', color: 'var(--muted)'}}>
-          Las Palmas de Gran Canaria, España
-        </span>
-      </div>
-    </footer>
-  );
-}
-
-/* ── CURSOR ── */
-function Cursor() {
-  const dot = useRef(null);
-  const ring = useRef(null);
-
-  useEffect(() => {
-    const move = (e) => {
-      if (dot.current) {
-        dot.current.style.left = e.clientX - 4 + 'px';
-        dot.current.style.top = e.clientY - 4 + 'px';
-      }
-      if (ring.current) {
-        ring.current.style.left = e.clientX - 16 + 'px';
-        ring.current.style.top = e.clientY - 16 + 'px';
-      }
-    };
-    window.addEventListener('mousemove', move);
-    return () => window.removeEventListener('mousemove', move);
-  }, []);
-
-  return (
-    <>
-      <div className="cursor" ref={dot} />
-      <div className="cursor-ring" ref={ring} />
-    </>
-  );
-}
-
-/* ── SCROLL REVEAL ── */
-function useScrollReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll('.section-reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(el => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
-}
-
-/* ── APP ── */
-function App() {
-  useScrollReveal();
-  return (
-    <>
-      <Cursor />
-      <Nav />
-      <Hero />
-      <div className="divider" />
-      <Experience />
-      <div className="divider" />
-      <Projects />
-      <div className="divider" />
-      <Skills />
-      <div className="divider" />
-      <Contact />
-      <Footer />
-    </>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+<script>
+  // El banner de "Abre tu sobre" solo se ve del 23 de octubre al 4 de diciembre de 2026.
+  (function () {
+    var hoy = new Date();
+    var desde = new Date(2026, 9, 23);        // 23 oct
+    var hasta = new Date(2026, 11, 4, 23, 59); // 4 dic
+    if (hoy >= desde && hoy <= hasta) {
+      document.getElementById('banner-sobre').style.display = 'block';
+    }
+  })();
 </script>
 </body>
 </html>
