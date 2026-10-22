@@ -98,6 +98,7 @@
   .sobre{display:grid;grid-template-columns:1.1fr 1fr;gap:56px}
   @media(max-width:820px){.sobre{grid-template-columns:1fr;gap:36px}}
   .sobre p{margin-bottom:16px}
+  .foto{width:132px;height:132px;border-radius:50%;object-fit:cover;border:4px solid var(--ocre-claro);margin-bottom:22px}
   .hitos{list-style:none;display:flex;flex-direction:column;gap:20px}
   .hitos li{padding-left:18px;border-left:3px solid var(--suave)}
   .hitos li:first-child{border-left-color:var(--ocre-claro)}
@@ -207,6 +208,34 @@
       </article>
 
       <article class="proyecto">
+        <div class="visual"><img src="assets/quiniela.png" alt="Dashboard de La Quiniela con la clasificación de aciertos y la evolución acumulada de tres amigos" loading="lazy"></div>
+        <div class="cuerpo">
+          <span class="pilar">Por dentro</span>
+          <h3>La Quiniela entre amigos</h3>
+          <p>Un panel para una quiniela de tres amigos: los resultados se rellenan en una hoja de Google publicada como CSV y la página calcula aciertos, media por jornada, mejor jornada y evolución acumulada.</p>
+          <div class="stack"><span>HTML</span><span>JavaScript</span><span>Google Sheets</span></div>
+          <div class="enlaces">
+            <a href="https://henry94bt.github.io/quiniela-millonarios/">Abrir el panel</a>
+            <a href="https://github.com/henry94bt/quiniela-millonarios">Código</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proyecto">
+        <div class="visual"><img src="assets/historia-para-gandules.png" alt="Mapa interactivo de Canarias con los vídeos de Historia para Gandules" loading="lazy"></div>
+        <div class="cuerpo">
+          <span class="pilar">Canarias en datos</span>
+          <h3>El mapa de Historia para Gandules</h3>
+          <p>Un mapa con los vídeos de <a href="https://instagram.com/historiaparagandules" style="color:var(--ocre-claro)">@historiaparagandules</a>, la cuenta de Luis Cabrera, para saber dónde ocurrió cada historia. Extraje los vídeos, usé IA para detectar el lugar en cada descripción y lo volqué en un mapa. Es de mis primeros proyectos y lo estoy renovando.</p>
+          <div class="stack"><span>Python</span><span>Web scraping</span><span>NLP</span><span>Folium</span></div>
+          <div class="enlaces">
+            <a href="https://henry94bt.github.io/HistoriaParaGandules/">Abrir el mapa</a>
+            <a href="https://github.com/henry94bt/HistoriaParaGandules">Código</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proyecto">
         <div class="visual">
           <div class="visual-texto">
             <svg viewBox="0 0 48 40" style="color:var(--claro)"><use href="#volcan"/></svg>
@@ -259,10 +288,12 @@
 <section id="sobre-mi" class="claro">
   <div class="wrap sobre">
     <div>
+      <img class="foto" src="assets/henry.jpg" alt="Henry Barrios Thornhill" width="132" height="132">
       <p class="etiqueta">Sobre mí</p>
       <h2>Henry Barrios Thornhill</h2>
       <p>Soy de Las Palmas de Gran Canaria. Estudié ADE y un máster en Big Data, y trabajo con datos desde hace unos años: análisis, automatización de informes y dashboards.</p>
       <p>Hoy lo hago en una agencia de comunicación de Gran Canaria, y en mi tiempo libre construyo lo que ves arriba. Me gusta que un dato se entienda a la primera y que lo que hago se pueda abrir, tocar y comprobar.</p>
+      <p>Y fuera de la pantalla, varias veces al año me voy de voluntario con la Fundación Foresta a plantar especies autóctonas por Canarias.</p>
       <div class="herr">
         <h3>Con qué trabajo</h3>
         <div class="stack"><span>Python</span><span>SQL</span><span>Power BI</span><span>Pandas</span><span>Folium</span><span>Git y GitHub</span><span>Excel avanzado</span><span>Inglés C1</span></div>
@@ -270,6 +301,7 @@
     </div>
     <ul class="hitos">
       <li><small>Actualidad</small><strong>La Pepa Studio</strong><span>Datos, automatización e informes.</span></li>
+      <li><small>Varias veces al año</small><strong>Voluntariado · Fundación Foresta</strong><span>Jornadas de reforestación: plantación de especies autóctonas y mantenimiento forestal.</span></li>
       <li><small>2025</small><strong>Salescaling · Analista de datos</strong><span>Pipelines en Python y preparación de datos para LLMs.</span></li>
       <li><small>2024</small><strong>The Wise Dreams · Analista de datos</strong><span>Mapas interactivos y dashboards de KPIs.</span></li>
       <li><small>2023–2024</small><strong>Máster en Big Data &amp; Analytics</strong><span>INESDI Business School.</span></li>
@@ -285,7 +317,7 @@
     <h2>¿Tienes unos datos y una pregunta?</h2>
     <p>Escríbeme si quieres comentar un proyecto, proponer un dato de aquí que merezca contarse, o encargar un análisis o un dashboard.</p>
     <div class="botones">
-      <a class="btn btn-ocre" href="mailto:henry1994bt@gmail.com">Escríbeme</a>
+      <a class="btn btn-ocre" href="mailto:hbtdataanalyst@gmail.com">Escríbeme</a>
       <a class="btn btn-borde" href="https://linkedin.com/in/henry-data-analyst-">LinkedIn</a>
     </div>
     <div class="redes">
