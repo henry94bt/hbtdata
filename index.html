@@ -71,49 +71,11 @@
   #banner-sobre a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
 
   /* HERO */
-  .hero{padding:76px 0 0;overflow:hidden}
-  .hero .wrap{display:grid;grid-template-columns:1fr 1.15fr;grid-template-areas:"titulo titulo" "texto grafico";column-gap:48px;align-items:end}
-  .hero-titulo{grid-area:titulo}
-  .hero-texto{grid-area:texto;padding-bottom:92px}
-  .islas{grid-area:grafico;margin-top:36px}
+  .hero{padding:92px 0 96px}
   .hero h1{font-size:clamp(2.5rem,6.4vw,4.7rem);max-width:15ch}
   .hero h1 span{color:var(--ocre)}
-  .hero-texto p{max-width:460px;margin:0 0 30px;font-size:1.08rem;opacity:.92}
-  @media(max-width:900px){
-    .hero{padding-top:56px}
-    .hero .wrap{grid-template-columns:1fr;grid-template-areas:"titulo" "texto" "grafico"}
-    .hero-texto{padding:24px 0 28px}
-  }
-
-  /* GRÁFICO DEL HERO: altura máxima de cada isla */
-  .islas{margin:0;position:relative}
-  .islas figcaption{display:flex;flex-direction:column;gap:2px;margin-bottom:6px;min-height:3.4em}
-  .islas .titulo-graf{font-size:.9rem;opacity:.75}
-  .islas .lectura{font-size:1.15rem;font-weight:600}
-  .islas .lectura b{color:var(--ocre);font-weight:700}
-  .islas svg{width:100%;height:auto;display:block;overflow:hidden}
-  .islas .fuente{position:absolute;right:8%;bottom:8px;font-size:.72rem;font-weight:500;color:var(--oscuro);opacity:.75}
-  .barra{cursor:pointer;outline:none}
-  .barra rect{fill:var(--claro);transform-box:fill-box;transform-origin:50% 100%;transition:fill .25s,opacity .25s}
-  .barra.teide rect{fill:var(--ocre)}
-  .barra text{fill:var(--claro);font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;text-anchor:middle;transition:opacity .25s}
-  .grafico.foco .barra:not(.activa) rect{opacity:.35}
-  .grafico.foco .barra:not(.activa) .valor{fill-opacity:.35}
-  .barra.activa:not(.teide) rect{fill:var(--suave)}
-  .barra:focus-visible rect{stroke:var(--ocre);stroke-width:3}
-  .codigos text{font-size:14px}
-  @media(max-width:600px){.barra text{font-size:21px}.codigos text{font-size:20px}.islas .fuente{position:static;display:block;text-align:right;padding:6px 0 10px;color:var(--claro);opacity:.6;font-size:.7rem}}
-  .mar{fill:var(--suave)}
-  .mar-1{opacity:.95}
-  .mar-2{opacity:.45}
-
-  .anima .barra rect{animation:sube 1.15s cubic-bezier(.2,.75,.2,1) both;animation-delay:calc(var(--i) * 120ms + 250ms)}
-  .anima .barra .valor{animation:aparece .5s ease both;animation-delay:calc(var(--i) * 120ms + 1000ms)}
-  .anima .ola-1{animation:ola 9s linear infinite}
-  .anima .ola-2{animation:ola 14s linear infinite reverse}
-  @keyframes sube{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-  @keyframes aparece{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-  @keyframes ola{from{transform:translateX(0)}to{transform:translateX(-280px)}}
+  .hero-texto p{max-width:560px;margin:28px 0 32px;font-size:1.1rem;opacity:.92}
+  @media(max-width:560px){.hero{padding:60px 0 64px}}
 
   .botones{display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;transition:transform .15s,border-color .15s,color .15s}
@@ -197,7 +159,6 @@
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .btn,.proyecto .visual img{transition:none}
-    .anima .barra rect,.anima .barra .valor,.anima .ola-1,.anima .ola-2{animation:none}
   }
 </style>
 </head>
@@ -264,67 +225,6 @@
       </div>
     </div>
 
-    <!-- Las siete islas de oeste a este: la altura de cada barra es la cumbre de la isla, desde el nivel del mar -->
-    <figure class="islas">
-      <figcaption>
-        <span class="titulo-graf">Altura máxima de cada isla, de oeste a este</span>
-        <span class="lectura" id="lectura" aria-live="polite">El Teide, en Tenerife: <b>3.715 m</b></span>
-      </figcaption>
-      <svg class="grafico" viewBox="0 0 560 400" role="group" aria-label="Gráfico de barras: altura máxima de cada isla canaria, de oeste a este">
-        <g class="barra" style="--i:0" tabindex="0" role="img" aria-label="El Hierro, Malpaso: 1.501 metros" data-texto="Malpaso, en El Hierro: <b>1.501 m</b>">
-          <rect x="25" y="215" width="54" height="105"/>
-          <text class="valor" x="52" y="203">1.501</text>
-        </g>
-        <g class="barra" style="--i:1" tabindex="0" role="img" aria-label="La Palma, Roque de los Muchachos: 2.426 metros" data-texto="El Roque de los Muchachos, en La Palma: <b>2.426 m</b>">
-          <rect x="101" y="150.2" width="54" height="169.8"/>
-          <text class="valor" x="128" y="138">2.426</text>
-        </g>
-        <g class="barra" style="--i:2" tabindex="0" role="img" aria-label="La Gomera, Alto de Garajonay: 1.487 metros" data-texto="El Alto de Garajonay, en La Gomera: <b>1.487 m</b>">
-          <rect x="177" y="215.9" width="54" height="104.1"/>
-          <text class="valor" x="204" y="204">1.487</text>
-        </g>
-        <g class="barra teide" style="--i:3" tabindex="0" role="img" aria-label="Tenerife, Teide: 3.715 metros" data-texto="El Teide, en Tenerife: <b>3.715 m</b>">
-          <rect x="253" y="60" width="54" height="260"/>
-          <text class="valor" x="280" y="48">3.715</text>
-        </g>
-        <g class="barra" style="--i:4" tabindex="0" role="img" aria-label="Gran Canaria, Pico de las Nieves: 1.949 metros" data-texto="El Pico de las Nieves, en Gran Canaria: <b>1.949 m</b>">
-          <rect x="329" y="183.6" width="54" height="136.4"/>
-          <text class="valor" x="356" y="172">1.949</text>
-        </g>
-        <g class="barra" style="--i:5" tabindex="0" role="img" aria-label="Fuerteventura, Pico de la Zarza: 807 metros" data-texto="El Pico de la Zarza, en Fuerteventura: <b>807 m</b>">
-          <rect x="405" y="263.5" width="54" height="56.5"/>
-          <text class="valor" x="432" y="251">807</text>
-        </g>
-        <g class="barra" style="--i:6" tabindex="0" role="img" aria-label="Lanzarote, Peñas del Chache: 670 metros" data-texto="Las Peñas del Chache, en Lanzarote: <b>670 m</b>">
-          <rect x="481" y="273.1" width="54" height="46.9"/>
-          <text class="valor" x="508" y="261">670</text>
-        </g>
-        <!-- El mar: el cero del gráfico. Se difumina en los bordes. -->
-        <defs>
-          <linearGradient id="borde-mar" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-            <stop offset=".07" stop-color="#fff" stop-opacity="1"/>
-            <stop offset=".93" stop-color="#fff" stop-opacity="1"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-          <mask id="mascara-mar" maskUnits="userSpaceOnUse" x="0" y="0" width="560" height="400"><rect width="560" height="400" fill="url(#borde-mar)"/></mask>
-        </defs>
-        <g aria-hidden="true" mask="url(#mascara-mar)">
-          <path class="mar mar-2 ola-2" d="M0 316 q35 -7 70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 V400 H0Z"/>
-          <path class="mar mar-1 ola-1" d="M0 322 q35 -6 70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 V400 H0Z"/>
-        </g>
-        <g class="codigos" aria-hidden="true" style="pointer-events:none">
-          <text x="52" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">EH</text>
-          <text x="128" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">LP</text>
-          <text x="204" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">LG</text>
-          <text x="280" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">TF</text>
-          <text x="356" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">GC</text>
-          <text x="432" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">FV</text>
-          <text x="508" y="356" fill="#0A3440" font-family="Poppins,sans-serif" font-weight="700" font-size="14" text-anchor="middle">LZ</text>
-        </g>
-      </svg>
-      <span class="fuente">Fuente: IGN y Wikipedia, octubre de 2026</span>
-    </figure>
   </div>
 </header>
 
@@ -437,7 +337,7 @@
         <p>Automatizar e IA aplicada a datos, gratis o casi.</p>
       </div>
     </div>
-    <p class="reglas">Reglas fijas: las barras empiezan en cero, para los precios uso medianas, y todo gráfico con datos lleva fecha y fuente. Como el de arriba, que empieza en el mar.</p>
+    <p class="reglas">Reglas fijas: las barras empiezan en cero, para los precios uso medianas, y todo gráfico con datos lleva fecha y fuente.</p>
   </div>
 </section>
 
@@ -509,34 +409,6 @@
     if (hoy >= desde && hoy <= hasta) {
       document.getElementById('banner-sobre').style.display = 'block';
     }
-  })();
-
-  // Gráfico del hero: las barras suben desde el mar al cargar y, al pasar por encima
-  // (o tocar en el móvil), la frase de arriba cuenta qué cumbre es.
-  (function () {
-    var graf = document.querySelector('.grafico');
-    var lectura = document.getElementById('lectura');
-    if (!graf || !lectura) return;
-    var inicial = lectura.innerHTML;
-    graf.classList.add('anima');
-
-    function activar(b) {
-      graf.querySelectorAll('.barra').forEach(function (x) { x.classList.toggle('activa', x === b); });
-      graf.classList.add('foco');
-      lectura.innerHTML = b.getAttribute('data-texto');
-    }
-    function soltar() {
-      graf.classList.remove('foco');
-      graf.querySelectorAll('.barra').forEach(function (x) { x.classList.remove('activa'); });
-      lectura.innerHTML = inicial;
-    }
-    graf.querySelectorAll('.barra').forEach(function (b) {
-      b.addEventListener('mouseenter', function () { activar(b); });
-      b.addEventListener('focus', function () { activar(b); });
-      b.addEventListener('click', function () { activar(b); });
-      b.addEventListener('blur', soltar);
-    });
-    graf.addEventListener('mouseleave', soltar);
   })();
 </script>
 </body>
