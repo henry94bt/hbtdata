@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>hbtdata · Datos de Canarias</title>
-<meta name="description" content="Datos explicados con cosas de aquí. Proyectos reales con datos de Canarias, hechos y contados por Henry Barrios Thornhill.">
+<title>hbtdata · Henry Barrios Thornhill, datos de Canarias</title>
+<meta name="description" content="Datos explicados con cosas de aquí. Proyectos reales con datos de Canarias, hechos y contados por Henry Barrios Thornhill, analista de datos en Gran Canaria.">
 <link rel="canonical" href="https://henry94bt.github.io/hbtdata/">
 <meta property="og:title" content="hbtdata · Datos de Canarias">
 <meta property="og:description" content="Datos explicados con cosas de aquí: gasolina, fútbol, islas. Herramientas propias y cómo están hechas.">
@@ -15,181 +15,186 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0A3440">
+<meta name="theme-color" content="#04161C">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230A3440'/%3E%3Cg fill='%23F7F3EC'%3E%3Crect x='8' y='29.8' width='5.1' height='10.2' rx='1.4'/%3E%3Crect x='14.7' y='20.2' width='5.1' height='19.8' rx='1.4'/%3E%3Crect x='21.4' y='8' width='5.1' height='32' rx='1.4' fill='%23F0A840'/%3E%3Crect x='28.2' y='14.4' width='5.1' height='25.6' rx='1.4'/%3E%3Crect x='34.9' y='25.3' width='5.1' height='14.7' rx='1.4'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root{
-    --oscuro:#0A3440;
+    --fondo:#04161C;      /* petróleo muy oscuro: el fondo de la experiencia */
+    --petroleo:#0A3440;
     --claro:#F7F3EC;
-    --ocre:#F0A840;      /* resaltado sobre oscuro */
-    --ocre-claro:#C46E14;/* resaltado sobre claro */
+    --tenue:rgba(247,243,236,.64);
+    --linea:rgba(247,243,236,.14);
+    --ocre:#F0A840;
     --suave:#96D6D6;
-    --maxw:1120px;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'Poppins',system-ui,sans-serif;
+    --lado:clamp(20px,4vw,56px);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Poppins',system-ui,sans-serif;background:var(--claro);color:var(--oscuro);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  body{font-family:var(--sans);background:var(--fondo);color:var(--claro);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit}
   img{max-width:100%;display:block}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-  section{padding:88px 0}
-  .oscuro{background:var(--oscuro);color:var(--claro)}
-  .claro{background:var(--claro);color:var(--oscuro)}
-  .etiqueta{font-size:.95rem;font-weight:600;margin-bottom:8px}
-  .oscuro .etiqueta{color:var(--ocre)}
-  .claro .etiqueta{color:var(--ocre-claro)}
-  h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
-  h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
-  .intro{max-width:620px;margin-bottom:44px;opacity:.9}
-  :focus-visible{outline:3px solid var(--ocre);outline-offset:3px;border-radius:6px}
-
-  /* ICONOS */
-  .ico{width:20px;height:20px;flex:none;fill:currentColor}
+  :focus-visible{outline:2px solid var(--ocre);outline-offset:4px;border-radius:4px}
+  .ico{width:18px;height:18px;flex:none;fill:currentColor}
   .ico.trazo{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-  /* NAV */
-  nav{position:sticky;top:0;z-index:20;background:var(--oscuro);color:var(--claro);border-bottom:1px solid rgba(247,243,236,.12)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.25rem;letter-spacing:-.01em}
-  .logo svg{height:28px;width:28px}
-  .logo b{color:var(--ocre);font-weight:700}
-  nav ul{display:flex;gap:26px;list-style:none;font-size:.9rem;margin-left:auto}
-  nav ul a{text-decoration:none;opacity:.85}
-  nav ul a:hover{opacity:1;color:var(--ocre)}
-  .nav-redes{display:flex;gap:4px;padding-left:18px;border-left:1px solid rgba(247,243,236,.18)}
-  .nav-redes a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;opacity:.85}
-  .nav-redes a:hover{opacity:1;color:var(--ocre);background:rgba(247,243,236,.08)}
-  .nav-redes .ico{width:18px;height:18px}
-  @media(max-width:820px){nav ul{display:none}.nav-redes{border-left:0;padding-left:0}}
+  /* Textos pequeños de instrumento */
+  .mono{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+  .mono b{font-weight:500;color:var(--ocre)}
+  .titular{font-weight:200;text-transform:uppercase;letter-spacing:-.01em;line-height:.98;font-size:clamp(2.5rem,5vw,4.8rem)}
+  .pildora{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border:1px solid rgba(247,243,236,.32);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--claro);background:rgba(4,22,28,.35);transition:border-color .2s,color .2s}
+  .pildora:hover{border-color:var(--ocre);color:var(--ocre)}
+  .pildora .ico{width:14px;height:14px}
+  .enlace{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);text-decoration:none}
+  .enlace:hover{color:var(--ocre)}
 
-  /* BANNER ABRE TU SOBRE (solo 23 oct - 4 dic) */
-  #banner-sobre{display:none;background:var(--ocre);color:var(--oscuro);font-size:.92rem}
-  #banner-sobre .wrap{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;text-align:center}
-  #banner-sobre a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
-
-  /* HERO */
-  .hero{--mar:84px;position:relative;overflow:hidden;padding:92px 0 0}
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);grid-template-areas:"titulo isla" "texto isla";column-gap:48px;align-items:end}
-  .hero-titulo{grid-area:titulo}
-  .hero-texto{grid-area:texto;padding-bottom:calc(var(--mar) + 64px)}
-  .hero h1{font-size:clamp(2.3rem,5vw,3.7rem)}
-  .hero h1 span{color:var(--ocre)}
-  .hero-texto p{max-width:540px;margin:28px 0 32px;font-size:1.1rem;opacity:.92}
-
-  /* El logo sale del mar como una isla */
-  .isla{grid-area:isla;justify-self:center;display:block;width:min(100%,340px);height:auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
-  .isla .b{fill:var(--claro);transform-box:fill-box;transition:transform .55s cubic-bezier(.3,1.5,.5,1);transition-delay:calc(var(--k) * 45ms)}
-  .isla .b.cumbre{fill:var(--ocre)}
-  .isla:hover .b{transform:translateY(-3.5%)}
-  .isla.sale .b{animation:emerge 1.7s cubic-bezier(.2,1.12,.35,1) backwards;animation-delay:calc(var(--o) * 260ms + 350ms)}
-  .isla.sale .b.cumbre{animation-duration:2.1s;animation-timing-function:cubic-bezier(.2,1.25,.35,1)}
-  @keyframes emerge{from{transform:translateY(100%)}to{transform:none}}
-  .mar{position:absolute;left:0;right:0;bottom:0;height:var(--mar);pointer-events:none;z-index:2;animation:marea 7s ease-in-out infinite alternate}
-  .mar i{position:absolute;inset:0;background-repeat:repeat-x;background-position:0 0}
-  .mar .ola-a{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120'%3E%3Cpath d='M0 10 Q75 22 150 10 T300 10 V120 H0Z' fill='%2396D6D6'/%3E%3C/svg%3E");background-size:300px 120px;opacity:.45;top:-10px;animation:ola-a 13s linear infinite}
-  .mar .ola-b{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='120'%3E%3Cpath d='M0 16 Q60 4 120 16 T240 16 V120 H0Z' fill='%2396D6D6'/%3E%3C/svg%3E");background-size:240px 120px;animation:ola-b 8s linear infinite}
-  @keyframes ola-a{to{background-position:-300px 0}}
-  @keyframes ola-b{to{background-position:240px 0}}
-  @keyframes marea{to{transform:translateY(5px)}}
-  @media(max-width:860px){
-    .hero{--mar:64px;padding-top:60px}
-    .hero .wrap{grid-template-columns:1fr;grid-template-areas:"titulo" "texto" "isla"}
-    .hero-texto{padding-bottom:8px}
-    .isla{width:min(62%,240px);margin-top:28px}
+  /* ---------- Cabecera fija ---------- */
+  .barra{position:fixed;inset:0 0 auto;z-index:30;display:flex;justify-content:space-between;align-items:flex-start;padding:26px var(--lado) 0;pointer-events:none}
+  .barra>*{pointer-events:auto}
+  .quien{display:flex;flex-direction:column;gap:12px}
+  .quien a.firma{display:flex;align-items:center;gap:14px;text-decoration:none}
+  .sello{width:36px;height:36px;border:1px solid rgba(247,243,236,.4);border-radius:50%;display:grid;place-items:center}
+  .sello svg{width:16px;height:16px}
+  .barra .derecha{display:flex;align-items:center;gap:18px}
+  .barra .redes{display:flex;gap:4px}
+  .barra .redes a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:var(--tenue)}
+  .barra .redes a:hover{color:var(--ocre)}
+  .menu-boton{display:flex;align-items:center;gap:12px;background:none;border:0;color:var(--tenue);cursor:pointer;font:inherit}
+  .menu-boton .circulo{width:48px;height:48px;border:1px solid rgba(247,243,236,.5);border-radius:50%;display:grid;place-items:center;transition:border-color .2s}
+  .menu-boton .circulo i{width:8px;height:8px;border-radius:50%;background:var(--claro);box-shadow:0 0 0 4px var(--fondo),0 0 0 5px rgba(247,243,236,.5);transition:background .2s}
+  .menu-boton:hover .circulo{border-color:var(--ocre)}
+  .menu-boton:hover .circulo i{background:var(--ocre)}
+  body.debajo .barra{background:linear-gradient(var(--fondo) 55%,transparent);padding-bottom:18px}
+  body.debajo .quien>.enlace:not(#sobre){display:none}
+  #sobre{display:none;margin-top:4px;text-decoration:none}
+  #sobre b{color:var(--ocre)}
+  @media(max-width:760px){
+    .barra{padding-top:18px}
+    .quien .rol,.barra .redes,.menu-boton>.mono,.quien .largo{display:none}
+    .quien{gap:8px}
+    .menu-boton .circulo{width:42px;height:42px}
   }
 
-  .botones{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;transition:transform .15s,border-color .15s,color .15s}
-  .btn:hover{transform:translateY(-2px)}
-  .btn .ico{width:18px;height:18px}
-  .btn-ocre{background:var(--ocre);color:var(--oscuro)}
-  .btn-borde{border-color:rgba(247,243,236,.5);color:var(--claro)}
-  .btn-borde:hover{border-color:var(--ocre);color:var(--ocre)}
+  /* ---------- Fondo: partículas y resplandor ---------- */
+  .resplandor{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(circle at var(--gx,62%) var(--gy,50%),rgba(var(--gc,240,168,64),.30),rgba(var(--gc,240,168,64),.08) 32%,transparent 62%),
+               radial-gradient(ellipse at 50% 120%,rgba(10,52,64,.9),transparent 60%)}
+  #campo{position:fixed;inset:0;width:100vw;height:100lvh;z-index:1;pointer-events:none}
+  .resplandor,#campo{transition:opacity .6s}
+  body.debajo .resplandor,body.debajo #campo{opacity:0}
 
-  /* PROYECTOS */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}}
-  .proyecto{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 0 rgba(10,52,64,.08),0 14px 34px -20px rgba(10,52,64,.35);display:flex;flex-direction:column}
-  .proyecto .visual{background:var(--oscuro);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .proyecto .visual img{width:100%;height:100%;object-fit:cover;object-position:50% 0;transition:object-position 5s ease-in-out}
-  .proyecto:hover .visual img{object-position:50% 100%}
-  .proyecto .visual.ancha{background:#EEF1F2}
-  .proyecto .visual.ancha img{object-fit:contain;object-position:center}
-  .proyecto .cuerpo{padding:24px 26px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
-  .pilar{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:var(--ocre-claro)}
-  .pilar::before{content:"";width:8px;height:8px;border-radius:2px;background:currentColor}
-  .proyecto h3{font-size:1.35rem}
-  .proyecto p{font-size:.95rem}
-  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
-  .stack span{font-size:.76rem;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(150,214,214,.4)}
-  .enlaces{margin-top:auto;padding-top:6px;display:flex;flex-wrap:wrap;gap:8px 20px;font-weight:600;font-size:.92rem}
-  .enlaces a{display:inline-flex;align-items:center;gap:6px;color:var(--ocre-claro);text-underline-offset:3px}
-  .enlaces .ico{width:16px;height:16px}
+  /* ---------- La experiencia ---------- */
+  .experiencia{position:relative;z-index:2}
+  .escena{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:170px var(--lado) 120px}
+  .escena .texto{font-family:var(--mono);font-size:.92rem;line-height:1.7;color:var(--tenue);max-width:46ch}
+  .escena .titular{max-width:12.5ch}
+  .escena .acciones{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:4px}
+  .escena .nota{color:rgba(247,243,236,.46)}
+  .escena .nota b{color:var(--suave)}
+  .js .experiencia{height:calc(var(--n) * 100svh)}
+  .js .escenario{position:sticky;top:0;height:100svh;overflow:hidden}
+  .js .escena{position:absolute;inset:0;min-height:0;will-change:opacity,transform;opacity:0;visibility:hidden}
+  .js .escena.der{align-items:flex-end;text-align:right}
+  .js .escena.der .acciones{justify-content:flex-end}
+  .escena h1,.escena h2{text-shadow:0 0 40px rgba(4,22,28,.6)}
+  @media(max-width:760px){
+    .escena{justify-content:flex-end;gap:16px;padding-bottom:96px;padding-right:44px}
+    .js .escena.der{align-items:flex-start;text-align:left}
+    .js .escena.der .acciones{justify-content:flex-start}
+    .escena .texto{font-size:.84rem;max-width:none}
+    .escena .titular{font-size:clamp(2.1rem,10vw,3rem)}
+    .js .escena::before{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(transparent,rgba(4,22,28,.88) 38%);z-index:-1}
+  }
 
-  /* El proyecto destacado ocupa todo el ancho */
-  .destacado{grid-column:1/-1;display:grid;grid-template-columns:1.3fr 1fr}
-  .destacado .visual{aspect-ratio:auto;min-height:340px}
-  .destacado .cuerpo{padding:34px 34px 32px}
-  .destacado h3{font-size:1.7rem}
-  @media(max-width:760px){.destacado{display:flex}.destacado .visual{aspect-ratio:16/10;min-height:0}.destacado .cuerpo{padding:24px 26px 26px}}
+  /* Rayitas de progreso y línea de etiquetas */
+  .marcas{position:fixed;right:var(--lado);top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;align-items:flex-end;gap:14px;list-style:none;transition:opacity .4s}
+  .marcas button{display:block;width:14px;height:14px;background:none;border:0;cursor:pointer;position:relative}
+  .marcas button::after{content:"";position:absolute;right:0;top:50%;height:1px;width:14px;background:rgba(247,243,236,.35);transition:width .3s,background .3s}
+  .marcas button.activa::after{width:28px;background:var(--ocre)}
+  .pie-escena{position:fixed;left:var(--lado);right:var(--lado);bottom:24px;z-index:20;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;pointer-events:none;transition:opacity .4s}
+  .pie-escena .tags{flex:1;max-width:620px}
+  .pie-escena .tags span{display:block;margin-bottom:10px;color:var(--suave);transition:opacity .3s}
+  .pie-escena .linea{height:1px;background:var(--linea);position:relative}
+  .pie-escena .linea i{position:absolute;inset:0 auto 0 0;width:0;background:var(--suave)}
+  .pie-escena .pista{display:flex;align-items:center;gap:14px}
+  .pie-escena .pista::after{content:"";width:1px;height:40px;background:var(--linea)}
+  body.debajo .marcas,body.debajo .pie-escena{opacity:0;pointer-events:none}
+  html:not(.js) .marcas,html:not(.js) .pie-escena{display:none}
+  @media(max-width:760px){
+    .marcas{right:12px;gap:10px}
+    .pie-escena{bottom:16px}
+    .pie-escena .pista{display:none}
+  }
 
-  .visual-texto{padding:24px;text-align:center;color:var(--claro)}
-  .visual-texto svg{height:64px;width:auto;margin:0 auto 10px}
-  .visual-texto strong{display:block;font-size:1.05rem;color:var(--ocre)}
+  /* Menú */
+  .menu{position:fixed;inset:0;z-index:40;background:rgba(4,22,28,.97);display:flex;flex-direction:column;justify-content:center;padding:100px var(--lado) 60px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+  .menu.abierto{opacity:1;visibility:visible}
+  .menu ol{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .menu ol a{display:flex;align-items:center;gap:20px;text-decoration:none}
+  .menu ol a .titular{font-size:clamp(2.2rem,6vw,4.6rem);transition:color .2s}
+  .menu ol a:hover .titular{color:var(--ocre)}
+  .menu .pie-menu{display:flex;flex-wrap:wrap;gap:12px;margin-top:48px}
+  .menu .cerrar{position:absolute;top:26px;right:var(--lado)}
 
-  /* PILARES */
-  .pilares{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-  .pilares div{border:1px solid rgba(247,243,236,.22);border-radius:16px;padding:26px}
-  .pilares h3{font-size:1.15rem;color:var(--ocre);margin-bottom:8px}
-  .pilares p{font-size:.94rem;opacity:.9}
-  .reglas{margin-top:40px;max-width:720px;font-size:.95rem;opacity:.88;border-left:3px solid var(--ocre);padding-left:16px}
+  /* ---------- Lo de debajo de la experiencia ---------- */
+  .seccion{position:relative;z-index:2;background:var(--fondo);padding:120px var(--lado)}
+  .cabeza{margin-bottom:56px}
+  .cabeza .titular{margin:16px 0 18px}
+  .cabeza p:not(.mono){font-family:var(--mono);font-size:.9rem;color:var(--tenue);max-width:52ch}
 
-  /* SOBRE MI */
-  .sobre{display:grid;grid-template-columns:1.1fr 1fr;gap:56px}
-  @media(max-width:820px){.sobre{grid-template-columns:1fr;gap:36px}}
-  .sobre p{margin-bottom:16px}
-  .foto{width:132px;height:132px;border-radius:50%;object-fit:cover;border:4px solid var(--ocre-claro);margin-bottom:22px}
-  .hitos{list-style:none;display:flex;flex-direction:column;gap:20px}
-  .hitos li{padding-left:18px;border-left:3px solid var(--suave)}
-  .hitos li:first-child{border-left-color:var(--ocre-claro)}
-  .hitos small{display:block;font-size:.82rem;font-weight:600;opacity:.7}
-  .hitos strong{display:block;font-size:1.02rem}
-  .hitos span{font-size:.9rem;opacity:.85}
-  .herr{margin-top:36px}
-  .herr h3{font-size:.95rem;color:var(--ocre-claro);margin-bottom:10px}
-  .herr .stack span{background:var(--oscuro);color:var(--claro)}
+  .lista{list-style:none;border-top:1px solid var(--linea)}
+  .fila{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1.15fr) 190px;gap:28px;padding:34px 0;border-bottom:1px solid var(--linea);align-items:start}
+  .fila h3{font-weight:200;text-transform:uppercase;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.02}
+  .fila .desc{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:22px;font-family:var(--mono);font-size:.82rem;line-height:1.7;color:var(--tenue)}
+  .fila .desc a{color:var(--claro)}
+  .fila figure{border-radius:8px;overflow:hidden;border:1px solid var(--linea);aspect-ratio:16/10;background:var(--petroleo)}
+  .fila figure img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.85;transition:opacity .3s,transform .6s}
+  .fila:hover figure img{opacity:1;transform:scale(1.03)}
+  .fila .vinculos{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+  .fila .vinculos a{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  .fila .vinculos .ico{width:13px;height:13px}
+  .fila .stack{margin-top:10px;line-height:1.9}
+  @media(max-width:1000px){
+    .fila{grid-template-columns:1fr;gap:14px}
+    .fila .desc{grid-template-columns:1fr}
+    .fila figure{max-width:420px}
+    .fila .vinculos{flex-direction:row;align-items:center;gap:22px}
+  }
 
-  /* CONTACTO */
-  .contacto h2{max-width:640px}
-  .contacto p{max-width:560px;margin-bottom:28px;opacity:.92}
-  .redes{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px;list-style:none}
-  .redes a{display:flex;align-items:center;gap:12px;padding:12px 18px 12px 14px;border-radius:14px;border:1px solid rgba(247,243,236,.2);text-decoration:none;transition:border-color .15s,background .15s}
-  .redes a:hover{border-color:var(--ocre);background:rgba(247,243,236,.05)}
-  .redes .ico{width:22px;height:22px;color:var(--ocre)}
-  .redes strong{display:block;font-size:.95rem;font-weight:600;line-height:1.2}
-  .redes small{display:block;font-size:.8rem;opacity:.7}
-  footer{background:var(--oscuro);color:var(--claro);border-top:1px solid rgba(247,243,236,.12);padding:22px 0;font-size:.82rem}
-  footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
-  footer .pie-redes{display:flex;gap:14px}
-  footer .pie-redes a{opacity:.75}
-  footer .pie-redes a:hover{opacity:1;color:var(--ocre)}
-  footer .pie-redes .ico{width:18px;height:18px}
-  footer span{opacity:.7}
+  .sobre{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px}
+  .sobre .foto{width:112px;height:112px;border-radius:50%;object-fit:cover;border:1px solid rgba(247,243,236,.4);padding:4px;margin-bottom:26px}
+  .sobre .bio p{font-weight:300;font-size:1.05rem;line-height:1.75;max-width:56ch;margin-bottom:16px;color:rgba(247,243,236,.86)}
+  .herr{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .herr span{border:1px solid var(--linea);border-radius:999px;padding:6px 12px}
+  .hitos{list-style:none;border-top:1px solid var(--linea)}
+  .hitos li{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--linea)}
+  .hitos strong{display:block;font-weight:400;font-size:1rem}
+  .hitos span{font-family:var(--mono);font-size:.8rem;color:var(--tenue)}
+  @media(max-width:860px){.sobre{grid-template-columns:1fr;gap:48px}.hitos li{grid-template-columns:1fr;gap:4px}}
 
-  @media(max-width:560px){section{padding:64px 0}}
+  .contacto .correo{display:inline-block;font-weight:200;font-size:clamp(1.5rem,4.6vw,3.6rem);text-decoration:none;border-bottom:1px solid var(--linea);margin:6px 0 40px;word-break:break-all}
+  .contacto .correo:hover{color:var(--ocre);border-color:var(--ocre)}
+  .redes-grandes{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;max-width:960px}
+  .redes-grandes a{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid var(--linea);border-radius:14px;text-decoration:none;transition:border-color .2s}
+  .redes-grandes a:hover{border-color:var(--ocre)}
+  .redes-grandes .ico{width:22px;height:22px;color:var(--ocre)}
+  .redes-grandes strong{display:block;font-weight:400;line-height:1.2}
+  .redes-grandes small{font-family:var(--mono);font-size:.74rem;color:var(--tenue)}
+  footer{position:relative;z-index:2;background:var(--fondo);border-top:1px solid var(--linea);padding:24px var(--lado);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    .btn,.proyecto .visual img,.isla .b{transition:none}
-    .isla.sale .b,.mar,.mar i{animation:none}
+    .pildora,.fila figure img,.menu,.resplandor,#campo{transition:none}
   }
 </style>
 </head>
 <body>
 
-<!-- Iconos y logo -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="volcan" viewBox="0 0 100 100">
     <rect x="0"  y="68" width="16" height="32"  rx="4.5" fill="currentColor"/>
@@ -201,257 +206,400 @@
   <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
   <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
   <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
-  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
   <symbol id="i-correo" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
-  <symbol id="i-codigo" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
-  <symbol id="i-abrir" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-fuera" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-abajo" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
 </svg>
 
-<div id="banner-sobre">
-  <div class="wrap">
-    <span>Hasta el 4 de diciembre: un test de cromos hecho con datos.</span>
-    <a href="https://www.abretusobre.es/?utm_source=web">Abre tu sobre</a>
-  </div>
-</div>
-
-<nav>
-  <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="hbtdata, inicio">
-      <svg viewBox="0 0 100 100" style="color:var(--claro)"><use href="#volcan"/></svg>
-      <span>hbt<b>data</b></span>
+<header class="barra">
+  <div class="quien">
+    <a class="firma" href="#inicio" aria-label="hbtdata, inicio">
+      <span class="sello"><svg viewBox="0 0 100 100" style="color:var(--claro)"><use href="#volcan"/></svg></span>
+      <span class="mono" style="color:var(--claro)">Henry Barrios Thornhill<span class="rol"> / Analista de datos</span></span>
     </a>
-    <ul>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#como">Cómo trabajo</a></li>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <div class="nav-redes">
+    <a class="enlace" href="#proyectos"><span class="largo">Saltar la experiencia / </span>Ver todos los proyectos</a>
+    <a id="sobre" class="enlace" href="https://www.abretusobre.es/?utm_source=web"><b>●</b> Abre tu sobre<span class="largo">: un test de cromos hecho con datos</span></a>
+  </div>
+  <div class="derecha">
+    <nav class="redes" aria-label="Redes">
       <a href="https://instagram.com/hbtdata" aria-label="Instagram de hbtdata"><svg class="ico"><use href="#i-instagram"/></svg></a>
       <a href="https://linkedin.com/in/henry-data-analyst-" aria-label="LinkedIn de Henry Barrios Thornhill"><svg class="ico"><use href="#i-linkedin"/></svg></a>
       <a href="https://github.com/henry94bt" aria-label="GitHub de henry94bt"><svg class="ico"><use href="#i-github"/></svg></a>
-    </div>
+    </nav>
+    <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="mono">Menú</span><span class="circulo"><i></i></span>
+    </button>
   </div>
-</nav>
-
-<header id="inicio" class="oscuro hero">
-  <div class="wrap">
-    <div class="hero-titulo">
-      <p class="etiqueta">Datos de Canarias</p>
-      <h1>Datos explicados<br> con <span>cosas de aquí.</span></h1>
-    </div>
-    <div class="hero-texto">
-      <p>Soy Henry. Construyo mis propias herramientas con datos de Canarias (gasolina, fútbol, islas) y enseño cómo están hechas, con el código y las capturas delante.</p>
-      <div class="botones">
-        <a class="btn btn-ocre" href="#proyectos">Ver proyectos</a>
-        <a class="btn btn-borde" href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg>@hbtdata</a>
-      </div>
-    </div>
-    <!-- El logo de hbtdata, inspirado en los picos de Canarias. Las barras siguen por debajo del mar. -->
-    <svg class="isla sale" viewBox="0 -8 100 136" role="img" aria-label="Logo de hbtdata: cinco barras con forma de volcán que salen del mar">
-      <rect class="b" style="--o:0;--k:0" x="0"  y="68" width="16" height="60"  rx="4.5"/>
-      <rect class="b" style="--o:2;--k:1" x="21" y="38" width="16" height="90"  rx="4.5"/>
-      <rect class="b cumbre" style="--o:4;--k:2" x="42" y="0"  width="16" height="128" rx="4.5"/>
-      <rect class="b" style="--o:3;--k:3" x="63" y="20" width="16" height="108" rx="4.5"/>
-      <rect class="b" style="--o:1;--k:4" x="84" y="54" width="16" height="74"  rx="4.5"/>
-    </svg>
-  </div>
-  <div class="mar" aria-hidden="true"><i class="ola-a"></i><i class="ola-b"></i></div>
 </header>
 
-<section id="proyectos" class="claro">
-  <div class="wrap">
-    <p class="etiqueta">Proyectos</p>
-    <h2>Lo que he construido</h2>
-    <p class="intro">Proyectos reales con datos públicos. Cada uno funciona hoy y se puede abrir.</p>
-
-    <div class="grid">
-
-      <article class="proyecto destacado">
-        <div class="visual ancha"><img src="assets/gas-tracker.png" alt="Tabla con las 10 gasolineras más baratas de Canarias en el Canarias Gas Tracker" loading="lazy"></div>
-        <div class="cuerpo">
-          <span class="pilar">Canarias en datos</span>
-          <h3>Canarias Gas Tracker</h3>
-          <p>Las gasolineras más baratas de las islas, con filtro por isla y por combustible. Se alimenta de la API de precios del Ministerio y se actualiza solo cada día.</p>
-          <div class="stack"><span>HTML</span><span>JavaScript</span><span>API pública</span><span>GitHub Actions</span></div>
-          <div class="enlaces">
-            <a href="https://henry94bt.github.io/canarias-gas-tracker/"><svg class="ico trazo"><use href="#i-abrir"/></svg>Abrir la web</a>
-            <a href="https://github.com/henry94bt/canarias-gas-tracker"><svg class="ico trazo"><use href="#i-codigo"/></svg>Código</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proyecto">
-        <div class="visual"><img src="assets/moleiro-dashboard.png" alt="Dashboard de Power BI que compara la producción de Alberto Moleiro con otros jugadores" loading="lazy"></div>
-        <div class="cuerpo">
-          <span class="pilar">Canarias en datos</span>
-          <h3>Moleiro frente al resto del Mundial</h3>
-          <p>¿Cuánto produce Alberto Moleiro comparado con otros jugadores de las cinco grandes ligas? Un pipeline en Python que baja los datos de FBref y un dashboard en Power BI para leerlos.</p>
-          <div class="stack"><span>Python</span><span>FBref</span><span>Power BI</span></div>
-          <div class="enlaces">
-            <a href="https://github.com/henry94bt/moleiro-mundial-2026"><svg class="ico trazo"><use href="#i-codigo"/></svg>Código y dashboard</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proyecto">
-        <div class="visual"><img src="assets/historia-para-gandules.png" alt="Mapa interactivo de Canarias con los vídeos de Historia para Gandules" loading="lazy"></div>
-        <div class="cuerpo">
-          <span class="pilar">Canarias en datos</span>
-          <h3>El mapa de Historia para Gandules</h3>
-          <p>Un mapa con 121 historias de <a href="https://instagram.com/historiaparagandules" style="color:var(--ocre-claro)">@historiaparagandules</a>, la cuenta de Luis Cabrera: cada vídeo queda anclado al lugar del que habla, con filtros por categoría e isla, buscador y un juego para adivinar dónde ocurrió cada historia. Los datos salen de un pipeline en Python y la web solo lee un JSON.</p>
-          <div class="stack"><span>Python</span><span>Leaflet</span><span>JavaScript</span><span>Pipeline de datos</span></div>
-          <div class="enlaces">
-            <a href="https://henry94bt.github.io/historiaparagandul/site/mapa.html"><svg class="ico trazo"><use href="#i-abrir"/></svg>Abrir el mapa</a>
-            <a href="https://github.com/henry94bt/historiaparagandul"><svg class="ico trazo"><use href="#i-codigo"/></svg>Código</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proyecto">
-        <div class="visual"><img src="assets/quiniela.png" alt="Dashboard de La Quiniela con la clasificación de aciertos y la evolución acumulada de tres amigos" loading="lazy"></div>
-        <div class="cuerpo">
-          <span class="pilar">Por dentro</span>
-          <h3>La Quiniela entre amigos</h3>
-          <p>Un panel para una quiniela de tres amigos: los resultados se rellenan en una hoja de Google publicada como CSV y la página calcula aciertos, media por jornada, mejor jornada y evolución acumulada.</p>
-          <div class="stack"><span>HTML</span><span>JavaScript</span><span>Google Sheets</span></div>
-          <div class="enlaces">
-            <a href="https://henry94bt.github.io/quiniela-millonarios/"><svg class="ico trazo"><use href="#i-abrir"/></svg>Abrir el panel</a>
-            <a href="https://github.com/henry94bt/quiniela-millonarios"><svg class="ico trazo"><use href="#i-codigo"/></svg>Código</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proyecto">
-        <div class="visual">
-          <div class="visual-texto">
-            <svg viewBox="0 0 100 100" style="color:var(--claro)"><use href="#volcan"/></svg>
-            <strong>Fábrica de contenido</strong>
-            <span style="font-size:.85rem;opacity:.85">Python, Pillow, matplotlib y ffmpeg</span>
-          </div>
-        </div>
-        <div class="cuerpo">
-          <span class="pilar">Por dentro</span>
-          <h3>Los carruseles se generan con código</h3>
-          <p>Los carruseles, reels y stories de @hbtdata no se maquetan a mano: salen de un conjunto de scripts con la identidad de la marca, gráficos propios y las reglas de siempre (barras desde cero, medianas, fecha y fuente).</p>
-          <div class="stack"><span>Python</span><span>Pillow</span><span>matplotlib</span><span>ffmpeg</span></div>
-          <div class="enlaces">
-            <a href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg>Verlo en Instagram</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú">
+  <button class="menu-boton cerrar" type="button"><span class="mono">Cerrar</span><span class="circulo"><i style="background:var(--ocre)"></i></span></button>
+  <ol>
+    <li><a href="#inicio"><span class="mono">01</span><span class="titular">Inicio</span></a></li>
+    <li><a href="#proyectos"><span class="mono">02</span><span class="titular">Proyectos</span></a></li>
+    <li><a href="#como-trabajo"><span class="mono">03</span><span class="titular">Cómo trabajo</span></a></li>
+    <li><a href="#sobre-mi"><span class="mono">04</span><span class="titular">Sobre mí</span></a></li>
+    <li><a href="#contacto"><span class="mono">05</span><span class="titular">Contacto</span></a></li>
+  </ol>
+  <div class="pie-menu">
+    <a class="pildora" href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg>Instagram</a>
+    <a class="pildora" href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg>LinkedIn</a>
+    <a class="pildora" href="https://github.com/henry94bt"><svg class="ico"><use href="#i-github"/></svg>GitHub</a>
   </div>
-</section>
+</div>
 
-<section id="como" class="oscuro">
-  <div class="wrap">
-    <p class="etiqueta">Cómo trabajo</p>
-    <h2>Cuatro cosas que cuento</h2>
-    <p class="intro">Todo lo que publico entra en uno de estos cuatro cajones.</p>
-    <div class="pilares">
-      <div>
-        <h3>Canarias en datos</h3>
-        <p>Datos locales que se comparten por aquí: gasolina, fútbol, islas.</p>
-      </div>
-      <div>
-        <h3>Por dentro</h3>
-        <p>Cómo está hecho un proyecto real, con capturas y código.</p>
-      </div>
-      <div>
-        <h3>Aprende datos</h3>
-        <p>Un concepto explicado con un ejemplo de todos los días.</p>
-      </div>
-      <div>
-        <h3>Herramientas</h3>
-        <p>Automatizar e IA aplicada a datos, gratis o casi.</p>
-      </div>
-    </div>
-    <p class="reglas">Reglas fijas: las barras empiezan en cero, para los precios uso medianas, y todo gráfico con datos lleva fecha y fuente.</p>
-  </div>
-</section>
+<div class="resplandor" aria-hidden="true"></div>
+<canvas id="campo" aria-hidden="true"></canvas>
 
-<section id="sobre-mi" class="claro">
-  <div class="wrap sobre">
-    <div>
-      <img class="foto" src="assets/henry.jpg" alt="Henry Barrios Thornhill" width="132" height="132">
-      <p class="etiqueta">Sobre mí</p>
-      <h2>Henry Barrios Thornhill</h2>
-      <p>Soy de Las Palmas de Gran Canaria. Estudié ADE y un máster en Big Data, y trabajo con datos desde hace unos años: análisis, automatización de informes y dashboards.</p>
-      <p>Hoy lo hago en una agencia de comunicación de Gran Canaria, y en mi tiempo libre construyo lo que ves arriba. Me gusta que un dato se entienda a la primera y que lo que hago se pueda abrir, tocar y comprobar.</p>
-      <p>Y fuera de la pantalla, varias veces al año me voy de voluntario con la Fundación Foresta a plantar especies autóctonas por Canarias.</p>
-      <div class="herr">
-        <h3>Con qué trabajo</h3>
-        <div class="stack"><span>Python</span><span>SQL</span><span>Power BI</span><span>Pandas</span><span>Folium</span><span>Git y GitHub</span><span>Excel avanzado</span><span>Inglés C1</span></div>
-      </div>
-    </div>
-    <ul class="hitos">
-      <li><small>Actualidad</small><strong>La Pepa Studio</strong><span>Datos, automatización e informes.</span></li>
-      <li><small>Varias veces al año</small><strong>Voluntariado en la Fundación Foresta</strong><span>Jornadas de reforestación: plantación de especies autóctonas y mantenimiento forestal.</span></li>
-      <li><small>2025</small><strong>Salescaling, analista de datos</strong><span>Pipelines en Python y preparación de datos para LLMs.</span></li>
-      <li><small>2024</small><strong>The Wise Dreams, analista de datos</strong><span>Mapas interactivos y dashboards de KPIs.</span></li>
-      <li><small>2023–2024</small><strong>Máster en Big Data &amp; Analytics</strong><span>INESDI Business School.</span></li>
-      <li><small>2023</small><strong>Finalista del Datathon 5G Beach Challenge</strong><span>SPEGC.</span></li>
-      <li><small>2012–2018</small><strong>Grado en ADE</strong><span>ULPGC, con Erasmus en Wrocław.</span></li>
-    </ul>
-  </div>
-</section>
+<main>
+  <!-- La experiencia: cada escena le dice al campo de partículas qué forma tomar (data-forma),
+       de qué color brilla el fondo (data-tono) y a qué lado va el texto. -->
+  <section class="experiencia" id="inicio" aria-label="Presentación">
+    <div class="escenario">
 
-<section id="contacto" class="oscuro contacto">
-  <div class="wrap">
-    <p class="etiqueta">Contacto</p>
-    <h2>¿Tienes unos datos y una pregunta?</h2>
-    <p>Escríbeme si quieres comentar un proyecto, proponer un dato de aquí que merezca contarse, o encargar un análisis o un dashboard.</p>
-    <div class="botones">
-      <a class="btn btn-ocre" href="mailto:hbtdataanalyst@gmail.com"><svg class="ico trazo"><use href="#i-correo"/></svg>Escríbeme</a>
-      <a class="btn btn-borde" href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg>LinkedIn</a>
+      <article class="escena" data-forma="logo" data-tono="ocre" data-etiquetas="Python / SQL / Power BI / Automatización">
+        <p class="mono"><b>//00</b> &nbsp;hbtdata / Datos de Canarias</p>
+        <h1 class="titular">Datos explicados con cosas de aquí.</h1>
+        <p class="texto">Soy Henry Barrios Thornhill, analista de datos en Gran Canaria. Construyo mis propias herramientas con datos públicos y enseño cómo están hechas.</p>
+        <div class="acciones"><a class="pildora" href="#proyectos" data-escena="1">Entrar <svg class="ico trazo"><use href="#i-abajo"/></svg></a></div>
+      </article>
+
+      <article class="escena" data-forma="islas" data-tono="suave" data-etiquetas="Siete islas / Datos públicos / Código abierto">
+        <p class="mono"><b>//01</b> &nbsp;Canarias en datos</p>
+        <h2 class="titular">Siete islas. Muchos datos.</h2>
+        <p class="texto">Gasolina, fútbol, historias y quinielas. Datos de aquí que se comparten por aquí, contados para que se entiendan a la primera.</p>
+      </article>
+
+      <article class="escena der" data-forma="gasolineras" data-tono="ocre" data-etiquetas="HTML / JavaScript / API pública / GitHub Actions">
+        <p class="mono"><b>//02</b> &nbsp;Proyecto / Canarias Gas Tracker</p>
+        <h2 class="titular">La gasolina más barata de las islas.</h2>
+        <p class="texto">Cada punto es una gasolinera real, de turquesa (más barata) a ocre (más cara). Los precios salen cada día de la API del Ministerio y GitHub Actions actualiza la web solo.</p>
+        <p class="mono nota">Gasolina 95 / precios del 13 oct. 2026 / Ministerio</p>
+        <div class="acciones">
+          <a class="pildora" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir la web <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+          <a class="enlace" href="https://github.com/henry94bt/canarias-gas-tracker">Código</a>
+        </div>
+      </article>
+
+      <article class="escena" data-forma="campo" data-tono="suave" data-etiquetas="Python / FBref / Power BI">
+        <p class="mono"><b>//03</b> &nbsp;Proyecto / Moleiro y el Mundial</p>
+        <h2 class="titular">Moleiro frente al resto.</h2>
+        <p class="texto">¿Cuánto produce Alberto Moleiro comparado con otros jugadores de las cinco grandes ligas? Un pipeline en Python baja los datos de FBref y un dashboard en Power BI los pone a hablar.</p>
+        <div class="acciones"><a class="pildora" href="https://github.com/henry94bt/moleiro-mundial-2026">Código y dashboard <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+      </article>
+
+      <article class="escena der" data-forma="historias" data-tono="claro" data-etiquetas="Python / Leaflet / JavaScript / Pipeline de datos">
+        <p class="mono"><b>//04</b> &nbsp;Proyecto / Historia para Gandules</p>
+        <h2 class="titular">121 historias en su sitio.</h2>
+        <p class="texto">Cada vídeo de <a href="https://instagram.com/historiaparagandules">@historiaparagandules</a>, la cuenta de Luis Cabrera, anclado al lugar del que habla. Con filtros por isla y categoría, buscador y un juego para adivinar dónde pasó cada historia.</p>
+        <div class="acciones">
+          <a class="pildora" href="https://henry94bt.github.io/historiaparagandul/site/mapa.html">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+          <a class="enlace" href="https://github.com/henry94bt/historiaparagandul">Código</a>
+        </div>
+      </article>
+
+      <article class="escena" data-forma="unoequisdos" data-tono="suave" data-etiquetas="HTML / JavaScript / Google Sheets">
+        <p class="mono"><b>//05</b> &nbsp;Proyecto / La Quiniela</p>
+        <h2 class="titular">Uno, equis, dos.</h2>
+        <p class="texto">El panel de una quiniela entre tres amigos: los resultados van a una hoja de Google publicada como CSV y la web calcula aciertos, mejor jornada y evolución.</p>
+        <div class="acciones">
+          <a class="pildora" href="https://henry94bt.github.io/quiniela-millonarios/">Abrir el panel <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+          <a class="enlace" href="https://github.com/henry94bt/quiniela-millonarios">Código</a>
+        </div>
+      </article>
+
+      <article class="escena der" data-forma="carruseles" data-tono="ocre" data-etiquetas="Python / Pillow / matplotlib / ffmpeg">
+        <p class="mono"><b>//06</b> &nbsp;Por dentro / Fábrica de contenido</p>
+        <h2 class="titular">Los carruseles salen de un script.</h2>
+        <p class="texto">Los carruseles, reels y stories de @hbtdata no se maquetan a mano: los genera un conjunto de scripts con la identidad de la marca y gráficos propios. Estas partículas, también son código.</p>
+        <div class="acciones"><a class="pildora" href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg>Verlo en Instagram</a></div>
+      </article>
+
+      <article class="escena" id="como-trabajo" data-forma="picos" data-tono="suave" data-etiquetas="Canarias en datos / Por dentro / Aprende datos / Herramientas">
+        <p class="mono"><b>//07</b> &nbsp;Cómo trabajo / Reglas fijas</p>
+        <h2 class="titular">Las barras empiezan en cero.</h2>
+        <p class="texto">Aquí, en el nivel del mar: la cumbre más alta de cada isla, de oeste a este. Para los precios uso medianas y todo gráfico lleva fecha y fuente. De estos picos sale también el logo.</p>
+        <p class="mono nota">Altura máxima en metros / IGN y Wikipedia, oct. 2026</p>
+      </article>
+
+      <article class="escena" data-forma="logo" data-tono="ocre" data-etiquetas="Instagram / LinkedIn / GitHub">
+        <p class="mono"><b>//08</b> &nbsp;hbtdata / Contacto</p>
+        <h2 class="titular">¿Tienes unos datos y una pregunta?</h2>
+        <p class="texto">Escríbeme si quieres comentar un proyecto, proponer un dato de aquí que merezca contarse o encargar un análisis o un dashboard.</p>
+        <div class="acciones">
+          <a class="pildora" href="mailto:hbtdataanalyst@gmail.com"><svg class="ico trazo"><use href="#i-correo"/></svg>Escríbeme</a>
+          <a class="enlace" href="#proyectos">Ver todos los proyectos</a>
+        </div>
+      </article>
+
     </div>
-    <ul class="redes">
+  </section>
+
+  <section class="seccion" id="proyectos">
+    <div class="cabeza">
+      <p class="mono"><b>//</b> Lo que he construido</p>
+      <h2 class="titular">Proyectos</h2>
+      <p>Proyectos reales con datos públicos. Cada uno funciona hoy y se puede abrir.</p>
+    </div>
+    <ol class="lista">
+      <li class="fila">
+        <div class="mono"><b>01</b><div class="stack">HTML / JavaScript / API pública / GitHub Actions</div></div>
+        <h3>Canarias Gas Tracker</h3>
+        <div class="desc"><p>Las gasolineras más baratas de las islas, con filtro por isla y por combustible. Se alimenta de la API de precios del Ministerio y se actualiza sola cada día.</p>
+          <figure><img src="assets/gas-tracker.png" alt="Tabla con las gasolineras más baratas de Canarias y el mapa del Canarias Gas Tracker" loading="lazy"></figure></div>
+        <div class="vinculos"><a class="enlace" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir la web <svg class="ico trazo"><use href="#i-fuera"/></svg></a><a class="enlace" href="https://github.com/henry94bt/canarias-gas-tracker">Código <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+      </li>
+      <li class="fila">
+        <div class="mono"><b>02</b><div class="stack">Python / FBref / Power BI</div></div>
+        <h3>Moleiro frente al resto del Mundial</h3>
+        <div class="desc"><p>¿Cuánto produce Alberto Moleiro comparado con otros jugadores de las cinco grandes ligas? Un pipeline en Python que baja los datos de FBref y un dashboard en Power BI para leerlos.</p>
+          <figure><img src="assets/moleiro-dashboard.png" alt="Dashboard de Power BI que compara la producción de Alberto Moleiro con otros jugadores" loading="lazy"></figure></div>
+        <div class="vinculos"><a class="enlace" href="https://github.com/henry94bt/moleiro-mundial-2026">Código y dashboard <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+      </li>
+      <li class="fila">
+        <div class="mono"><b>03</b><div class="stack">Python / Leaflet / JavaScript / Pipeline de datos</div></div>
+        <h3>El mapa de Historia para Gandules</h3>
+        <div class="desc"><p>Un mapa con 121 historias de <a href="https://instagram.com/historiaparagandules">@historiaparagandules</a>, la cuenta de Luis Cabrera: cada vídeo anclado al lugar del que habla, con filtros, buscador y un juego para adivinar dónde ocurrió. Los datos salen de un pipeline en Python y la web solo lee un JSON.</p>
+          <figure><img src="assets/historia-para-gandules.png" alt="Mapa interactivo de Canarias con los vídeos de Historia para Gandules" loading="lazy"></figure></div>
+        <div class="vinculos"><a class="enlace" href="https://henry94bt.github.io/historiaparagandul/site/mapa.html">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a><a class="enlace" href="https://github.com/henry94bt/historiaparagandul">Código <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+      </li>
+      <li class="fila">
+        <div class="mono"><b>04</b><div class="stack">HTML / JavaScript / Google Sheets</div></div>
+        <h3>La Quiniela entre amigos</h3>
+        <div class="desc"><p>Un panel para una quiniela de tres amigos: los resultados se rellenan en una hoja de Google publicada como CSV y la página calcula aciertos, media por jornada, mejor jornada y evolución acumulada.</p>
+          <figure><img src="assets/quiniela.png" alt="Dashboard de La Quiniela con la clasificación de aciertos y la evolución acumulada" loading="lazy"></figure></div>
+        <div class="vinculos"><a class="enlace" href="https://henry94bt.github.io/quiniela-millonarios/">Abrir el panel <svg class="ico trazo"><use href="#i-fuera"/></svg></a><a class="enlace" href="https://github.com/henry94bt/quiniela-millonarios">Código <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+      </li>
+      <li class="fila">
+        <div class="mono"><b>05</b><div class="stack">Python / Pillow / matplotlib / ffmpeg</div></div>
+        <h3>La fábrica de contenido</h3>
+        <div class="desc"><p>Los carruseles, reels y stories de @hbtdata salen de un conjunto de scripts con la identidad de la marca, gráficos propios y las reglas de siempre: barras desde cero, medianas, fecha y fuente.</p>
+          <figure style="display:grid;place-items:center"><svg viewBox="0 0 100 100" style="width:30%;color:var(--claro)" role="img" aria-label="Logo de hbtdata"><use href="#volcan"/></svg></figure></div>
+        <div class="vinculos"><a class="enlace" href="https://instagram.com/hbtdata">Verlo en Instagram <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="seccion" id="sobre-mi">
+    <div class="sobre">
+      <div class="bio">
+        <img class="foto" src="assets/henry.jpg" alt="Henry Barrios Thornhill" width="112" height="112">
+        <p class="mono"><b>//</b> Sobre mí</p>
+        <h2 class="titular" style="margin:16px 0 26px">Henry Barrios Thornhill</h2>
+        <p>Soy de Las Palmas de Gran Canaria. Estudié ADE y un máster en Big Data, y trabajo con datos desde hace unos años: análisis, automatización de informes y dashboards.</p>
+        <p>Hoy lo hago en una agencia de comunicación de Gran Canaria y, en mi tiempo libre, construyo lo que ves arriba. Me gusta que un dato se entienda a la primera y que lo que hago se pueda abrir, tocar y comprobar.</p>
+        <p>Y fuera de la pantalla, varias veces al año me voy de voluntario con la Fundación Foresta a plantar especies autóctonas por Canarias.</p>
+        <div class="herr mono"><span>Python</span><span>SQL</span><span>Power BI</span><span>Pandas</span><span>Folium</span><span>Git y GitHub</span><span>Excel avanzado</span><span>Inglés C1</span></div>
+      </div>
+      <ol class="hitos">
+        <li><span class="mono"><b>Actualidad</b></span><div><strong>La Pepa Studio</strong><span>Datos, automatización e informes.</span></div></li>
+        <li><span class="mono">Varias veces al año</span><div><strong>Voluntariado en la Fundación Foresta</strong><span>Jornadas de reforestación: plantación de especies autóctonas y mantenimiento forestal.</span></div></li>
+        <li><span class="mono">2025</span><div><strong>Salescaling, analista de datos</strong><span>Pipelines en Python y preparación de datos para LLMs.</span></div></li>
+        <li><span class="mono">2024</span><div><strong>The Wise Dreams, analista de datos</strong><span>Mapas interactivos y dashboards de KPIs.</span></div></li>
+        <li><span class="mono">2023–2024</span><div><strong>Máster en Big Data &amp; Analytics</strong><span>INESDI Business School.</span></div></li>
+        <li><span class="mono">2023</span><div><strong>Finalista del Datathon 5G Beach Challenge</strong><span>SPEGC.</span></div></li>
+        <li><span class="mono">2012–2018</span><div><strong>Grado en ADE</strong><span>ULPGC, con Erasmus en Wrocław.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="seccion contacto" id="contacto">
+    <p class="mono"><b>//</b> Contacto</p>
+    <h2 class="titular" style="margin:16px 0 8px">Escríbeme.</h2>
+    <a class="correo" href="mailto:hbtdataanalyst@gmail.com">hbtdataanalyst@gmail.com</a>
+    <ul class="redes-grandes">
       <li><a href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg><span><strong>Instagram</strong><small>@hbtdata</small></span></a></li>
       <li><a href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg><span><strong>LinkedIn</strong><small>Henry Barrios Thornhill</small></span></a></li>
       <li><a href="https://github.com/henry94bt"><svg class="ico"><use href="#i-github"/></svg><span><strong>GitHub</strong><small>henry94bt</small></span></a></li>
-      <!-- Cuando exista la cuenta de TikTok, quitar el comentario:
-      <li><a href="https://www.tiktok.com/@hbtdata"><svg class="ico"><use href="#i-tiktok"/></svg><span><strong>TikTok</strong><small>@hbtdata</small></span></a></li>
-      -->
-      <li><a href="mailto:hbtdataanalyst@gmail.com"><svg class="ico trazo"><use href="#i-correo"/></svg><span><strong>Correo</strong><small>hbtdataanalyst@gmail.com</small></span></a></li>
+      <!-- Cuando exista la cuenta de TikTok, añadirla aquí con su icono. -->
     </ul>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
-  <div class="wrap">
-    <div>hbt<b style="color:var(--ocre)">data</b>, datos de Canarias</div>
-    <div class="pie-redes">
-      <a href="https://instagram.com/hbtdata" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
-      <a href="https://linkedin.com/in/henry-data-analyst-" aria-label="LinkedIn"><svg class="ico"><use href="#i-linkedin"/></svg></a>
-      <a href="https://github.com/henry94bt" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a>
-    </div>
-    <span>© 2026 Henry Barrios Thornhill, Las Palmas de Gran Canaria</span>
-  </div>
+  <span class="mono">hbt<b>data</b> / Datos de Canarias</span>
+  <span class="mono">© 2026 Henry Barrios Thornhill / Las Palmas de Gran Canaria</span>
 </footer>
 
-<script>
-  // El banner de "Abre tu sobre" solo se ve del 23 de octubre al 4 de diciembre de 2026.
-  (function () {
-    var hoy = new Date();
-    var desde = new Date(2026, 9, 23);        // 23 oct
-    var hasta = new Date(2026, 11, 4, 23, 59); // 4 dic
-    if (hoy >= desde && hoy <= hasta) {
-      document.getElementById('banner-sobre').style.display = 'block';
-    }
-  })();
+<div class="marcas" aria-label="Escenas"></div>
+<div class="pie-escena" aria-hidden="true">
+  <div class="tags"><span class="mono"></span><div class="linea"><i></i></div></div>
+  <div class="pista mono">Desliza / mueve el ratón para revolver</div>
+</div>
 
-  // Al tocar el logo de la cabecera, vuelve a salir del mar.
-  (function () {
-    var isla = document.querySelector('.isla');
-    if (!isla) return;
-    isla.addEventListener('click', function () {
-      isla.classList.remove('sale');
-      void isla.getBoundingClientRect();
-      isla.classList.add('sale');
+<script src="assets/campo-datos.js"></script>
+<script src="assets/campo.js"></script>
+<script>
+(function () {
+  'use strict';
+  var raiz = document.documentElement;
+  var reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var movil = window.matchMedia('(max-width: 760px)');
+
+  // El enlace de «Abre tu sobre» solo se ve del 23 de octubre al 4 de diciembre de 2026.
+  var hoy = new Date();
+  if (hoy >= new Date(2026, 9, 23) && hoy <= new Date(2026, 11, 4, 23, 59)) document.getElementById('sobre').style.display = 'block';
+
+  // ---------- menú ----------
+  var menu = document.getElementById('menu'), abre = document.querySelector('.barra .menu-boton'), cierra = menu.querySelector('.cerrar');
+  function menuAbierto(si) {
+    menu.classList.toggle('abierto', si);
+    abre.setAttribute('aria-expanded', si ? 'true' : 'false');
+    if (si) setTimeout(function () { menu.querySelector('ol a').focus(); }, 60); else abre.focus({ preventScroll: true });
+  }
+  abre.addEventListener('click', function () { menuAbierto(true); });
+  cierra.addEventListener('click', function () { menuAbierto(false); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('ol a')) menuAbierto(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('abierto')) menuAbierto(false); });
+
+  // ---------- la experiencia ----------
+  var exp = document.querySelector('.experiencia');
+  var escenas = [].slice.call(document.querySelectorAll('.escena'));
+  var n = escenas.length;
+  exp.style.setProperty('--n', n);
+  var TONOS = { ocre: [240, 168, 64], suave: [120, 200, 200], claro: [230, 214, 190] };
+  var datos = escenas.map(function (e) {
+    return { forma: e.dataset.forma, tono: TONOS[e.dataset.tono] || TONOS.suave, der: e.classList.contains('der'), tags: e.dataset.etiquetas || '' };
+  });
+
+  // rayitas
+  var marcas = document.querySelector('.marcas');
+  escenas.forEach(function (e, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Ir a la escena ' + (i + 1) + ': ' + (e.querySelector('.titular') || {}).textContent);
+    b.addEventListener('click', function () { irA(i); });
+    marcas.appendChild(b);
+  });
+  var botones = [].slice.call(marcas.children);
+  var tagEl = document.querySelector('.pie-escena .tags span'), barraEl = document.querySelector('.pie-escena .linea i');
+  var pista = document.querySelector('.pie-escena .pista');
+  if (window.matchMedia('(hover: none)').matches) pista.textContent = 'Desliza / toca para revolver';
+
+  function recorrido() { return exp.offsetHeight - window.innerHeight; }
+  function irA(i) {
+    var y = exp.offsetTop + recorrido() * i / (n - 1);
+    window.scrollTo({ top: y, behavior: reducido ? 'auto' : 'smooth' });
+  }
+  document.querySelectorAll('[data-escena]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); irA(+a.dataset.escena); });
+  });
+  // Si alguien llega con el teclado a un enlace de otra escena, se lleva la página hasta ella.
+  escenas.forEach(function (e, i) { e.addEventListener('focusin', function () { if (Math.round(progreso) !== i) irA(i); }); });
+
+  var progreso = 0;
+  function lee() {
+    var r = exp.getBoundingClientRect();
+    progreso = Math.max(0, Math.min(1, -r.top / Math.max(1, recorrido()))) * (n - 1);
+    document.body.classList.toggle('debajo', r.bottom < window.innerHeight * 0.55);
+  }
+  function suave(a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
+
+  var ultimaActiva = -1;
+  function textos() {
+    escenas.forEach(function (e, i) {
+      var d = progreso - i, a = 1 - suave(0.14, 0.58, Math.abs(d));
+      e.style.opacity = a.toFixed(3);
+      e.style.visibility = a < 0.01 ? 'hidden' : 'visible';
+      e.style.transform = reducido ? '' : 'translateY(' + (-d * 46).toFixed(1) + 'px)';
+      e.style.filter = (reducido || movil.matches) ? '' : 'blur(' + (suave(0.1, 0.5, Math.abs(d)) * 7).toFixed(2) + 'px)';
+      if (a < 0.5) e.setAttribute('inert', ''); else e.removeAttribute('inert');
     });
-  })();
+    var act = Math.round(progreso);
+    if (act !== ultimaActiva) {
+      ultimaActiva = act;
+      botones.forEach(function (b, i) { b.classList.toggle('activa', i === act); b.setAttribute('aria-current', i === act ? 'step' : 'false'); });
+      tagEl.textContent = datos[act].tags;
+    }
+    barraEl.style.width = (progreso / (n - 1) * 100).toFixed(2) + '%';
+  }
+
+  // ---------- el campo de partículas ----------
+  var canvas = document.getElementById('campo'), resplandor = document.querySelector('.resplandor');
+  var campo = null;
+  try {
+    campo = window.CampoParticulas && window.CampoParticulas({
+      canvas: canvas,
+      particulas: movil.matches ? 16000 : 34000,
+      tam: movil.matches ? 3.4 : 4.0,
+      alfa: movil.matches ? 0.5 : 0.38
+    });
+  } catch (err) { campo = null; }
+  if (!campo) canvas.style.display = 'none';
+
+  var raton = [0, 0], ratonPrev = null, fuerza = 0, objetivoFuerza = 0, giro = [0, 0];
+  function alMover(x, y) {
+    var nx = x / window.innerWidth * 2 - 1, ny = -(y / window.innerHeight * 2 - 1);
+    if (ratonPrev) objetivoFuerza = Math.min(1, objetivoFuerza + Math.hypot(nx - ratonPrev[0], ny - ratonPrev[1]) * 6);
+    ratonPrev = [nx, ny]; raton = [nx, ny];
+  }
+  window.addEventListener('pointermove', function (e) { alMover(e.clientX, e.clientY); }, { passive: true });
+  window.addEventListener('touchmove', function (e) { var t = e.touches[0]; if (t) alMover(t.clientX, t.clientY); }, { passive: true });
+  window.addEventListener('pointerdown', function (e) { alMover(e.clientX, e.clientY); objetivoFuerza = 1; }, { passive: true });
+
+  function colocacion(i) {                       // dónde va la forma según el lado del texto
+    if (movil.matches) return { x: 0, y: 0.45, e: Math.min(0.42, window.innerWidth / window.innerHeight * 0.9) };
+    var ancho = window.innerWidth / window.innerHeight;
+    var e = Math.min(0.88, ancho / 1.75);
+    return { x: datos[i].der ? -0.34 : 0.36, y: 0.02, e: e };
+  }
+
+  var visible = true, inicio = performance.now(), intro = reducido ? 1 : 0, ultimo = inicio;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { rootMargin: '0px 0px 30% 0px' }).observe(exp);
+  }
+
+  function cuadro(ahora) {
+    var dt = Math.min(0.05, (ahora - ultimo) / 1000); ultimo = ahora;
+    lee(); textos();
+    var i0 = Math.min(n - 1, Math.floor(progreso)), i1 = Math.min(n - 1, i0 + 1), f = progreso - i0;
+    var m = reducido ? (f > 0.55 ? 1 : 0) : suave(0.28, 0.82, f);
+    var A = colocacion(i0), B = colocacion(i1);
+    var cx = A.x + (B.x - A.x) * m, cy = A.y + (B.y - A.y) * m, ce = A.e + (B.e - A.e) * m;
+
+    // resplandor del fondo
+    var c0 = datos[i0].tono, c1 = datos[i1].tono;
+    resplandor.style.setProperty('--gc', [0, 1, 2].map(function (k) { return Math.round(c0[k] + (c1[k] - c0[k]) * m); }).join(','));
+    resplandor.style.setProperty('--gx', ((cx + 1) * 50).toFixed(1) + '%');
+    resplandor.style.setProperty('--gy', ((1 - cy) * 50).toFixed(1) + '%');
+
+    if (campo && visible) {
+      if (intro < 1) intro = Math.min(1, (ahora - inicio) / 2600);
+      fuerza += (objetivoFuerza - fuerza) * Math.min(1, dt * 6);
+      objetivoFuerza *= Math.pow(0.08, dt);
+      var t = (ahora - inicio) / 1000;
+      var objetivoGiro = reducido ? [0, 0] : [Math.sin(t * 0.22) * 0.22 + raton[0] * 0.18, raton[1] * 0.1];
+      giro[0] += (objetivoGiro[0] - giro[0]) * Math.min(1, dt * 2);
+      giro[1] += (objetivoGiro[1] - giro[1]) * Math.min(1, dt * 2);
+      var enIntro = intro < 1 && progreso < 0.02;
+      var ei = 1 - Math.pow(1 - intro, 3);
+      campo.pinta({
+        de: enIntro ? 'esfera' : datos[i0].forma,
+        a: enIntro ? datos[0].forma : datos[i1].forma,
+        mezcla: enIntro ? ei : m,
+        explosion: reducido ? 0 : (enIntro ? 0.5 : 0.9),
+        t: t, giro: giro, escala: ce, desplaza: [cx, cy],
+        raton: raton, fuerza: reducido ? 0 : fuerza, movimiento: reducido ? 0 : 1
+      });
+    }
+    requestAnimationFrame(cuadro);
+  }
+
+  var ultimoAncho = window.innerWidth, ultimoAlto = window.innerHeight;
+  window.addEventListener('resize', function () {
+    if (!campo) return;
+    if (window.innerWidth !== ultimoAncho || Math.abs(window.innerHeight - ultimoAlto) > 140) {
+      ultimoAncho = window.innerWidth; ultimoAlto = window.innerHeight; campo.mide();
+    }
+  });
+
+  // La forma del 1 X 2 usa la fuente de la web: se espera a que cargue (o un segundo como mucho).
+  var listo = document.fonts && document.fonts.load ? Promise.race([document.fonts.load('600 250px Poppins'), new Promise(function (r) { setTimeout(r, 1000); })]) : Promise.resolve();
+  listo.then(function () {
+    if (campo) campo.precarga(['esfera'].concat(datos.map(function (d) { return d.forma; })));
+    requestAnimationFrame(cuadro);
+  });
+})();
 </script>
 </body>
 </html>
