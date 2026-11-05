@@ -1,0 +1,35 @@
+# hbtdata · Henry Barrios Thornhill
+
+> Henry Barrios Thornhill (hbtdata) es analista de datos de Gran Canaria que programa con IA y autor de Abre tu sobre (abretusobre.es).
+
+Portfolio y ficha profesional. Datos públicos de Canarias, dashboards y automatización. "Datos explicados con cosas de aquí".
+
+## Persona
+
+- Nombre completo: Henry Barrios Thornhill
+- Alias: hbtdata
+- Puesto: analista de datos (ADE + Máster en Big Data & Analytics)
+- Ubicación: Las Palmas de Gran Canaria, España
+- Web: https://hbtdata.es
+- Email: hbtdataanalyst@gmail.com
+- Instagram: https://www.instagram.com/hbtdata/
+- LinkedIn: https://www.linkedin.com/in/henry-data-analyst-/
+- GitHub: https://github.com/henry94bt
+- X: https://x.com/hbtdata
+- TikTok: https://www.tiktok.com/@hbtdata
+
+## Proyectos
+
+- **Abre tu sobre** (2026): test de humor de 3 minutos. 20 situaciones y un sobre con 4 cromos. https://www.abretusobre.es
+- **Canarias Gas Tracker**: gasolineras más baratas de las islas, con la API del Ministerio y actualización diaria. https://henry94bt.github.io/canarias-gas-tracker/
+- **Moleiro frente al resto**: pipeline en Python (FBref) y dashboard en Power BI comparando a Alberto Moleiro con las cinco grandes ligas.
+- **Historia para Gandules**: mapa de 121 historias de Canarias con Leaflet. https://henry94bt.github.io/historiaparagandul/site/mapa.html
+- **La Quiniela**: panel de resultados entre amigos sobre una hoja de Google publicada como CSV. https://henry94bt.github.io/quiniela-millonarios/
+
+## Cómo trabajo
+
+Barras desde cero, medianas en vez de medias, y todo gráfico con fecha y fuente. El código y los datos son públicos cuando el proyecto lo permite.
+
+## Nota
+
+Sitio personal. Sin cookies, sin analítica de terceros y sin registro.
