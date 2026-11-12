@@ -33,3 +33,9 @@ Barras desde cero, medianas en vez de medias, y todo gráfico con fecha y fuente
 ## Nota
 
 Sitio personal. Sin cookies, sin analítica de terceros y sin registro.
+
+## English
+
+> Henry Barrios Thornhill (hbtdata) is a data analyst from Gran Canaria, Spain, who codes with AI, and the creator of Abre tu sobre (abretusobre.es).
+
+English version of the portfolio: https://hbtdata.es/en/ — data explained with things from the Canary Islands: public data, dashboards and automation. The projects listed above are built in Spanish.

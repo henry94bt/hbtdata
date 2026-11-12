@@ -12,6 +12,9 @@
 <title>Henry Barrios Thornhill · hbtdata, datos de Canarias</title>
 <meta name="description" content="Datos explicados con cosas de aquí. Proyectos reales con datos de Canarias, hechos y contados por Henry Barrios Thornhill, analista de datos en Gran Canaria.">
 <link rel="canonical" href="https://hbtdata.es/">
+<link rel="alternate" hreflang="es" href="https://hbtdata.es/">
+<link rel="alternate" hreflang="en" href="https://hbtdata.es/en/">
+<link rel="alternate" hreflang="x-default" href="https://hbtdata.es/">
 <meta property="og:title" content="hbtdata · Datos de Canarias">
 <meta property="og:description" content="Datos explicados con cosas de aquí: gasolina, fútbol, islas. Herramientas propias y cómo están hechas.">
 <meta property="og:type" content="website">
@@ -20,6 +23,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#04161C">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230A3440'/%3E%3Cg fill='%23F7F3EC'%3E%3Crect x='8' y='29.8' width='5.1' height='10.2' rx='1.4'/%3E%3Crect x='14.7' y='20.2' width='5.1' height='19.8' rx='1.4'/%3E%3Crect x='21.4' y='8' width='5.1' height='32' rx='1.4' fill='%23F0A840'/%3E%3Crect x='28.2' y='14.4' width='5.1' height='25.6' rx='1.4'/%3E%3Crect x='34.9' y='25.3' width='5.1' height='14.7' rx='1.4'/%3E%3C/g%3E%3C/svg%3E">
@@ -68,6 +72,10 @@
   .sello svg{width:16px;height:16px}
   .barra .derecha{display:flex;align-items:center;gap:18px}
   .barra .redes{display:flex;gap:4px}
+  .idioma{display:flex;align-items:center;gap:6px}
+  .idioma a{color:var(--tenue);text-decoration:none;padding:6px 2px}
+  .idioma a:hover{color:var(--ocre)}
+  .idioma [aria-current]{color:var(--claro)}
   .barra .redes a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:var(--tenue)}
   .barra .redes a:hover{color:var(--ocre)}
   .menu-boton{display:flex;align-items:center;gap:12px;background:none;border:0;color:var(--tenue);cursor:pointer;font:inherit}
@@ -217,7 +225,7 @@
       "url": "https://hbtdata.es/",
       "name": "hbtdata",
       "alternateName": "Henry Barrios Thornhill",
-      "inLanguage": "es-ES",
+      "inLanguage": ["es-ES", "en"],
       "author": { "@id": "https://hbtdata.es/#person" }
     },
     {
@@ -228,6 +236,7 @@
       "url": "https://hbtdata.es/",
       "image": "https://hbtdata.es/assets/henry.jpg",
       "jobTitle": "Analista de datos",
+      "knowsLanguage": ["es", "en"],
       "description": "Analista de datos de Gran Canaria que programa con IA. Construye herramientas con datos públicos de Canarias y explica cómo están hechas.",
       "email": "mailto:hbtdataanalyst@gmail.com",
       "address": {
@@ -306,6 +315,7 @@
     <a id="sobre" class="enlace" href="https://www.abretusobre.es/?utm_source=web"><b>●</b> Abre tu sobre<span class="largo">: un test de cromos hecho con datos</span></a>
   </div>
   <div class="derecha">
+    <nav class="idioma mono" aria-label="Idioma"><span aria-current="page">ES</span><span aria-hidden="true">/</span><a href="en/" hreflang="en" lang="en" title="English version">EN</a></nav>
     <nav class="redes" aria-label="Redes">
       <a href="https://instagram.com/hbtdata" aria-label="Instagram de hbtdata"><svg class="ico"><use href="#i-instagram"/></svg></a>
       <a href="https://linkedin.com/in/henry-data-analyst-" aria-label="LinkedIn de Henry Barrios Thornhill"><svg class="ico"><use href="#i-linkedin"/></svg></a>
@@ -332,6 +342,7 @@
     <a class="pildora" href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg>LinkedIn</a>
     <a class="pildora" href="https://github.com/henry94bt"><svg class="ico"><use href="#i-github"/></svg>GitHub</a>
     <a class="pildora" href="https://www.tiktok.com/@hbtdata"><svg class="ico"><use href="#i-tiktok"/></svg>TikTok</a>
+    <a class="pildora" href="en/" hreflang="en" lang="en">English version</a>
   </div>
 </div>
 
