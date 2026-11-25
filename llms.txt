@@ -31,6 +31,12 @@ Portfolio y ficha profesional. Datos públicos de Canarias, dashboards y automat
 
 https://hbtdata.es/webs/ · Webs para negocios de Canarias (web nueva, rediseño, páginas para campañas), SEO local y medición sin cookies, dashboards y automatización de procesos con IA con revisión humana. Presupuesto sin compromiso: hbtdataanalyst@gmail.com
 
+## Juegos
+
+https://hbtdata.es/juegos/ · Juegos cortos con datos oficiales de Canarias, sin registro ni cookies:
+- **Test de Canarias** (https://hbtdata.es/juegos/test/): 10 preguntas sobre islas y municipios (Padrón del INE a 1 de enero de 2025, superficie del ISTAC, UNESCO, IGN). Cada respuesta enseña la fuente y la fecha.
+- **¿Dónde está?** (https://hbtdata.es/juegos/donde-esta/): localizar pueblos, roques, playas y lugares en un mapa de las islas; puntúa por kilómetros de distancia. Coordenadas del IGN (NGBE y BTN) y contorno de las islas del ISTAC.
+
 ## Cómo trabajo
 
 Barras desde cero, medianas en vez de medias, y todo gráfico con fecha y fuente. El código y los datos son públicos cuando el proyecto lo permite.

@@ -1,0 +1,587 @@
+{
+ "titulo": "¿Dónde está?",
+ "url": "https://hbtdata.es/juegos/donde-esta/",
+ "categorias": [
+  {
+   "id": "pueblos",
+   "nombre": "Pueblos"
+  },
+  {
+   "id": "montanas",
+   "nombre": "Roques y montañas"
+  },
+  {
+   "id": "playas",
+   "nombre": "Playas y costa"
+  },
+  {
+   "id": "lugares",
+   "nombre": "Monumentos y lugares"
+  }
+ ],
+ "filtros_isla": [
+  {
+   "id": "lanzarote",
+   "nombre": "Lanzarote y La Graciosa",
+   "islas": [
+    "Lanzarote",
+    "La Graciosa"
+   ]
+  },
+  {
+   "id": "fuerteventura",
+   "nombre": "Fuerteventura",
+   "islas": [
+    "Fuerteventura"
+   ]
+  },
+  {
+   "id": "gran-canaria",
+   "nombre": "Gran Canaria",
+   "islas": [
+    "Gran Canaria"
+   ]
+  },
+  {
+   "id": "tenerife",
+   "nombre": "Tenerife",
+   "islas": [
+    "Tenerife"
+   ]
+  },
+  {
+   "id": "la-gomera",
+   "nombre": "La Gomera",
+   "islas": [
+    "La Gomera"
+   ]
+  },
+  {
+   "id": "la-palma",
+   "nombre": "La Palma",
+   "islas": [
+    "La Palma"
+   ]
+  },
+  {
+   "id": "el-hierro",
+   "nombre": "El Hierro",
+   "islas": [
+    "El Hierro"
+   ]
+  }
+ ],
+ "actualizado": "2026-11-25",
+ "sitios": [
+  {
+   "id": "ngbe_2627492",
+   "nombre": "Roque Nublo",
+   "categoria": "montanas",
+   "isla": "Gran Canaria",
+   "municipio": "Tejeda",
+   "lat": 27.9707,
+   "lng": -15.61243,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Roque+Nublo&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Roque Nublo (Montaña) (Tejeda)"
+   }
+  },
+  {
+   "id": "ngbe_2627472",
+   "nombre": "Roque Bentayga",
+   "categoria": "montanas",
+   "isla": "Gran Canaria",
+   "municipio": "Tejeda",
+   "lat": 27.99152,
+   "lng": -15.64172,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Roque+Bentayga&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Roque Bentayga (Montaña) (Tejeda)"
+   }
+  },
+  {
+   "id": "BTN_341",
+   "nombre": "Dunas de Maspalomas",
+   "categoria": "playas",
+   "isla": "Gran Canaria",
+   "municipio": "San Bartolomé de Tirajana",
+   "lat": 27.74553,
+   "lng": -15.58869,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Dunas+de+Maspalomas&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Reserva Natural Especial Las Dunas de Maspalomas (San Bartolomé de Tirajana)"
+   }
+  },
+  {
+   "id": "ngbe_2627087",
+   "nombre": "Playa de Las Canteras",
+   "categoria": "playas",
+   "isla": "Gran Canaria",
+   "municipio": "Las Palmas de Gran Canaria",
+   "lat": 28.1405,
+   "lng": -15.4361,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Playa+de+Las+Canteras&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de las Canteras (Playa) (Las Palmas de Gran Canaria)"
+   }
+  },
+  {
+   "id": "BTN_539653",
+   "nombre": "Teror",
+   "categoria": "pueblos",
+   "isla": "Gran Canaria",
+   "municipio": "Teror",
+   "lat": 28.05955,
+   "lng": -15.54842,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Teror&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Ayuntamiento de Teror, Teror"
+   }
+  },
+  {
+   "id": "BTN_486868",
+   "nombre": "Cueva Pintada de Gáldar",
+   "categoria": "lugares",
+   "isla": "Gran Canaria",
+   "municipio": "Gáldar",
+   "lat": 28.14343,
+   "lng": -15.65487,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Cueva+Pintada&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Parque Arqueológico Cueva Pintada, Gáldar"
+   }
+  },
+  {
+   "id": "ngbe_2637213",
+   "nombre": "Pico del Teide",
+   "categoria": "montanas",
+   "isla": "Tenerife",
+   "municipio": "La Orotava",
+   "lat": 28.27289,
+   "lng": -16.64221,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Pico+del+Teide&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Pico del Teide (Montaña) (La Orotava)"
+   }
+  },
+  {
+   "id": "ngbe_2637882",
+   "nombre": "Roques de García",
+   "categoria": "montanas",
+   "isla": "Tenerife",
+   "municipio": "La Orotava",
+   "lat": 28.22931,
+   "lng": -16.64081,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Roques+de+Garc%C3%ADa&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Roques de García (Paraje) (La Orotava)"
+   }
+  },
+  {
+   "id": "BTN_542203",
+   "nombre": "Garachico",
+   "categoria": "pueblos",
+   "isla": "Tenerife",
+   "municipio": "Garachico",
+   "lat": 28.37293,
+   "lng": -16.76407,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Garachico&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Ayuntamiento de Garachico, Garachico"
+   }
+  },
+  {
+   "id": "ngbe_2637314",
+   "nombre": "Playa de Las Teresitas",
+   "categoria": "playas",
+   "isla": "Tenerife",
+   "municipio": "Santa Cruz de Tenerife",
+   "lat": 28.50989,
+   "lng": -16.1839,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Las+Teresitas&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de las Teresitas (Playa) (Santa Cruz de Tenerife)"
+   }
+  },
+  {
+   "id": "BTN_428246",
+   "nombre": "Basílica de Candelaria",
+   "categoria": "lugares",
+   "isla": "Tenerife",
+   "municipio": "Candelaria",
+   "lat": 28.35123,
+   "lng": -16.36991,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Basilica+de+Candelaria&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Basílica de Nuestra Señora de la Candelaria, Candelaria"
+   }
+  },
+  {
+   "id": "ngbe_2632712",
+   "nombre": "Barranco de Masca",
+   "categoria": "lugares",
+   "isla": "Tenerife",
+   "municipio": "Buenavista del Norte",
+   "lat": 28.29688,
+   "lng": -16.84772,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Barranco+de+Masca&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Barranco de Masca (Curso natural de agua) (Buenavista del Norte)"
+   }
+  },
+  {
+   "id": "ngbe_2629895",
+   "nombre": "Montañas del Fuego",
+   "categoria": "montanas",
+   "isla": "Lanzarote",
+   "municipio": "Yaiza",
+   "lat": 28.99689,
+   "lng": -13.76141,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Monta%C3%B1as+del+Fuego&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Montañas del Fuego de Timanfaya (Montaña) (Yaiza)"
+   }
+  },
+  {
+   "id": "ngbe_2629328",
+   "nombre": "Jameos del Agua",
+   "categoria": "lugares",
+   "isla": "Lanzarote",
+   "municipio": "Haría",
+   "lat": 29.15692,
+   "lng": -13.43182,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Jameos+del+Agua&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Jameos del Agua (Elemento puntual del paisaje) (Haría)"
+   }
+  },
+  {
+   "id": "BTN_513322",
+   "nombre": "Mirador del Río",
+   "categoria": "lugares",
+   "isla": "Lanzarote",
+   "municipio": "Haría",
+   "lat": 29.21444,
+   "lng": -13.48116,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Mirador+del+R%C3%ADo&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Mirador del Río (Haría)"
+   }
+  },
+  {
+   "id": "ngbe_2863833",
+   "nombre": "Teguise",
+   "categoria": "pueblos",
+   "isla": "Lanzarote",
+   "municipio": "Teguise",
+   "lat": 29.05829,
+   "lng": -13.55811,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Teguise&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Villa de Teguise (Entidad singular), Teguise"
+   }
+  },
+  {
+   "id": "ngbe_2638598",
+   "nombre": "Punta del Papagayo",
+   "categoria": "playas",
+   "isla": "Lanzarote",
+   "municipio": "Yaiza",
+   "lat": 28.8389,
+   "lng": -13.78734,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Papagayo&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Punta del Papagayo (Saliente costero) (Yaiza)"
+   }
+  },
+  {
+   "id": "ngbe_2630069",
+   "nombre": "Playa de Famara",
+   "categoria": "playas",
+   "isla": "Lanzarote",
+   "municipio": "Teguise",
+   "lat": 29.12073,
+   "lng": -13.54419,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Playa+de+Famara&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de Famara (Playa) (Teguise)"
+   }
+  },
+  {
+   "id": "BTN_4338721",
+   "nombre": "Caleta de Sebo",
+   "categoria": "pueblos",
+   "isla": "La Graciosa",
+   "municipio": "Teguise",
+   "lat": 29.22995,
+   "lng": -13.50245,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Caleta+de+Sebo&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Puerto de Caleta de Sebo, Caleta de Sebo (Teguise)"
+   }
+  },
+  {
+   "id": "BTN_540606",
+   "nombre": "Betancuria",
+   "categoria": "pueblos",
+   "isla": "Fuerteventura",
+   "municipio": "Betancuria",
+   "lat": 28.42472,
+   "lng": -14.05778,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Betancuria&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Ayuntamiento de Betancuria, Betancuria"
+   }
+  },
+  {
+   "id": "ngbe_2622973",
+   "nombre": "Playa de Cofete",
+   "categoria": "playas",
+   "isla": "Fuerteventura",
+   "municipio": "Pájara",
+   "lat": 28.10913,
+   "lng": -14.40308,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Playa+de+Cofete&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de Cofete (Playa) (Pájara)"
+   }
+  },
+  {
+   "id": "ngbe_2622468",
+   "nombre": "Montaña de Tindaya",
+   "categoria": "montanas",
+   "isla": "Fuerteventura",
+   "municipio": "La Oliva",
+   "lat": 28.59631,
+   "lng": -13.97668,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Monta%C3%B1a+de+Tindaya&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Montaña Sagrada de Tindaya (Montaña) (La Oliva)"
+   }
+  },
+  {
+   "id": "ngbe_2623016",
+   "nombre": "Playa de Sotavento de Jandía",
+   "categoria": "playas",
+   "isla": "Fuerteventura",
+   "municipio": "Pájara",
+   "lat": 28.11749,
+   "lng": -14.25061,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Playa+de+Sotavento&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de Sotavento de Jandía (Playa) (Pájara)"
+   }
+  },
+  {
+   "id": "ngbe_3300894",
+   "nombre": "Roque de los Muchachos",
+   "categoria": "montanas",
+   "isla": "La Palma",
+   "municipio": "Garafía",
+   "lat": 28.75471,
+   "lng": -17.88531,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Roque+de+los+Muchachos&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Roque de los Muchachos (Vértice Geodésico) (Garafía)"
+   }
+  },
+  {
+   "id": "ngbe_2631850",
+   "nombre": "Playa de Nogales",
+   "categoria": "playas",
+   "isla": "La Palma",
+   "municipio": "Puntallana",
+   "lat": 28.76068,
+   "lng": -17.74139,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Playa+de+Nogales&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de Nogales (Playa) (Puntallana)"
+   }
+  },
+  {
+   "id": "ngbe_2630588",
+   "nombre": "Bosque de Los Tilos",
+   "categoria": "lugares",
+   "isla": "La Palma",
+   "municipio": "San Andrés y Sauces",
+   "lat": 28.7951,
+   "lng": -17.79449,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Bosque+de+Los+Tilos&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Bosque de los Tilos (Paraje) (San Andrés y Sauces)"
+   }
+  },
+  {
+   "id": "BTN_377809",
+   "nombre": "Faro de Fuencaliente",
+   "categoria": "lugares",
+   "isla": "La Palma",
+   "municipio": "Fuencaliente de la Palma",
+   "lat": 28.45526,
+   "lng": -17.8431,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Faro+de+Fuencaliente&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Faro de Fuencaliente (Fuencaliente de la Palma)"
+   }
+  },
+  {
+   "id": "ngbe_2628629",
+   "nombre": "Roque de Agando",
+   "categoria": "montanas",
+   "isla": "La Gomera",
+   "municipio": "San Sebastián de la Gomera",
+   "lat": 28.10529,
+   "lng": -17.21381,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Roque+de+Agando&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Roque de Agando (Montaña) (San Sebastián de la Gomera)"
+   }
+  },
+  {
+   "id": "ngbe_2638528",
+   "nombre": "Alto de Garajonay",
+   "categoria": "montanas",
+   "isla": "La Gomera",
+   "municipio": "San Sebastián de la Gomera",
+   "lat": 28.1001,
+   "lng": -17.23328,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Garajonay&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "El Alto de Garajonay (Montaña) (San Sebastián de la Gomera)"
+   }
+  },
+  {
+   "id": "BTN_542185",
+   "nombre": "Agulo",
+   "categoria": "pueblos",
+   "isla": "La Gomera",
+   "municipio": "Agulo",
+   "lat": 28.18865,
+   "lng": -17.19407,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Agulo&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Ayuntamiento de Agulo, Agulo"
+   }
+  },
+  {
+   "id": "ngbe_2628515",
+   "nombre": "Playa de Valle Gran Rey",
+   "categoria": "playas",
+   "isla": "La Gomera",
+   "municipio": "Valle Gran Rey",
+   "lat": 28.09167,
+   "lng": -17.34039,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Valle+Gran+Rey&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Playa de Valle Gran Rey (Playa) (Valle Gran Rey)"
+   }
+  },
+  {
+   "id": "ngbe_2619941",
+   "nombre": "Roque de la Bonanza",
+   "categoria": "montanas",
+   "isla": "El Hierro",
+   "municipio": "Valverde",
+   "lat": 27.7293,
+   "lng": -17.94134,
+   "fuente": {
+    "nombre": "IGN · Nomenclátor Geográfico Básico de España (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Roque+de+la+Bonanza&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "El Roque de la Bonanza (Isla) (Valverde)"
+   }
+  },
+  {
+   "id": "BTN_377812",
+   "nombre": "Faro de Orchilla",
+   "categoria": "lugares",
+   "isla": "El Hierro",
+   "municipio": "El Pinar de El Hierro",
+   "lat": 27.70658,
+   "lng": -18.14745,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Faro+de+Orchilla&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Faro de Orchilla (El Pinar de El Hierro)"
+   }
+  },
+  {
+   "id": "BTN_4338709",
+   "nombre": "La Restinga",
+   "categoria": "pueblos",
+   "isla": "El Hierro",
+   "municipio": "El Pinar de El Hierro",
+   "lat": 27.63968,
+   "lng": -17.9787,
+   "fuente": {
+    "nombre": "IGN · Base Topográfica Nacional (vía CartoCiudad)",
+    "url": "https://www.cartociudad.es/geocoder/api/geocoder/candidates?q=Puerto+de+La+Restinga&limit=10&no_process=callejero%2Ccarretera%2Cportal%2Ccodpost%2Cexpendeduria%2Crefcatastral%2Cpunto_recarga_electrica",
+    "fecha": "consultado el 25/11/2026",
+    "registro": "Puerto de La Restinga, La Restinga (El Pinar de El Hierro)"
+   }
+  }
+ ]
+}
