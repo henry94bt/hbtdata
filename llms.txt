@@ -9,6 +9,7 @@ Portfolio y ficha profesional. Datos públicos de Canarias, dashboards y automat
 - Nombre completo: Henry Barrios Thornhill
 - Alias: hbtdata
 - Puesto: analista de datos (ADE + Máster en Big Data & Analytics)
+- Idiomas: español e inglés nativos
 - Ubicación: Las Palmas de Gran Canaria, España
 - Web: https://hbtdata.es
 - Email: hbtdataanalyst@gmail.com
