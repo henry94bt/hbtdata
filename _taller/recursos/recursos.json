@@ -1,22 +1,31 @@
 {
   "_nota": "Fuente de /recursos/. Para añadir un recurso basta con una entrada en «recursos» y volver a ejecutar generar.py. estado: «borrador» (sale con etiqueta y noindex, y no entra en la versión para publicar) o «publicado».",
-
   "tipos": {
-    "prompt": { "nombre": "Prompts", "uno": "Prompt" },
-    "skill":  { "nombre": "Skills", "uno": "Skill" },
-    "plugin": { "nombre": "Plugins y conectores", "uno": "Conectores" },
-    "pdf":    { "nombre": "Guías en PDF", "uno": "Guía en PDF" }
+    "prompt": {
+      "nombre": "Prompts",
+      "uno": "Prompt"
+    },
+    "skill": {
+      "nombre": "Skills",
+      "uno": "Skill"
+    },
+    "plugin": {
+      "nombre": "Plugins y conectores",
+      "uno": "Conectores"
+    },
+    "pdf": {
+      "nombre": "Guías en PDF",
+      "uno": "Guía en PDF"
+    }
   },
-
   "temas": {
-    "datos":          "Análisis de datos",
-    "informes":       "Informes y KPIs",
-    "limpieza":       "Limpieza de datos",
+    "datos": "Análisis de datos",
+    "informes": "Informes y KPIs",
+    "limpieza": "Limpieza de datos",
     "automatizacion": "Automatización",
-    "redes":          "Contenido para redes",
-    "personal":       "Organización personal"
+    "redes": "Contenido para redes",
+    "personal": "Organización personal"
   },
-
   "recursos": [
     {
       "slug": "limpiar-un-csv",
@@ -59,6 +68,266 @@
       ]
     },
     {
+      "slug": "primer-vistazo-a-unos-datos",
+      "tipo": "prompt",
+      "tema": "datos",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Primer vistazo a unos datos que no conoces",
+      "resumen": "Antes de hacer gráficos: qué hay en el archivo, qué preguntas puede responder y qué no.",
+      "para_que": [
+        "Cuando te pasan un Excel o un CSV y no sabes por dónde empezar.",
+        "Para no prometer un análisis que los datos no permiten.",
+        "Para detectar pronto columnas raras, huecos o periodos que faltan."
+      ],
+      "prompt": "Te paso un archivo de datos que no conozco. No hagas gráficos todavía. Quiero un primer vistazo:\n\n1. Qué representa cada fila y qué periodo cubre.\n2. Las columnas, en una tabla: nombre, tipo de dato, ejemplo y porcentaje de vacíos.\n3. Tres cosas que te llamen la atención (valores extremos, saltos, categorías con muy pocos casos).\n4. Cinco preguntas que estos datos SÍ pueden responder y tres que NO, explicando por qué.\n5. Qué me falta preguntar a quien me pasó el archivo.\n\nSi tienes que suponer algo, dilo como suposición.",
+      "ejemplo": "Cada fila es una venta; cubre del 1 de enero al 30 de septiembre de 2026.\n\nLlama la atención:\n· Agosto tiene la mitad de filas que julio: ¿cierre por vacaciones o faltan datos?\n· «importe» tiene 3 valores negativos (posibles devoluciones).\n\nNO se puede responder: el margen por producto (no hay columna de coste).\n\nPregunta para quien te pasó el archivo: ¿las devoluciones están incluidas en el total?",
+      "consejos": [
+        "Úsalo siempre antes de cualquier otro prompt de análisis: te ahorra rehacer trabajo.",
+        "Si el archivo es grande, basta con las primeras filas y un resumen de cada columna."
+      ]
+    },
+    {
+      "slug": "elige-el-grafico",
+      "tipo": "prompt",
+      "tema": "datos",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Elige el gráfico adecuado (y que no engañe)",
+      "resumen": "Le cuentas qué quieres enseñar y Claude te recomienda el gráfico, te explica por qué y te avisa de lo que haría que engañe.",
+      "para_que": [
+        "Cuando dudas entre barras, líneas, puntos o una tabla.",
+        "Para que un gráfico de redes o de ventas se entienda a la primera.",
+        "Para evitar trampas típicas: ejes que no empiezan en cero, demasiados colores, porcentajes sin base."
+      ],
+      "prompt": "Quiero enseñar esto: [la idea en una frase]\nPúblico: [quién lo va a ver y dónde: informe, Instagram, presentación]\nDatos: [pega la tabla o describe las columnas]\n\nRecomiéndame un gráfico:\n1. El tipo de gráfico y por qué es el mejor para esta idea.\n2. Qué va en cada eje, qué se ordena y cómo.\n3. Un título que diga la conclusión, no solo el tema.\n4. Qué evitar para que no engañe (por ejemplo: barras que no empiezan en cero, medias con valores extremos, demasiadas categorías).\n5. Una alternativa si el público es poco técnico.\n\nSi los datos no sirven para esa idea, dímelo antes de proponer nada.",
+      "ejemplo": "Recomendación: ranking de barras horizontales, ordenado de más a menos.\n\nPor qué: son 9 tiendas con nombres largos; en horizontal se leen sin girar la cabeza.\n\nTítulo: «La tienda del centro vende el doble que la media»\n\nOjo: si cortas el eje para que se noten diferencias pequeñas, exageras. Mejor barras desde cero con la cifra al final de cada barra.\n\n(Ejemplo con datos inventados.)",
+      "consejos": [
+        "La frase de «quiero enseñar esto» es lo más importante: cuanto más concreta, mejor recomendación.",
+        "Pídele después el código del gráfico en Python o los pasos en Excel."
+      ]
+    },
+    {
+      "slug": "consulta-sql-explicada",
+      "tipo": "prompt",
+      "tema": "datos",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Una consulta SQL que entiendas línea a línea",
+      "resumen": "Claude escribe la consulta, la explica paso a paso y te dice con qué casos raros puede fallar.",
+      "para_que": [
+        "Sacar datos de una base sin copiar consultas que no entiendes.",
+        "Aprender SQL con tus propias tablas en vez de con ejemplos genéricos.",
+        "Revisar una consulta que ya tienes y no te cuadra."
+      ],
+      "prompt": "Trabajo con [PostgreSQL / MySQL / BigQuery / SQLite]. Estas son mis tablas:\n\n[pega el nombre de cada tabla con sus columnas y tipos, y 2 o 3 filas de ejemplo]\n\nQuiero saber: [la pregunta en lenguaje normal]\n\n1. Escribe la consulta, legible y con comentarios.\n2. Explícala línea a línea, como si fuera la primera vez que veo un JOIN o un GROUP BY.\n3. Dime con qué casos raros puede dar un resultado engañoso (nulos, duplicados al unir tablas, fechas con hora).\n4. Dame una consulta corta para comprobar que el resultado tiene sentido.\n\nNo inventes columnas que no estén en las tablas.",
+      "ejemplo": "-- Ventas por isla en octubre, sin contar devoluciones\nSELECT t.isla,\n       SUM(v.importe) AS total\nFROM ventas v\nJOIN tiendas t ON t.id = v.tienda_id\nWHERE v.fecha >= '2026-10-01' AND v.fecha < '2026-11-01'\n  AND v.importe > 0\nGROUP BY t.isla\nORDER BY total DESC;\n\nOjo: si una tienda aparece dos veces en «tiendas», el JOIN duplica sus ventas. Comprueba con: SELECT id, COUNT(*) FROM tiendas GROUP BY id HAVING COUNT(*) > 1;",
+      "consejos": [
+        "Nunca pegues datos personales reales: con 2 o 3 filas inventadas que tengan la misma forma basta.",
+        "Pide la versión para tu motor de base de datos: las fechas cambian mucho de uno a otro."
+      ]
+    },
+    {
+      "slug": "informe-mensual-de-redes",
+      "tipo": "prompt",
+      "tema": "informes",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "De una exportación de redes a un informe mensual",
+      "resumen": "Pegas lo que exporta Instagram, TikTok o Meta Business y sale un informe ordenado, siempre con la misma estructura.",
+      "para_que": [
+        "Hacer el informe de redes de tu negocio o de un proyecto personal sin empezar de cero cada mes.",
+        "Que todos los meses tengan las mismas secciones y se puedan comparar.",
+        "Separar lo que funcionó de lo que no, con cifras."
+      ],
+      "prompt": "Te paso los datos de [red social] de [mes] y del mes anterior. Prepara un informe mensual con esta estructura exacta:\n\n1. Resumen en tres líneas.\n2. Tabla de KPIs: seguidores, alcance, interacciones, tasa de interacción, clics en el enlace. Columnas: este mes, mes anterior, variación en %.\n3. Las tres publicaciones que mejor funcionaron y por qué crees que funcionaron (marcado como hipótesis).\n4. Las tres que peor funcionaron.\n5. Tres acciones para el mes que viene, cada una con la cifra que debería mejorar.\n\nReglas: la tasa de interacción es interacciones / alcance. No inventes datos que no estén. Si una cifra no es comparable entre meses (por ejemplo, porque cambió la forma de medirla), avísame.",
+      "ejemplo": "Resumen: octubre trajo un 18 % más de alcance gracias a dos reels, pero la tasa de interacción bajó del 4,1 % al 3,6 %. Los carruseles siguen siendo lo que más se guarda.\n\nMejor publicación: reel del día 9 (12.400 de alcance). Hipótesis: el gancho de los tres primeros segundos y una pregunta directa al final.\n\nAcción: dos carruseles a la semana con una pregunta al final → objetivo, volver al 4 % de tasa de interacción.",
+      "consejos": [
+        "Guarda este prompt y úsalo igual cada mes: la gracia está en que la estructura no cambie.",
+        "Si los datos son de un cliente, revisa con él qué se puede pasar a una IA y quita lo que sobre."
+      ]
+    },
+    {
+      "slug": "unifica-categorias",
+      "tipo": "prompt",
+      "tema": "limpieza",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Unifica nombres escritos de mil maneras",
+      "resumen": "Municipios, islas, productos o proveedores escritos de formas distintas, convertidos en una tabla de equivalencias que puedes revisar.",
+      "para_que": [
+        "Cuando «Las Palmas de G.C.», «LPGC» y «las palmas» deberían contar como lo mismo.",
+        "Antes de agrupar o contar por categoría.",
+        "Para tener una tabla de equivalencias reutilizable para los meses siguientes."
+      ],
+      "prompt": "Esta es la lista de valores distintos de la columna [nombre de la columna], con cuántas veces aparece cada uno:\n\n[pega la lista]\n\n1. Agrupa los que creas que son lo mismo y propón un nombre oficial para cada grupo.\n2. Devuélvelo como tabla de dos columnas: valor_original, valor_unificado.\n3. Marca con «DUDA» los casos en los que no estés seguro y explica por qué.\n4. No juntes cosas que solo se parecen (por ejemplo, un municipio y una isla con el mismo nombre).\n\nSi existe una lista oficial (municipios, códigos postales…), úsala como referencia y dime cuál.",
+      "ejemplo": "valor_original | valor_unificado\nLas Palmas de G.C. | Las Palmas de Gran Canaria\nLPGC | Las Palmas de Gran Canaria\nlas palmas | Las Palmas de Gran Canaria\nS/C Tenerife | Santa Cruz de Tenerife\nLa Palma | DUDA: ¿la isla o el barrio? Revisa las filas\n\nReferencia: nombres oficiales de municipios del INE.",
+      "consejos": [
+        "Pega solo la lista de valores distintos, no el archivo entero: es más rápido y no compartes datos de más.",
+        "Guarda la tabla de equivalencias: el mes que viene solo tendrás que añadir los nombres nuevos."
+      ]
+    },
+    {
+      "slug": "que-parte-se-puede-automatizar",
+      "tipo": "prompt",
+      "tema": "automatizacion",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Descubre qué parte de una tarea se puede automatizar",
+      "resumen": "Describes algo que haces a mano y Claude lo parte en pasos: qué puede hacerse solo, qué puede preparar la IA para que lo revises y qué tiene que seguir siendo tuyo.",
+      "para_que": [
+        "Antes de comprar una herramienta o montar una automatización.",
+        "Para ver si una tarea repetitiva merece el esfuerzo de automatizarla.",
+        "Para explicarle a alguien qué se puede automatizar sin hablar de tecnología."
+      ],
+      "prompt": "Te describo una tarea que hago a mano:\n\n[qué haces, cada cuánto, cuánto tiempo te lleva y con qué programas]\n\n1. Divídela en pasos concretos.\n2. Para cada paso, dime si puede ser AUTOMÁTICO, si la IA puede PREPARARLO para que yo lo revise, o si debe seguir siendo MÍO, y por qué.\n3. Calcula cuánto tiempo me ahorraría al mes, con una horquilla realista.\n4. Propón la forma más sencilla de empezar, con herramientas que probablemente ya tengo (correo, hojas de cálculo, Claude) antes que herramientas nuevas.\n5. Dime qué podría salir mal y cómo me daría cuenta.\n\nLo que toque dinero o salga a clientes, siempre con revisión humana.",
+      "ejemplo": "Paso 3, «copiar los datos de cada factura a la hoja»: AUTOMÁTICO. Un formulario o una regla del correo puede dejar los PDF en una carpeta, y Claude puede leer importe, fecha y proveedor.\n\nPaso 4, «clasificar el gasto»: IA PREPARA. Propone la categoría y tú revisas solo las dudosas.\n\nPaso 5, «pagar»: TUYO.\n\nAhorro estimado: entre 2 y 4 horas al mes.",
+      "consejos": [
+        "Cuanto más detalle des del «cada cuánto» y del «cuánto tarda», mejor será el cálculo de ahorro.",
+        "Empieza automatizando un solo paso y mide antes de ir a por el siguiente."
+      ]
+    },
+    {
+      "slug": "formula-de-hoja-de-calculo",
+      "tipo": "prompt",
+      "tema": "automatizacion",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "La fórmula de Excel o Google Sheets que necesitas, explicada",
+      "resumen": "Le cuentas lo que quieres calcular, con qué columnas, y te da la fórmula, cómo funciona y cómo comprobarla.",
+      "para_que": [
+        "Buscar valores entre hojas, sumar con condiciones o limpiar textos sin pelearte con la sintaxis.",
+        "Entender una fórmula larga que heredaste.",
+        "Evitar fórmulas que fallan en cuanto cambian los datos."
+      ],
+      "prompt": "Uso [Excel / Google Sheets] en [español / inglés] (para que los nombres de las funciones y los separadores sean los correctos).\n\nMi hoja: [qué hay en cada columna y desde qué fila empiezan los datos]\nQuiero: [lo que quieres calcular, con un ejemplo del resultado esperado]\n\n1. Dame la fórmula lista para pegar y en qué celda va.\n2. Explícala por partes.\n3. Dime qué pasa si hay celdas vacías, texto donde debería haber números o filas nuevas al final.\n4. Si hay una forma más sencilla o más robusta, enséñamela también.",
+      "ejemplo": "En E2:\n=SUMAR.SI.CONJUNTO(C:C; A:A; \"Gran Canaria\"; B:B; \">=\"&FECHA(2026;10;1))\n\n· SUMAR.SI.CONJUNTO suma la columna C…\n· …solo en las filas donde A es «Gran Canaria»…\n· …y la fecha de B es del 1 de octubre en adelante.\n\nOjo: si en C hay importes guardados como texto, no se suman. Compruébalo con =ESNUMERO(C2).",
+      "consejos": [
+        "Di siempre el idioma de tu Excel: en español se usa ; como separador y las funciones cambian de nombre.",
+        "Pide también una versión con nombres de rango si la hoja la va a usar más gente."
+      ]
+    },
+    {
+      "slug": "script-de-python-explicado",
+      "tipo": "prompt",
+      "tema": "automatizacion",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Un script de Python que puedas mantener tú",
+      "resumen": "Para pedir un script pequeño que haga algo repetitivo, con comentarios, instrucciones para ejecutarlo y una prueba.",
+      "para_que": [
+        "Renombrar archivos, juntar varios Excel, descargar datos públicos cada día.",
+        "Tener código que entiendes y puedes tocar, no una caja negra.",
+        "Empezar a programar con IA con buenas costumbres desde el principio."
+      ],
+      "prompt": "Necesito un script de Python que haga esto: [qué tiene que hacer, con un ejemplo de entrada y de salida].\n\nCondiciones:\n- Python 3, con la menor cantidad posible de librerías externas. Si usas alguna, dime cómo instalarla.\n- Comentarios en español explicando cada bloque.\n- Los datos que pueden cambiar (rutas, fechas, nombres) arriba del todo, en variables.\n- Que no borre ni sobrescriba nada sin avisar.\n- Mensajes claros si algo falla.\n\nDespués:\n1. Explícame cómo ejecutarlo paso a paso en [Windows / Mac].\n2. Dame una forma de probarlo con datos de ejemplo antes de usarlo con los de verdad.\n3. Dime qué partes tendría que cambiar si [un cambio probable, por ejemplo: el archivo llega con otra columna].",
+      "ejemplo": "# ----- Configuración: cambia esto -----\nCARPETA_ENTRADA = \"informes_mensuales\"\nARCHIVO_SALIDA = \"todo_junto.xlsx\"\n\n# ----- Juntar todos los Excel de la carpeta -----\nimport pandas as pd\nfrom pathlib import Path\n\narchivos = sorted(Path(CARPETA_ENTRADA).glob(\"*.xlsx\"))\nif not archivos:\n    raise SystemExit(f\"No hay archivos .xlsx en {CARPETA_ENTRADA}\")\n…\n\nPara probarlo: crea una carpeta con dos Excel pequeños inventados y ejecútalo ahí primero.",
+      "consejos": [
+        "Prueba siempre con una copia de tus archivos, nunca con los originales.",
+        "Si algo falla, pega el mensaje de error completo en el mismo chat: es lo que más ayuda a Claude."
+      ]
+    },
+    {
+      "slug": "carrusel-desde-un-dato",
+      "tipo": "prompt",
+      "tema": "redes",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "De un dato a un carrusel de Instagram",
+      "resumen": "Le das un dato con su fuente y te propone un carrusel de seis diapositivas, con gancho, gráfico, contexto y cierre.",
+      "para_que": [
+        "Convertir un dato curioso en una publicación que se guarde y se comparta.",
+        "Tener la estructura antes de abrir Canva.",
+        "Que el carrusel lleve siempre fecha y fuente."
+      ],
+      "prompt": "Quiero hacer un carrusel de Instagram de 6 diapositivas con este dato:\n\nDato: [la cifra o tabla]\nFuente y fecha: [de dónde sale y de cuándo es]\nPúblico: [quién te sigue]\nTono: [cercano / serio / con humor]\n\nPara cada diapositiva dame: el titular (máximo 8 palabras), el texto de apoyo (máximo 25 palabras) y qué visual pondrías.\n\nEstructura:\n1. Gancho que haga parar el dedo, sin exagerar el dato.\n2. El dato principal, con un gráfico sencillo.\n3. Contexto: comparado con qué.\n4. Lo que sorprende o lo que la gente suele creer mal.\n5. Qué significa para quien lo lee.\n6. Cierre con pregunta y la fuente con fecha.\n\nAñade un pie de foto de 3 líneas y 4 hashtags genéricos. No inventes cifras.",
+      "ejemplo": "1 · «¿Pagas de más por el café del desayuno?» — Visual: taza en silueta.\n2 · «Hasta 60 céntimos de diferencia en el mismo barrio» — Ranking de cafeterías, barras desde cero.\n3 · «Un café al día: 18 € al mes de diferencia» — Icono de calendario con la cifra.\n…\n6 · «¿Cuánto pagas tú?» — Fuente: precios recogidos a mano en 12 cafeterías, con su fecha.\n\n(Ejemplo con datos inventados.)",
+      "consejos": [
+        "El gancho tiene que ser verdad: si el dato no da para un titular llamativo, mejor uno honesto.",
+        "Pídele después tres versiones del gancho y quédate con la que te diría algo a ti."
+      ]
+    },
+    {
+      "slug": "ideas-de-contenido",
+      "tipo": "prompt",
+      "tema": "redes",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Diez ideas de contenido que puedas hacer de verdad",
+      "resumen": "Ideas ajustadas a lo que sabes, al tiempo que tienes y a tu público, con el formato y el primer paso de cada una.",
+      "para_que": [
+        "Cuando no sabes qué publicar esta semana.",
+        "Para salir de las ideas genéricas que salen en todos los perfiles.",
+        "Para ordenar las ideas por esfuerzo y empezar por las fáciles."
+      ],
+      "prompt": "Ayúdame con ideas de contenido para [red social].\n\nSobre mí: [a qué te dedicas o de qué va tu cuenta]\nMi público: [quién te sigue y qué le interesa]\nTiempo que tengo: [horas a la semana]\nLo que ya me funcionó: [1 o 2 publicaciones que fueron bien]\nLo que no quiero hacer: [por ejemplo, salir a cámara o bailes]\n\nDame 10 ideas. Para cada una: título, formato (carrusel, reel, story…), por qué le interesaría a mi público, esfuerzo (bajo, medio, alto) y el primer paso para hacerla hoy.\n\nNada genérico tipo «comparte tu rutina»: cada idea tiene que poder hacerla solo alguien como yo.",
+      "ejemplo": "3 · «La gasolinera más barata de cada isla este mes» — Carrusel. Tu público es de aquí y lo usa a diario. Esfuerzo: bajo (ya tienes los datos). Primer paso: exportar los precios del día 1.\n\n7 · «Cómo hice esta web en una tarde con IA» — Reel con capturas de pantalla, sin salir a cámara. Esfuerzo: medio. Primer paso: grabar la pantalla mientras trabajas.",
+      "consejos": [
+        "Cuanto más concreto seas en «sobre mí», menos genéricas serán las ideas.",
+        "Pídele después un calendario de 4 semanas con las ideas de esfuerzo bajo."
+      ]
+    },
+    {
+      "slug": "planifica-la-semana",
+      "tipo": "prompt",
+      "tema": "personal",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Planifica la semana con lo que de verdad cabe",
+      "resumen": "Vuelcas todo lo pendiente y Claude te ayuda a decidir qué entra esta semana, qué espera y qué sobra.",
+      "para_que": [
+        "Los domingos, cuando la lista de pendientes no cabe en la semana.",
+        "Para dejar de arrastrar tareas de una semana a otra.",
+        "Para ver con claridad qué es urgente y qué solo lo parece."
+      ],
+      "prompt": "Ayúdame a planificar la semana. Esto es todo lo que tengo pendiente, sin orden:\n\n[vuelca la lista]\n\nMis horas disponibles: [por ejemplo: de lunes a viernes, 2 horas por la tarde; el sábado por la mañana]\nCompromisos fijos: [citas, trabajo, entrenamientos…]\n\n1. Estima cuánto tiempo lleva cada tarea (con margen: siempre tardo más de lo que creo).\n2. Clasifícalas: ESTA SEMANA, PUEDE ESPERAR, DELEGAR o QUITAR.\n3. Reparte las de esta semana en mis huecos, con la más difícil en el momento en que tengo más energía.\n4. Deja al menos un hueco libre para imprevistos.\n5. Si no cabe todo, dímelo claramente y pregúntame qué prefiero sacrificar. No me llenes la semana.",
+      "ejemplo": "No cabe todo: tienes unas 11 horas de tareas y 8 horas libres.\n\nESTA SEMANA: presupuesto para el cliente (2 h, martes), revisar la web (1 h, miércoles)…\nPUEDE ESPERAR: reorganizar las fotos del móvil.\nQUITAR: «mirar cursos nuevos» lleva tres semanas en la lista sin moverse.\n\nHueco libre: jueves por la tarde.\n\n¿Prefieres pasar el vídeo a la semana que viene o recortar el gimnasio del viernes?",
+      "consejos": [
+        "Hazlo siempre el mismo día y a la misma hora: el hábito importa más que el prompt.",
+        "El viernes, pega lo que hiciste y pídele que ajuste sus estimaciones a tu ritmo real."
+      ]
+    },
+    {
+      "slug": "resume-un-documento-largo",
+      "tipo": "prompt",
+      "tema": "personal",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Resume un documento largo sin perder lo importante",
+      "resumen": "Contratos, bases de ayudas, normativas o informes de 40 páginas, resumidos con lo que te toca hacer y los plazos.",
+      "para_que": [
+        "Leer unas bases, un contrato o un informe largo en diez minutos.",
+        "Sacar fechas, plazos y obligaciones sin que se escape ninguno.",
+        "Saber qué partes hay que leer enteras sí o sí."
+      ],
+      "prompt": "Te paso un documento. Soy [quién eres y por qué lo lees] y necesito saber [qué decisión tienes que tomar].\n\n1. Resumen de 5 líneas, en lenguaje normal.\n2. Lo que me toca hacer a mí, en una lista, con plazos y fechas exactas.\n3. Requisitos, condiciones o letra pequeña que me puedan perjudicar.\n4. Cifras importantes (importes, porcentajes, penalizaciones) con la página o el apartado donde aparecen.\n5. Lo que el documento NO aclara y debería preguntar.\n6. Qué apartados debería leer enteros yo.\n\nCita siempre el apartado o la página. Si algo no está en el documento, no lo completes de memoria.",
+      "ejemplo": "Lo que te toca hacer:\n· Presentar la solicitud antes del 15 de diciembre de 2026 (apartado 7.2).\n· Justificar el gasto en los 3 meses siguientes al pago (apartado 12).\n\nLetra pequeña: si no justificas a tiempo, se reclama el 100 % más intereses (apartado 14.1).\n\nNo aclara: si el IVA cuenta como gasto subvencionable. Pregúntalo antes de presentar.\n\nLee entero: el apartado 12 (justificación).",
+      "consejos": [
+        "Para contratos o temas legales, úsalo para entender, no para decidir: la última palabra la tiene un profesional.",
+        "Pide siempre las citas de apartado y comprueba al menos las de los plazos."
+      ]
+    },
+    {
+      "slug": "decide-entre-opciones",
+      "tipo": "prompt",
+      "tema": "personal",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Decide entre varias opciones con una tabla",
+      "resumen": "Para comparar con criterio: móviles, ofertas de trabajo, herramientas o pisos, con pesos que decides tú.",
+      "para_que": [
+        "Cuando llevas días dándole vueltas a algo y ya no ves claro.",
+        "Para que la decisión dependa de lo que te importa a ti y no de la última opinión que leíste.",
+        "Para explicar después por qué elegiste lo que elegiste."
+      ],
+      "prompt": "Tengo que decidir entre estas opciones:\n\n[opción A, opción B, opción C, con lo que sepas de cada una]\n\nLo que me importa, de más a menos: [por ejemplo: precio, tiempo de desplazamiento, posibilidades de aprender]\n\n1. Antes de nada, hazme 3 preguntas que me ayuden a precisar qué me importa.\n2. Con mis respuestas, propón una tabla con criterios, un peso para cada uno (que sumen 100) y una puntuación del 1 al 5 por opción, explicando cada nota.\n3. Calcula el total y dime qué opción gana.\n4. Dime qué tendría que cambiar para que ganase otra.\n5. Señala qué datos me faltan y cómo conseguirlos.\n\nNo decidas por mí: ayúdame a ver claro.",
+      "ejemplo": "Antes de puntuar:\n1. ¿Cuántos días a la semana tendrías que ir a la oficina en cada oferta?\n2. ¿El sueldo es bruto anual en las dos?\n3. ¿Qué te gustaría estar haciendo dentro de dos años?\n\n(Tras tus respuestas)\nGana B con 78 puntos frente a 71 de A. Ganaría A si el teletrabajo pesara más de 30. Te falta saber el horario real de B: pregúntalo en la entrevista.",
+      "consejos": [
+        "Responde las 3 preguntas con calma: es donde está la mitad del valor.",
+        "Si el resultado no te convence, fíjate en por qué: a menudo revela un criterio que no habías dicho."
+      ]
+    },
+    {
       "slug": "propuesta-web-canarias",
       "tipo": "skill",
       "tema": "automatizacion",
@@ -91,13 +360,36 @@
         "Ver ejemplos reales de uso, no la lista entera del directorio."
       ],
       "elementos": [
-        { "nombre": "Buffer", "uso": "Programar las publicaciones de X de la semana sin abrir la aplicación.", "enlace": "https://buffer.com" },
-        { "nombre": "Canva", "uso": "Buscar diseños, crear versiones nuevas y exportarlas.", "enlace": "https://www.canva.com" },
-        { "nombre": "Gmail", "uso": "Buscar correos concretos y dejar borradores preparados para revisarlos yo.", "enlace": "https://mail.google.com" },
-        { "nombre": "Google Drive", "uso": "Leer documentos y hojas sin descargarlos ni pegarlos en el chat.", "enlace": "https://drive.google.com" },
-        { "nombre": "Claude in Chrome", "uso": "Tareas en webs donde tengo la sesión iniciada, como sacar datos de Search Console.", "enlace": "https://claude.com/chrome" }
+        {
+          "nombre": "Buffer",
+          "uso": "Programar las publicaciones de X de la semana sin abrir la aplicación.",
+          "enlace": "https://buffer.com"
+        },
+        {
+          "nombre": "Canva",
+          "uso": "Buscar diseños, crear versiones nuevas y exportarlas.",
+          "enlace": "https://www.canva.com"
+        },
+        {
+          "nombre": "Gmail",
+          "uso": "Buscar correos concretos y dejar borradores preparados para revisarlos yo.",
+          "enlace": "https://mail.google.com"
+        },
+        {
+          "nombre": "Google Drive",
+          "uso": "Leer documentos y hojas sin descargarlos ni pegarlos en el chat.",
+          "enlace": "https://drive.google.com"
+        },
+        {
+          "nombre": "Claude in Chrome",
+          "uso": "Tareas en webs donde tengo la sesión iniciada, como sacar datos de Search Console.",
+          "enlace": "https://claude.com/chrome"
+        }
       ],
-      "fuente": { "texto": "Directorio oficial de conectores", "enlace": "https://claude.com/connectors" }
+      "fuente": {
+        "texto": "Directorio oficial de conectores",
+        "enlace": "https://claude.com/connectors"
+      }
     },
     {
       "slug": "guia-muestra",
@@ -108,11 +400,16 @@
       "titulo": "Prompts para analistas de datos",
       "resumen": "Muestra de diseño de las guías en PDF: portada, índice, fichas de prompts y pie con la fecha de versión. El tema definitivo está por decidir.",
       "para_que": [
-        "Ver cómo quedan las guías antes de escribir la primera de verdad."
+        "Ver cómo quedan las guías antes de escribir la primera de verdad.",
+        "Siete prompts de análisis, limpieza e informes, cada uno en su página."
       ],
       "descarga": "descargas/guia-muestra.pdf",
       "version": "0.1",
-      "pdf_temas": ["limpieza", "informes"]
+      "pdf_temas": [
+        "datos",
+        "limpieza",
+        "informes"
+      ]
     }
   ]
 }
