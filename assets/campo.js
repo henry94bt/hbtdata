@@ -253,6 +253,43 @@
       return f;
     },
 
+    ventana: function (N, R) {                   // una web en el navegador y la misma en el móvil
+      var f = new Forma(N), piezas = [];
+      // [tipo, x0, y0, x1, y1, z, color, peso]   tipo: b = borde, r = relleno
+      function caja(t, x0, y0, x1, y1, z, c, peso) { piezas.push([t, x0, y0, x1, y1, z, c, peso]); }
+      var X0 = -1.25, X1 = 0.75, Y0 = -0.72, Y1 = 0.62;
+      caja('b', X0, Y0, X1, Y1, 0, CLARO, 3.4);                       // marco del navegador
+      caja('r', X0, Y1 - 0.12, X1, Y1, 0, escala(CLARO, 0.45), 1.0);  // barra de arriba
+      [0, 1, 2].forEach(function (i) { caja('r', X0 + 0.07 + i * 0.07, Y1 - 0.075, X0 + 0.1 + i * 0.07, Y1 - 0.045, 0.01, i === 0 ? OCRE : CLARO, 0.12); });
+      caja('r', X0 + 0.12, Y1 - 0.3, X0 + 0.95, Y1 - 0.22, 0, CLARO, 1.1);          // titular
+      caja('r', X0 + 0.12, Y1 - 0.42, X0 + 0.72, Y1 - 0.37, 0, escala(CLARO, 0.6), 0.6);
+      caja('r', X0 + 0.12, Y1 - 0.62, X0 + 0.5, Y1 - 0.5, 0.01, OCRE, 0.9);          // botón
+      caja('r', X0 + 1.08, Y1 - 0.66, X1 - 0.12, Y1 - 0.2, 0, escala(SUAVE, 0.7), 2.0); // imagen
+      [0, 1, 2].forEach(function (i) {                                               // tarjetas
+        var a = X0 + 0.12 + i * 0.6;
+        caja('b', a, Y0 + 0.1, a + 0.52, Y0 + 0.5, 0, escala(CLARO, 0.75), 0.9);
+        caja('r', a + 0.06, Y0 + 0.38, a + 0.34, Y0 + 0.42, 0, escala(CLARO, 0.6), 0.15);
+      });
+      var P0 = 0.62, P1 = 1.12, Q0 = -0.82, Q1 = 0.2, Z = 0.25;                       // el móvil
+      caja('b', P0, Q0, P1, Q1, Z, CLARO, 1.5);
+      caja('r', P0 + 0.06, Q1 - 0.2, P1 - 0.06, Q1 - 0.15, Z, CLARO, 0.25);
+      caja('r', P0 + 0.06, Q1 - 0.3, P1 - 0.16, Q1 - 0.26, Z, escala(CLARO, 0.6), 0.15);
+      caja('r', P0 + 0.06, Q1 - 0.5, P1 - 0.06, Q1 - 0.38, Z, OCRE, 0.45);
+      caja('r', P0 + 0.06, Q0 + 0.1, P1 - 0.06, Q1 - 0.6, Z, escala(SUAVE, 0.7), 0.8);
+      var acum = acumula(piezas.map(function (p) { return p[7]; }));
+      for (var i = 0; i < N; i++) {
+        var p = piezas[elige(acum, R())], x, y, w = p[3] - p[1], h = p[4] - p[2];
+        if (p[0] === 'b') {
+          var t = R() * 2 * (w + h);
+          if (t < w) { x = p[1] + t; y = p[2]; } else if (t < w + h) { x = p[3]; y = p[2] + t - w; }
+          else if (t < 2 * w + h) { x = p[3] - (t - w - h); y = p[4]; } else { x = p[1]; y = p[4] - (t - 2 * w - h); }
+          x += gauss(R) * 0.004; y += gauss(R) * 0.004;
+        } else { x = p[1] + R() * w; y = p[2] + R() * h; }
+        f.pon(x + 0.12, y + 0.05, p[5] + gauss(R) * 0.02, p[6]);
+      }
+      return f;
+    },
+
     picos: function (N, R) {                     // la cumbre más alta de cada isla, desde el nivel del mar
       var f = new Forma(N), P = DATOS.picos || [1501, 2426, 1487, 3715, 1949, 807, 670];
       var n = P.length, ancho = 2.3, gap = 0.09, bw = (ancho - gap * (n - 1)) / n, base = -0.78;

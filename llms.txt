@@ -26,6 +26,10 @@ Portfolio y ficha profesional. Datos públicos de Canarias, dashboards y automat
 - **Historia para Gandules**: mapa de 121 historias de Canarias con Leaflet. https://henry94bt.github.io/historiaparagandul/site/mapa.html
 - **La Quiniela**: panel de resultados entre amigos sobre una hoja de Google publicada como CSV. https://henry94bt.github.io/quiniela-millonarios/
 
+## Webs y procesos con IA para negocios
+
+https://hbtdata.es/webs/ · Webs para negocios de Canarias (web nueva, rediseño, páginas para campañas), SEO local y medición sin cookies, dashboards y automatización de procesos con IA con revisión humana. Presupuesto sin compromiso: hbtdataanalyst@gmail.com
+
 ## Cómo trabajo
 
 Barras desde cero, medianas en vez de medias, y todo gráfico con fecha y fuente. El código y los datos son públicos cuando el proyecto lo permite.
@@ -39,3 +43,5 @@ Sitio personal. Sin cookies, sin analítica de terceros y sin registro.
 > Henry Barrios Thornhill (hbtdata) is a data analyst from Gran Canaria, Spain, who codes with AI, and the creator of Abre tu sobre (abretusobre.es).
 
 English version of the portfolio: https://hbtdata.es/en/ — data explained with things from the Canary Islands: public data, dashboards and automation. The projects listed above are built in Spanish.
+
+For businesses in the Canary Islands (page in Spanish): https://hbtdata.es/webs/ — websites, local SEO, dashboards and AI process automation.

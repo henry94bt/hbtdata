@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webs y procesos con IA para negocios de Canarias · hbtdata</title>
+<meta name="description" content="Webs rápidas para negocios de Canarias, preparadas para salir en Google, y procesos repetitivos que se hacen solos con IA. Hechos en Las Palmas de Gran Canaria por Henry Barrios Thornhill (hbtdata).">
+<link rel="canonical" href="https://hbtdata.es/webs/">
+<meta property="og:title" content="Webs y procesos con IA para negocios de Canarias · hbtdata">
+<meta property="og:description" content="Webs que salen en Google y tareas que se hacen solas con IA, con tu revisión donde hace falta. Trato directo, sin compromiso.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hbtdata.es/webs/">
+<meta property="og:image" content="https://hbtdata.es/assets/og-webs.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#04161C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230A3440'/%3E%3Cg fill='%23F7F3EC'%3E%3Crect x='8' y='29.8' width='5.1' height='10.2' rx='1.4'/%3E%3Crect x='14.7' y='20.2' width='5.1' height='19.8' rx='1.4'/%3E%3Crect x='21.4' y='8' width='5.1' height='32' rx='1.4' fill='%23F0A840'/%3E%3Crect x='28.2' y='14.4' width='5.1' height='25.6' rx='1.4'/%3E%3Crect x='34.9' y='25.3' width='5.1' height='14.7' rx='1.4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://hbtdata.es/webs/#servicio",
+      "name": "hbtdata · Webs y procesos con IA para negocios",
+      "url": "https://hbtdata.es/webs/",
+      "image": "https://hbtdata.es/assets/og-webs.png",
+      "description": "Diseño y desarrollo de webs para negocios de Canarias, SEO local, medición de visitas, dashboards y automatización de procesos con IA.",
+      "email": "hbtdataanalyst@gmail.com",
+      "areaServed": { "@type": "AdministrativeArea", "name": "Canarias" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Las Palmas de Gran Canaria", "addressRegion": "Las Palmas", "addressCountry": "ES" },
+      "founder": { "@id": "https://hbtdata.es/#person" },
+      "knowsAbout": ["Diseño web", "SEO local", "Google Search Console", "Analítica web", "Dashboards", "Automatización de procesos con IA"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hbtdata.es/#person",
+      "name": "Henry Barrios Thornhill",
+      "url": "https://hbtdata.es/"
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --fondo:#04161C;
+    --panel:#082A33;
+    --petroleo:#0A3440;
+    --claro:#F7F3EC;
+    --tenue:rgba(247,243,236,.68);
+    --linea:rgba(247,243,236,.14);
+    --ocre:#F0A840;
+    --suave:#96D6D6;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'Poppins',system-ui,sans-serif;
+    --lado:clamp(20px,4vw,56px);
+    --ancho:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{font-family:var(--sans);font-weight:300;background:var(--fondo);color:var(--claro);line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  button{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--ocre);outline-offset:4px;border-radius:4px}
+  .ico{width:18px;height:18px;flex:none;fill:currentColor}
+  .ico.trazo{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .envuelve{max-width:var(--ancho);margin:0 auto;padding:0 var(--lado)}
+  .mono{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+  .mono b{font-weight:500;color:var(--ocre)}
+  .titular{font-weight:200;text-transform:uppercase;letter-spacing:-.01em;line-height:1;font-size:clamp(2.3rem,5vw,4.4rem)}
+  .entrada{max-width:58ch;color:var(--tenue);font-size:1.05rem}
+  .pildora{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid rgba(247,243,236,.32);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--claro);background:none;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+  .pildora:hover{border-color:var(--ocre);color:var(--ocre)}
+  .pildora.llena{background:var(--ocre);border-color:var(--ocre);color:var(--fondo)}
+  .pildora.llena:hover{background:#F6BE62;color:var(--fondo)}
+  .pildora .ico{width:14px;height:14px}
+  .enlace{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);text-decoration:none}
+  .enlace:hover{color:var(--ocre)}
+  section{padding:110px 0;position:relative}
+  .cabeza{margin-bottom:52px}
+  .cabeza .titular{margin:14px 0 18px}
+  .panel{background:var(--panel)}
+
+  /* ---------- cabecera ---------- */
+  .barra{position:fixed;inset:0 0 auto;z-index:30;transition:background .3s}
+  .barra .envuelve{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px;max-width:none}
+  .barra.con-fondo{background:rgba(4,22,28,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+  .firma{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .sello{width:34px;height:34px;border:1px solid rgba(247,243,236,.4);border-radius:50%;display:grid;place-items:center}
+  .sello svg{width:15px;height:15px}
+  .barra nav{display:flex;gap:24px}
+  .barra nav a{color:var(--tenue);text-decoration:none}
+  .barra nav a:hover{color:var(--ocre)}
+  .barra .pildora{padding:11px 18px}
+  @media(max-width:980px){.barra nav{display:none}.firma .mono span{display:none}}
+
+  /* ---------- portada ---------- */
+  .portada{min-height:100svh;display:flex;align-items:center;padding:120px 0 70px;overflow:hidden;
+    background:radial-gradient(circle at 72% 46%,rgba(240,168,64,.16),transparent 42%),radial-gradient(ellipse at 50% 120%,rgba(10,52,64,.9),transparent 60%)}
+  .portada .envuelve{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:30px;align-items:center;width:100%}
+  .portada h1{font-size:clamp(2.6rem,6vw,5.4rem);margin:18px 0 24px}
+  .portada .acciones{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:34px}
+  .confianza{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:34px;list-style:none}
+  .confianza li{display:flex;align-items:center;gap:8px}
+  .confianza li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--suave)}
+  .lienzo{position:relative;height:min(640px,70vh);margin-right:calc(var(--lado) * -1)}
+  .lienzo canvas{position:absolute;inset:0;width:100%;height:100%}
+  .lienzo .respaldo{position:absolute;inset:12% 8%;border:1px solid var(--linea);border-radius:14px;display:none}
+  .sin-webgl .lienzo .respaldo{display:block}
+  @media(max-width:900px){
+    .portada{min-height:0;padding-top:110px}
+    .portada .envuelve{grid-template-columns:1fr}
+    .lienzo{height:320px;order:-1;margin:0 -10px}
+  }
+
+  /* ---------- sectores en movimiento ---------- */
+  .sectores{padding:22px 0;border-block:1px solid var(--linea);overflow:hidden;white-space:nowrap}
+  .sectores .pista{display:inline-flex;animation:desfile 46s linear infinite}
+  .sectores ul{display:inline-flex;list-style:none}
+  .sectores li{font-weight:200;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,1.9rem);padding:0 22px;display:inline-flex;align-items:center;gap:44px}
+  .sectores li::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--ocre);opacity:.8}
+  .sectores .para{color:var(--ocre)}
+  .sectores .para::after{display:none}
+  .sectores:hover .pista{animation-play-state:paused}
+  @keyframes desfile{to{transform:translateX(-50%)}}
+
+  /* ---------- ¿te suena? ---------- */
+  .problemas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--linea);border-left:1px solid var(--linea)}
+  .problemas li{list-style:none;padding:30px 28px 34px;border-right:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .problemas h3{font-weight:400;font-size:1.15rem;line-height:1.3;margin:14px 0 10px}
+  .problemas p{color:var(--tenue);font-size:.96rem}
+  @media(max-width:900px){.problemas{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.problemas{grid-template-columns:1fr}}
+
+  /* ---------- procesos con IA ---------- */
+  .demo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start}
+  .mandos{display:flex;flex-direction:column;gap:26px;position:sticky;top:110px}
+  .procesos{display:flex;flex-direction:column;gap:8px}
+  .procesos button{display:flex;justify-content:space-between;align-items:center;gap:14px;text-align:left;padding:16px 18px;border:1px solid var(--linea);border-radius:14px;background:none;cursor:pointer;font-weight:400;font-size:1rem;transition:border-color .2s,background .2s}
+  .procesos button small{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+  .procesos button:hover{border-color:rgba(247,243,236,.4)}
+  .procesos button[aria-selected=true]{border-color:var(--ocre);background:rgba(240,168,64,.07)}
+  .interruptor{display:grid;grid-template-columns:1fr 1fr;padding:5px;border:1px solid var(--linea);border-radius:999px;position:relative}
+  .interruptor::before{content:"";position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:var(--claro);transition:transform .45s cubic-bezier(.3,1.3,.5,1)}
+  .interruptor.ia::before{transform:translateX(100%);background:var(--suave)}
+  .interruptor button{position:relative;z-index:1;padding:12px 10px;border:0;background:none;cursor:pointer;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);transition:color .3s}
+  .interruptor button[aria-pressed=true]{color:var(--fondo)}
+  .medidor .mono{display:flex;justify-content:space-between;margin-bottom:10px}
+  .medidor .tramos{display:flex;gap:4px}
+  .medidor .tramos i{flex:1;height:8px;border-radius:4px;background:var(--ocre);transition:background .4s;transition-delay:calc(var(--k) * 70ms)}
+  .medidor .tramos i.auto{background:var(--suave)}
+  .medidor .tramos i.ia{background:linear-gradient(90deg,var(--suave) 50%,var(--ocre) 50%)}
+  .leyenda{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none}
+  .leyenda li{display:flex;align-items:center;gap:8px}
+  .leyenda li::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--c)}
+  .pasos-demo{list-style:none;border:1px solid var(--linea);border-radius:20px;background:rgba(4,22,28,.55);padding:10px 26px;counter-reset:p}
+  .pasos-demo li{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid var(--linea)}
+  .pasos-demo li:last-child{border-bottom:0}
+  .pasos-demo li::before{counter-increment:p;content:"0" counter(p);font-family:var(--mono);font-size:.72rem;color:var(--tenue)}
+  .pasos-demo .texto{font-size:1.02rem;transition:opacity .3s,transform .3s;transition-delay:calc(var(--k) * 70ms)}
+  .pasos-demo .quien{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 11px;border-radius:999px;white-space:nowrap;background:rgba(240,168,64,.15);color:var(--ocre);transition:background .3s,color .3s;transition-delay:calc(var(--k) * 70ms)}
+  .pasos-demo .quien.auto{background:rgba(150,214,214,.14);color:var(--suave)}
+  .pasos-demo .quien.ia{background:rgba(247,243,236,.1);color:var(--claro)}
+  .pasos-demo.cambiando .texto,.pasos-demo.cambiando .quien{opacity:0;transform:translateY(6px)}
+  .nota-demo{margin-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  @media(max-width:900px){
+    .demo{grid-template-columns:minmax(0,1fr)}
+    .mandos{position:static;min-width:0}
+    .procesos{flex-direction:row;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+    .procesos button{flex:none}
+    .procesos button small{display:none}
+    .pasos-demo{padding:4px 18px}
+    .pasos-demo li{grid-template-columns:26px minmax(0,1fr);gap:6px 12px}
+    .pasos-demo .quien{grid-column:2;justify-self:start}
+  }
+
+  /* ---------- servicios ---------- */
+  .servicios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none}
+  .servicio{border:1px solid var(--linea);border-radius:16px;padding:28px 26px 30px;display:flex;flex-direction:column;gap:12px;background:rgba(4,22,28,.35)}
+  .servicio h3{font-weight:400;font-size:1.3rem;line-height:1.25}
+  .servicio p{color:var(--tenue);font-size:.96rem}
+  .servicio ul{list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:8px;font-size:.92rem}
+  .servicio ul li{display:flex;gap:10px;align-items:baseline}
+  .servicio ul li::before{content:"";flex:none;width:12px;height:1px;background:var(--ocre);transform:translateY(-4px)}
+  .servicio.datos{border-color:rgba(150,214,214,.32)}
+  .servicio.datos .mono{color:var(--suave)}
+  .servicio .enlace{margin-top:auto;padding-top:8px}
+  @media(max-width:980px){.servicios{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.servicios{grid-template-columns:1fr}}
+  .precio{margin-top:16px;border-radius:18px;background:var(--claro);color:var(--fondo);display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding:44px 46px}
+  .precio .titular{font-size:clamp(2rem,3.6vw,3rem);margin:12px 0 16px}
+  .precio p{font-weight:400;color:#2A3D43}
+  .precio .mono{color:#4A5D63}
+  .precio .mono b{color:#A8620E}
+  .precio ul{list-style:none;display:grid;border-top:1px solid rgba(4,22,28,.16)}
+  .precio ul li{padding:14px 0;border-bottom:1px solid rgba(4,22,28,.16);font-weight:400}
+  .precio .pildora{margin-top:26px;border-color:var(--fondo);color:var(--fondo)}
+  .precio .pildora:hover{background:var(--fondo);color:var(--claro)}
+  @media(max-width:860px){.precio{grid-template-columns:1fr;padding:34px 26px;gap:24px}}
+
+  /* ---------- mantenimiento ---------- */
+  .mant{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .mant .planes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+  .mant .planes div{border:1px solid var(--linea);border-radius:14px;padding:20px}
+  .mant .planes strong{display:block;font-weight:400;font-size:1.05rem;margin:8px 0 6px}
+  .mant .planes p{font-size:.9rem;color:var(--tenue)}
+  .hoja-mes{border:1px solid var(--linea);border-radius:18px;background:rgba(4,22,28,.5);padding:26px}
+  .hoja-mes header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .hoja-mes ol{list-style:none}
+  .hoja-mes li{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--linea);font-size:.95rem}
+  .hoja-mes li span:last-child{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(150,214,214,.14);color:var(--suave);white-space:nowrap}
+  .hoja-mes li.curso span:last-child{background:rgba(240,168,64,.14);color:var(--ocre)}
+  @media(max-width:860px){.mant{grid-template-columns:1fr;gap:36px}.mant .planes{grid-template-columns:1fr}}
+
+  /* ---------- webs hechas ---------- */
+  .hechas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;list-style:none}
+  .hecha{border:1px solid var(--linea);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .hecha figure{aspect-ratio:16/10;background:var(--petroleo);overflow:hidden;border-bottom:1px solid var(--linea)}
+  .hecha img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s}
+  .hecha:hover img{transform:scale(1.03)}
+  .hecha .texto{padding:24px 26px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .hecha h3{font-weight:400;font-size:1.4rem;line-height:1.2}
+  .hecha p{color:var(--tenue);font-size:.95rem}
+  .hecha .etiquetas{margin-top:4px}
+  .hecha .vinculos{margin-top:auto;padding-top:10px;display:flex;gap:22px;flex-wrap:wrap}
+  .hecha .vinculos a{display:inline-flex;align-items:center;gap:8px}
+  .hecha .vinculos .ico{width:13px;height:13px}
+  .tuya{margin-top:22px;border:1px dashed rgba(240,168,64,.5);border-radius:18px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .tuya .titular{font-size:clamp(1.6rem,3vw,2.4rem)}
+  @media(max-width:760px){.hechas{grid-template-columns:1fr}}
+
+  /* ---------- pasos ---------- */
+  .pasos{list-style:none;counter-reset:paso;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--linea)}
+  .pasos li{padding:28px 22px 0 0;position:relative}
+  .pasos li::before{counter-increment:paso;content:"0" counter(paso);display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;color:var(--ocre);margin-bottom:18px}
+  .pasos li::after{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--ocre)}
+  .pasos h3{font-weight:400;font-size:1.15rem;line-height:1.25;margin-bottom:10px}
+  .pasos p{color:var(--tenue);font-size:.93rem}
+  @media(max-width:980px){.pasos{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--linea);padding-left:26px;gap:30px}.pasos li{padding:0}.pasos li::after{left:-30px;top:4px}}
+
+  /* ---------- por qué conmigo ---------- */
+  .yo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+  .yo .foto{width:128px;height:128px;border-radius:50%;object-fit:cover;border:1px solid rgba(247,243,236,.4);padding:4px;margin-bottom:24px}
+  .yo .presenta p{color:var(--tenue);margin-bottom:14px;max-width:46ch}
+  .razones{display:grid;grid-template-columns:1fr 1fr;list-style:none;border-top:1px solid var(--linea)}
+  .razones li{padding:24px 24px 26px 0;border-bottom:1px solid var(--linea)}
+  .razones li:nth-child(odd){padding-right:28px;border-right:1px solid var(--linea)}
+  .razones li:nth-child(even){padding-left:28px}
+  .razones h3{font-weight:400;font-size:1.08rem;margin-bottom:6px}
+  .razones p{color:var(--tenue);font-size:.92rem}
+  @media(max-width:900px){.yo{grid-template-columns:1fr;gap:40px}}
+  @media(max-width:600px){.razones{grid-template-columns:1fr}.razones li:nth-child(n){padding:22px 0;border-right:0}}
+
+  /* ---------- dudas ---------- */
+  .dudas{max-width:900px;border-top:1px solid var(--linea)}
+  .dudas details{border-bottom:1px solid var(--linea)}
+  .dudas summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-weight:400;font-size:1.08rem}
+  .dudas summary::-webkit-details-marker{display:none}
+  .dudas summary::after{content:"";flex:none;width:12px;height:12px;border-right:1.5px solid var(--ocre);border-bottom:1.5px solid var(--ocre);transform:rotate(45deg) translateY(-3px);transition:transform .25s}
+  .dudas details[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+  .dudas details p{color:var(--tenue);padding:0 40px 24px 0;max-width:70ch}
+
+  /* ---------- llamada final y contacto ---------- */
+  .llamada{background:var(--ocre);color:var(--fondo);padding:90px 0}
+  .llamada .titular{font-size:clamp(2.2rem,5.6vw,4.8rem);max-width:16ch}
+  .llamada p{font-weight:400;margin:18px 0 30px;max-width:50ch}
+  .llamada .mono{color:rgba(4,22,28,.7)}
+  .llamada .pildora.llena{background:var(--fondo);border-color:var(--fondo);color:var(--claro)}
+  .llamada .pildora.llena:hover{color:var(--ocre)}
+  .contacto .envuelve{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+  .contacto .titular{margin:14px 0 18px}
+  .vias{list-style:none;display:flex;flex-direction:column;gap:12px;margin:30px 0 22px}
+  .vias a{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--linea);border-radius:14px;text-decoration:none;transition:border-color .2s}
+  .vias a:hover{border-color:var(--ocre)}
+  .vias .ico{width:22px;height:22px;color:var(--ocre)}
+  .vias strong{display:block;font-weight:400;line-height:1.25}
+  .vias small{font-family:var(--mono);font-size:.74rem;color:var(--tenue)}
+  .vias .ico.flecha{margin-left:auto;width:14px;height:14px;color:var(--tenue)}
+  @media(max-width:900px){.contacto .envuelve{grid-template-columns:1fr;gap:36px}}
+
+  /* formulario (igual en la portada) */
+  .formulario{border:1px solid var(--linea);border-radius:20px;padding:30px;background:rgba(8,42,51,.6);display:grid;gap:20px}
+  .formulario fieldset{border:0;display:flex;flex-wrap:wrap;gap:8px}
+  .formulario legend{font-weight:400;margin-bottom:12px;width:100%}
+  .formulario .chip{position:relative}
+  .formulario .chip input{position:absolute;opacity:0;width:1px;height:1px}
+  .formulario .chip span{display:inline-block;padding:10px 16px;border:1px solid rgba(247,243,236,.26);border-radius:999px;font-size:.9rem;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+  .formulario .chip input:checked + span{background:var(--claro);border-color:var(--claro);color:var(--fondo);font-weight:400}
+  .formulario .chip input:focus-visible + span{outline:2px solid var(--ocre);outline-offset:3px}
+  .formulario .dos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .formulario label{display:grid;gap:8px;font-weight:400;font-size:.95rem}
+  .formulario label small{color:var(--tenue);font-weight:300}
+  .formulario input[type=text],.formulario textarea{width:100%;font:inherit;font-weight:300;color:var(--claro);background:rgba(4,22,28,.6);border:1px solid var(--linea);border-radius:12px;padding:13px 14px}
+  .formulario input::placeholder,.formulario textarea::placeholder{color:rgba(247,243,236,.4)}
+  .formulario input:focus,.formulario textarea:focus{outline:none;border-color:var(--ocre)}
+  .formulario textarea{min-height:120px;resize:vertical}
+  .formulario button{justify-content:center;width:100%;padding:17px}
+  .formulario .aviso{font-size:.84rem;color:var(--tenue)}
+  .formulario .estado{font-size:.92rem;border-left:2px solid var(--suave);padding-left:12px}
+  .formulario .estado a{color:var(--suave)}
+  @media(max-width:560px){.formulario{padding:22px}.formulario .dos{grid-template-columns:1fr}}
+
+  footer{border-top:1px solid var(--linea);padding:26px 0}
+  footer .envuelve{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;max-width:none}
+  footer .redes{display:flex;gap:16px}
+  footer .redes a{color:var(--tenue)}
+  footer .redes a:hover{color:var(--ocre)}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .sectores .pista{animation:none}
+    .hecha img,.dudas summary::after,.interruptor::before,.medidor .tramos i,.pasos-demo .texto,.pasos-demo .quien{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="volcan" viewBox="0 0 100 100">
+    <rect x="0"  y="68" width="16" height="32"  rx="4.5" fill="currentColor"/>
+    <rect x="21" y="38" width="16" height="62"  rx="4.5" fill="currentColor"/>
+    <rect x="42" y="0"  width="16" height="100" rx="4.5" fill="#F0A840"/>
+    <rect x="63" y="20" width="16" height="80"  rx="4.5" fill="currentColor"/>
+    <rect x="84" y="54" width="16" height="46"  rx="4.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+  <symbol id="i-correo" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+  <symbol id="i-fuera" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<header class="barra">
+  <div class="envuelve">
+    <a class="firma" href="../" aria-label="hbtdata, ir al portfolio">
+      <span class="sello"><svg viewBox="0 0 100 100" style="color:var(--claro)"><use href="#volcan"/></svg></span>
+      <span class="mono" style="color:var(--claro)">hbt<b>data</b><span> / Para negocios</span></span>
+    </a>
+    <nav class="mono" aria-label="Secciones">
+      <a href="#procesos">Procesos con IA</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#webs">Webs hechas</a>
+      <a href="#como-trabajo">Cómo trabajo</a>
+      <a href="#dudas">Dudas</a>
+    </nav>
+    <a class="pildora llena" href="#contacto">Hablemos</a>
+  </div>
+</header>
+
+<main>
+  <section class="portada" id="inicio">
+    <div class="envuelve">
+      <div>
+        <p class="mono"><b>//webs + IA</b> &nbsp;Para negocios de Canarias</p>
+        <h1 class="titular">Webs para negocios de aquí.</h1>
+        <p class="entrada">Webs rápidas que salen en Google, y tareas repetitivas que se hacen solas con IA. Lo hago yo, un analista de datos de Las Palmas, y te lo explico sin tecnicismos.</p>
+        <div class="acciones">
+          <a class="pildora llena" href="#contacto">Cuéntame tu negocio</a>
+          <a class="enlace" href="#procesos">Ver procesos con IA</a>
+        </div>
+        <ul class="confianza mono">
+          <li>Trato directo</li>
+          <li>Sin compromiso</li>
+          <li>Tu dominio, a tu nombre</li>
+        </ul>
+      </div>
+      <div class="lienzo" aria-hidden="true"><canvas id="campo"></canvas><div class="respaldo"></div></div>
+    </div>
+  </section>
+
+  <div class="sectores" aria-label="Para qué negocios">
+    <div class="pista">
+      <ul>
+        <li class="para">Para</li><li>cafeterías</li><li>talleres</li><li>peluquerías</li><li>clínicas</li><li>fisios</li><li>academias</li><li>restaurantes</li><li>apartamentos vacacionales</li><li>tiendas de barrio</li><li>asesorías</li><li>creadores de contenido</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li class="para">Para</li><li>cafeterías</li><li>talleres</li><li>peluquerías</li><li>clínicas</li><li>fisios</li><li>academias</li><li>restaurantes</li><li>apartamentos vacacionales</li><li>tiendas de barrio</li><li>asesorías</li><li>creadores de contenido</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="te-suena">
+    <div class="envuelve">
+      <div class="cabeza">
+        <p class="mono"><b>//</b> ¿Te suena?</p>
+        <h2 class="titular">Lo bueno de tu negocio no se ve desde Google.</h2>
+        <p class="entrada">Antes de llamarte o de ir, la gente te busca en el móvil. Y mientras tanto, se te van las horas en tareas que nadie ve.</p>
+      </div>
+      <ul class="problemas">
+        <li><span class="mono"><b>01</b></span><h3>Te buscan en Google y sale otro.</h3><p>Tu competencia aparece primero, aunque tú lleves más años en el barrio.</p></li>
+        <li><span class="mono"><b>02</b></span><h3>Todo depende de Instagram.</h3><p>Si cambia el algoritmo o te bloquean la cuenta, desapareces de un día para otro.</p></li>
+        <li><span class="mono"><b>03</b></span><h3>Tu web es de hace diez años.</h3><p>En el móvil no se ve bien y el horario que sale sigue siendo el de antes.</p></li>
+        <li><span class="mono"><b>04</b></span><h3>No sabes si alguien la visita.</h3><p>Pagas el dominio y el hosting cada año, pero no sabes si te trae algún cliente.</p></li>
+        <li><span class="mono"><b>05</b></span><h3>Copias y pegas a todas horas.</h3><p>Del correo al Excel, del Excel a la factura, de la factura a la gestoría. Cada semana, lo mismo.</p></li>
+        <li><span class="mono"><b>06</b></span><h3>Tus números, en veinte Excel.</h3><p>Haces el mismo informe a mano cada mes y nunca terminas de fiarte de él.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="procesos" class="panel">
+    <div class="envuelve">
+      <div class="cabeza">
+        <p class="mono"><b>//</b> Procesos con IA</p>
+        <h2 class="titular">Lo que repites cada semana, que se haga solo.</h2>
+        <p class="entrada">La IA se encarga de lo repetitivo: leer, ordenar, copiar y preparar borradores. Lo que sale a tus clientes o toca tu dinero sigue pasando por ti. Elige un proceso y compáralo.</p>
+      </div>
+      <div class="demo">
+        <div class="mandos">
+          <div class="procesos" role="tablist" aria-label="Procesos de ejemplo">
+            <button role="tab" aria-selected="true" aria-controls="pasos-demo" data-proceso="presupuestos">Presupuestos <small>Talleres, reformas</small></button>
+            <button role="tab" aria-selected="false" aria-controls="pasos-demo" data-proceso="informe">Informe del mes <small>Cualquier negocio</small></button>
+            <button role="tab" aria-selected="false" aria-controls="pasos-demo" data-proceso="citas">Citas y reservas <small>Clínicas, peluquerías</small></button>
+            <button role="tab" aria-selected="false" aria-controls="pasos-demo" data-proceso="facturas">Facturas y gastos <small>Autónomos, pymes</small></button>
+          </div>
+          <div class="interruptor" role="group" aria-label="Cómo se hace">
+            <button type="button" aria-pressed="true" data-modo="mano">A mano</button>
+            <button type="button" aria-pressed="false" data-modo="ia">Con IA</button>
+          </div>
+          <div class="medidor">
+            <p class="mono"><span>Pasos que haces tú</span><b id="cuenta">5 de 5</b></p>
+            <div class="tramos" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i></div>
+          </div>
+          <ul class="leyenda mono" aria-hidden="true">
+            <li style="--c:var(--ocre)">Tú</li>
+            <li style="--c:var(--suave)">Automático</li>
+            <li style="--c:linear-gradient(90deg,var(--suave) 50%,var(--ocre) 50%)">La IA prepara, tú revisas</li>
+          </ul>
+        </div>
+        <div>
+          <ol class="pasos-demo" id="pasos-demo" role="tabpanel" aria-live="polite">
+            <li style="--k:0"><span class="texto">Lees el correo o el WhatsApp con lo que piden</span><span class="quien">Tú</span></li>
+            <li style="--k:1"><span class="texto">Copias los datos a mano en un Excel</span><span class="quien">Tú</span></li>
+            <li style="--k:2"><span class="texto">Buscas tus tarifas y calculas el precio</span><span class="quien">Tú</span></li>
+            <li style="--k:3"><span class="texto">Escribes la respuesta desde cero</span><span class="quien">Tú</span></li>
+            <li style="--k:4"><span class="texto">Apuntas cuándo volver a escribir</span><span class="quien">Tú</span></li>
+          </ol>
+          <div class="nota-demo">
+            <span class="mono">Ejemplos ilustrativos</span>
+            <span class="mono">Antes de automatizar nada, miramos juntos cómo trabajas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="envuelve">
+      <div class="cabeza">
+        <p class="mono"><b>//</b> Servicios</p>
+        <h2 class="titular">Qué puedo hacer por tu negocio.</h2>
+        <p class="entrada">Webs, y también lo que viene detrás: que te encuentren, saber cuánta gente lo hace y quitarte de encima el trabajo repetitivo.</p>
+      </div>
+      <ul class="servicios">
+        <li class="servicio">
+          <span class="mono"><b>Web</b></span>
+          <h3>Web para tu negocio</h3>
+          <p>Unas pocas páginas que explican qué haces, dónde estás y cómo contactarte.</p>
+          <ul><li>Pensada primero para el móvil</li><li>WhatsApp, mapa y horario a la vista</li><li>Preparada para salir en Google</li></ul>
+        </li>
+        <li class="servicio">
+          <span class="mono"><b>Landing</b></span>
+          <h3>Página para una campaña</h3>
+          <p>Una sola página con un objetivo: una oferta, un evento, un curso o un lanzamiento.</p>
+          <ul><li>Un mensaje y un botón claros</li><li>Lista para anuncios y redes</li><li>Sabes cuánta gente la abre</li></ul>
+        </li>
+        <li class="servicio">
+          <span class="mono"><b>Rediseño</b></span>
+          <h3>Tu web, renovada</h3>
+          <p>La web que ya tienes, más rápida, más clara y bien hecha para el móvil.</p>
+          <ul><li>Mantienes tu dominio</li><li>Textos revisados contigo</li><li>Sin perder lo que ya tienes en Google</li></ul>
+        </li>
+        <li class="servicio datos">
+          <span class="mono">Procesos con IA</span>
+          <h3>Tareas que se hacen solas</h3>
+          <p>Lo que repites cada semana, hecho con IA y automatizaciones, con tu revisión donde hace falta.</p>
+          <ul><li>Correos y pedidos leídos y ordenados</li><li>Borradores de respuesta que tú apruebas</li><li>Datos que pasan de un sitio a otro sin tocarlos</li></ul>
+          <a class="enlace" href="#procesos">Ver ejemplos</a>
+        </li>
+        <li class="servicio datos">
+          <span class="mono">Dashboards</span>
+          <h3>Tus números, en un panel</h3>
+          <p>Ventas, reservas o pedidos en un panel que se actualiza solo y se entiende a la primera.</p>
+          <ul><li>Desde Excel, Google Sheets o tu programa</li><li>En Power BI o en una web privada</li><li>Se acabó copiar y pegar cada mes</li></ul>
+        </li>
+        <li class="servicio datos">
+          <span class="mono">Google y medición</span>
+          <h3>Que te encuentren, y saber cuántos</h3>
+          <p>Lo que hace falta para aparecer en las búsquedas de tu zona y medir qué funciona.</p>
+          <ul><li>Search Console y ficha de Google</li><li>Visitas medidas sin cookies</li><li>Un informe al mes, en lenguaje claro</li></ul>
+        </li>
+      </ul>
+
+      <div class="precio">
+        <div>
+          <p class="mono"><b>//</b> ¿Y el precio?</p>
+          <h3 class="titular">Depende de lo que necesites.</h3>
+          <p>Cada negocio pide algo distinto, así que no hay tarifa cerrada. Me cuentas tu caso y te digo precio y plazo antes de empezar, por escrito y sin compromiso.</p>
+          <a class="pildora" href="#contacto">Pedir una propuesta</a>
+        </div>
+        <ul>
+          <li>Cuántas páginas, procesos o informes son</li>
+          <li>Si ya tienes textos, fotos y datos ordenados</li>
+          <li>Con qué programas trabajas hoy</li>
+          <li>Si quieres medición, informes o mantenimiento</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="mantenimiento" class="panel">
+    <div class="envuelve mant">
+      <div>
+        <p class="mono"><b>//</b> Después de publicar</p>
+        <h2 class="titular" style="margin:14px 0 18px">Tu web, siempre al día.</h2>
+        <p class="entrada">Cambiar el horario de verano, subir la carta nueva o saber cuánta gente te visitó este mes. Si quieres, me encargo yo y tú no tienes que pelearte con nada.</p>
+        <div class="planes">
+          <div><span class="mono"><b>Puntual</b></span><strong>Cuando lo necesites</strong><p>Me pides un cambio y te digo lo que cuesta antes de hacerlo.</p></div>
+          <div><span class="mono"><b>Mensual</b></span><strong>Me ocupo yo</strong><p>Cambios del mes, copias de seguridad y un informe de visitas.</p></div>
+        </div>
+      </div>
+      <div class="hoja-mes" aria-label="Ejemplo de un mes de mantenimiento">
+        <header><span class="mono">Un mes de mantenimiento</span><span class="mono" style="color:var(--suave)">Ejemplo</span></header>
+        <ol>
+          <li><span>Horario de Navidad actualizado</span><span>Hecho</span></li>
+          <li><span>Carta nueva con precios de enero</span><span>Hecho</span></li>
+          <li><span>Copia de seguridad de la web</span><span>Hecho</span></li>
+          <li><span>Revisión de velocidad en el móvil</span><span>Hecho</span></li>
+          <li class="curso"><span>Informe de visitas del mes</span><span>En curso</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="webs">
+    <div class="envuelve">
+      <div class="cabeza">
+        <p class="mono"><b>//</b> Webs hechas</p>
+        <h2 class="titular">Webs que ya están funcionando.</h2>
+        <p class="entrada">Proyectos míos y para creadores de aquí, todos en línea. Puedes abrirlos y tocarlos.</p>
+      </div>
+      <ul class="hechas">
+        <li class="hecha">
+          <figure><img src="../assets/abretusobre.jpg" alt="Portada de Abre tu sobre, un test de humor con cromos" loading="lazy"></figure>
+          <div class="texto">
+            <span class="mono"><b>Web propia</b> / abretusobre.es</span>
+            <h3>Abre tu sobre</h3>
+            <p>Un test de humor de tres minutos con su propia identidad: diseño, ilustraciones, versión para compartir en stories y seguimiento semanal en Search Console.</p>
+            <span class="mono etiquetas">Diseño / SEO / Medición sin cookies</span>
+            <div class="vinculos"><a class="enlace" href="https://www.abretusobre.es/?utm_source=web">Abrir la web <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+          </div>
+        </li>
+        <li class="hecha">
+          <figure><img src="../assets/historia-para-gandules.png" alt="Mapa de Canarias con los vídeos de Historia para Gandules" loading="lazy"></figure>
+          <div class="texto">
+            <span class="mono"><b>Para un creador</b> / @historiaparagandules</span>
+            <h3>El mapa de Historia para Gandules</h3>
+            <p>Los vídeos de la cuenta de Luis Cabrera, cada uno en el lugar del que habla, con filtros, buscador y un juego para adivinar dónde pasó cada historia.</p>
+            <span class="mono etiquetas">Mapa interactivo / Datos / Juego</span>
+            <div class="vinculos"><a class="enlace" href="https://henry94bt.github.io/historiaparagandul/site/mapa.html">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+          </div>
+        </li>
+        <li class="hecha">
+          <figure><img src="../assets/gas-tracker.png" alt="Tabla y mapa con las gasolineras más baratas de Canarias" loading="lazy"></figure>
+          <div class="texto">
+            <span class="mono"><b>Web con datos</b> / Canarias Gas Tracker</span>
+            <h3>La gasolina más barata de las islas</h3>
+            <p>Una web que se actualiza sola cada día con los precios oficiales del Ministerio, con filtros por isla y por combustible. Nadie la toca: un proceso automático hace el trabajo.</p>
+            <span class="mono etiquetas">Datos en directo / Automatización</span>
+            <div class="vinculos"><a class="enlace" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir la web <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+          </div>
+        </li>
+        <li class="hecha">
+          <figure><img src="../assets/og.png" alt="Portada de hbtdata.es con el logo de partículas" loading="lazy"></figure>
+          <div class="texto">
+            <span class="mono"><b>Web propia</b> / hbtdata.es</span>
+            <h3>Mi portfolio de datos</h3>
+            <p>Una portada con partículas que cambian de forma al bajar: el logo, las islas, las gasolineras reales. Hecha a mano, sin plantillas, en español y en inglés.</p>
+            <span class="mono etiquetas">Diseño / Animación / SEO</span>
+            <div class="vinculos"><a class="enlace" href="../">Abrir la web <svg class="ico trazo"><use href="#i-fuera"/></svg></a></div>
+          </div>
+        </li>
+      </ul>
+      <div class="tuya">
+        <h3 class="titular">¿Y lo de tu negocio?</h3>
+        <a class="pildora llena" href="#contacto">Cuéntame tu negocio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-trabajo" class="panel">
+    <div class="envuelve">
+      <div class="cabeza">
+        <p class="mono"><b>//</b> Cómo trabajo</p>
+        <h2 class="titular">Trabajar conmigo es sencillo.</h2>
+        <p class="entrada">Sin reuniones eternas ni palabras raras. Tú te ocupas de tu negocio; yo, de que la web lo cuente bien y de que lo repetitivo se haga solo.</p>
+      </div>
+      <ol class="pasos">
+        <li><h3>Me cuentas qué necesitas</h3><p>Por correo, por Instagram o con el formulario de abajo. Con lo básico me vale.</p></li>
+        <li><h3>Miro cómo trabajas</h3><p>Qué haces a mano, con qué programas y dónde se te va el tiempo. Antes de proponer nada.</p></li>
+        <li><h3>Te propongo un plan</h3><p>Qué incluye, cuánto cuesta y cuándo estará. Por escrito, para que no haya sorpresas.</p></li>
+        <li><h3>Lo construyo y lo probamos</h3><p>Te enseño avances y lo probamos juntos con casos reales antes de darlo por bueno.</p></li>
+        <li><h3>Se pone en marcha y se mide</h3><p>Sale a funcionar y medimos si te ahorra tiempo o te trae clientes, para ajustar lo que haga falta.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="por-que">
+    <div class="envuelve yo">
+      <div class="presenta">
+        <img class="foto" src="../assets/henry.jpg" alt="Henry Barrios Thornhill" width="128" height="128">
+        <p class="mono"><b>//</b> Por qué conmigo</p>
+        <h2 class="titular" style="margin:14px 0 20px">Soy Henry.</h2>
+        <p>Soy analista de datos en Las Palmas de Gran Canaria. Llevo años haciendo informes, dashboards y automatizaciones, y programo con IA a diario.</p>
+        <p>Lo que me diferencia: no me quedo en que la web sea bonita o en que la IA sea moderna. Quiero que te ahorre horas o te traiga clientes, y eso se mide.</p>
+        <a class="enlace" href="../">Ver mi portfolio de datos</a>
+      </div>
+      <ul class="razones">
+        <li><h3>Hablas con quien lo hace</h3><p>Sin intermediarios: me escribes a mí y te contesto yo.</p></li>
+        <li><h3>Medido desde el primer día</h3><p>Sabes cuánta gente entra y cuánto tiempo te ahorras.</p></li>
+        <li><h3>Soy de aquí</h3><p>Sé cómo se busca en Canarias y hablo como tus clientes.</p></li>
+        <li><h3>Es tuyo de verdad</h3><p>El dominio, las cuentas y los accesos quedan a tu nombre.</p></li>
+        <li><h3>IA con cabeza</h3><p>Se usa donde ahorra tiempo, y lo importante lo revisas tú.</p></li>
+        <li><h3>Rápido y ligero</h3><p>Hecho a medida, sin plantillas pesadas ni herramientas que no necesitas.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="dudas" class="panel">
+    <div class="envuelve">
+      <div class="cabeza">
+        <p class="mono"><b>//</b> Dudas frecuentes</p>
+        <h2 class="titular">Antes de que preguntes.</h2>
+      </div>
+      <div class="dudas">
+        <details><summary>¿Cuánto cuesta?</summary><p>Depende de cuántas páginas o procesos sean y de lo que tengan que hacer. Te digo el precio antes de empezar, por escrito, y sin compromiso.</p></details>
+        <details><summary>¿Cuánto se tarda?</summary><p>Depende del tamaño y de lo rápido que tengamos textos, fotos o datos. En la propuesta va una fecha de entrega.</p></details>
+        <details><summary>¿Qué hace la IA y qué hago yo?</summary><p>La IA se encarga de lo repetitivo: leer, ordenar, copiar y preparar borradores. Lo que sale a tus clientes o toca tu dinero pasa antes por ti, y siempre sabes qué se hace solo.</p></details>
+        <details><summary>¿Qué pasa con mis datos?</summary><p>Se usan solo los que hagan falta. Antes de empezar te explico dónde se guardan, qué herramienta los procesa y quién puede verlos.</p></details>
+        <details><summary>No tengo textos ni fotos, ¿es un problema?</summary><p>No. Te ayudo a escribir los textos a partir de lo que me cuentes, y vemos juntos qué fotos hacen falta.</p></details>
+        <details><summary>¿Me ayudas con el dominio y el hosting?</summary><p>Sí. Te ayudo a contratarlos a tu nombre, para que sean tuyos aunque algún día dejemos de trabajar juntos.</p></details>
+        <details><summary>¿Saldré en Google?</summary><p>La web sale preparada para que Google la entienda y la dejo dada de alta en sus herramientas. Nadie puede prometerte el primer puesto, pero sí medir cómo vas y mejorar.</p></details>
+        <details><summary>¿Trabajas solo en Gran Canaria?</summary><p>No. Trabajo con negocios de cualquier isla y en remoto; si estás cerca, también podemos vernos.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="llamada">
+    <div class="envuelve">
+      <p class="mono"><b style="color:var(--fondo)">//</b> ¿Empezamos?</p>
+      <h2 class="titular" style="margin-top:14px">¿Qué te quita más tiempo esta semana?</h2>
+      <p>Cuéntamelo: una web que no funciona, un informe eterno o un correo que respondes veinte veces. Te contesto con una propuesta sin compromiso.</p>
+      <a class="pildora llena" href="#contacto">Hablemos</a>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="envuelve">
+      <div>
+        <p class="mono"><b>//</b> Contacto</p>
+        <h2 class="titular">Cuéntame tu negocio.</h2>
+        <p class="entrada">Rellena esto en un minuto o escríbeme por donde prefieras. Cuanto más me cuentes, mejor te podré ayudar.</p>
+        <ul class="vias">
+          <li><a href="mailto:hbtdataanalyst@gmail.com"><svg class="ico trazo"><use href="#i-correo"/></svg><span><strong>Correo</strong><small>hbtdataanalyst@gmail.com</small></span><svg class="ico trazo flecha"><use href="#i-fuera"/></svg></a></li>
+          <li><a href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg><span><strong>Instagram</strong><small>Mensaje directo a @hbtdata</small></span><svg class="ico trazo flecha"><use href="#i-fuera"/></svg></a></li>
+          <li><a href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg><span><strong>LinkedIn</strong><small>Henry Barrios Thornhill</small></span><svg class="ico trazo flecha"><use href="#i-fuera"/></svg></a></li>
+        </ul>
+        <p class="mono" style="display:flex;align-items:center;gap:10px"><svg class="ico trazo" style="width:15px;height:15px"><use href="#i-reloj"/></svg>Te respondo lo antes posible. Sin compromiso.</p>
+      </div>
+
+      <form class="formulario" data-correo="hbtdataanalyst@gmail.com" data-asunto="hbtdata.es/webs" data-idioma="es">
+        <fieldset>
+          <legend>¿Qué necesitas?</legend>
+          <label class="chip"><input type="radio" name="necesito" value="Web nueva" checked><span>Web nueva</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Rediseño"><span>Rediseño</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Página para una campaña"><span>Página para una campaña</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Procesos con IA"><span>Procesos con IA</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Dashboard o informe"><span>Dashboard o informe</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Google y medición"><span>Google y medición</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Aún no lo sé"><span>Aún no lo sé</span></label>
+        </fieldset>
+        <div class="dos">
+          <label>Nombre<input type="text" name="nombre" required autocomplete="name" placeholder="¿Cómo te llamas?"></label>
+          <label>Correo o teléfono<input type="text" name="contacto" required autocomplete="email" placeholder="Para poder responderte"></label>
+        </div>
+        <label><span>Tu negocio <small>(opcional)</small></span><input type="text" name="negocio" autocomplete="organization" placeholder="Ej.: peluquería en Triana"></label>
+        <label>Cuéntame brevemente qué necesitas<textarea name="mensaje" placeholder="Ej.: cada semana paso a mano los pedidos del correo a un Excel y quiero dejar de hacerlo."></textarea></label>
+        <button class="pildora llena" type="submit">Preparar el correo</button>
+        <p class="aviso">Al pulsar, se abre tu programa de correo con el mensaje ya escrito. Tus datos solo se usan para responderte.</p>
+        <p class="estado" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envuelve">
+    <span class="mono">hbt<b>data</b> / Webs y procesos con IA para negocios / Las Palmas de Gran Canaria</span>
+    <nav class="redes" aria-label="Redes">
+      <a href="https://instagram.com/hbtdata" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+      <a href="https://linkedin.com/in/henry-data-analyst-" aria-label="LinkedIn"><svg class="ico"><use href="#i-linkedin"/></svg></a>
+      <a href="https://github.com/henry94bt" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a>
+      <a href="https://www.tiktok.com/@hbtdata" aria-label="TikTok"><svg class="ico"><use href="#i-tiktok"/></svg></a>
+    </nav>
+    <a class="mono enlace" href="../">© 2026 Henry Barrios Thornhill / Volver al portfolio</a>
+  </div>
+</footer>
+
+<script src="../assets/campo.js"></script>
+<script src="../assets/formulario.js"></script>
+<script>
+(function () {
+  'use strict';
+  var reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // La cabecera gana fondo al bajar.
+  var barra = document.querySelector('.barra');
+  function fondo() { barra.classList.toggle('con-fondo', window.scrollY > 40); }
+  window.addEventListener('scroll', fondo, { passive: true }); fondo();
+
+  // ---------- Procesos con IA: un proceso, a mano y con IA ----------
+  // quién hace cada paso: t = tú, a = automático, i = la IA lo prepara y tú lo revisas
+  var PROCESOS = {
+    presupuestos: {
+      mano: ['Lees el correo o el WhatsApp con lo que piden', 'Copias los datos a mano en un Excel', 'Buscas tus tarifas y calculas el precio', 'Escribes la respuesta desde cero', 'Apuntas cuándo volver a escribir'],
+      ia: [['La petición llega por un formulario o al correo', 'a'], ['La IA saca los datos y los ordena en tu hoja', 'a'], ['El precio sale de tus propias tarifas', 'a'], ['La IA prepara la respuesta; tú la revisas y la envías', 'i'], ['Te avisa si en tres días no han contestado', 'a']]
+    },
+    informe: {
+      mano: ['Descargas los datos de cada sitio: ventas, redes, web', 'Los pegas en un Excel', 'Arreglas formatos y fechas que no cuadran', 'Rehaces los gráficos de cada mes', 'Escribes las conclusiones'],
+      ia: [['Los datos se descargan solos cada mes', 'a'], ['Se juntan en una sola tabla', 'a'], ['Se limpian siempre con las mismas reglas', 'a'], ['El panel se actualiza solo', 'a'], ['La IA resume qué cambió; tú decides qué hacer', 'i']]
+    },
+    citas: {
+      mano: ['Contestas «¿tienes hueco el jueves?»', 'Miras la agenda', 'Apuntas la cita a mano', 'Mandas el recordatorio el día antes', 'Persigues a quien no vino'],
+      ia: [['La web enseña tus huecos libres', 'a'], ['El cliente elige la hora él solo', 'a'], ['La cita entra en tu agenda', 'a'], ['El recordatorio sale solo', 'a'], ['La IA te propone qué hacer con los cambios; decides tú', 'i']]
+    },
+    facturas: {
+      mano: ['Buscas las facturas en el correo', 'Las descargas una a una', 'Tecleas importe, fecha y proveedor', 'Las clasificas por tipo de gasto', 'Se las mandas a la gestoría'],
+      ia: [['Las facturas que llegan se guardan solas', 'a'], ['La IA lee importe, fecha y proveedor', 'a'], ['Quedan en tu hoja, clasificadas', 'a'], ['Revisas solo las que la IA marca como dudosas', 'i'], ['La gestoría recibe la carpeta del mes', 'a']]
+    }
+  };
+  var QUIEN = { t: ['Tú', ''], a: ['Automático', 'auto'], i: ['IA · revisas tú', 'ia'] };
+  var lista = document.getElementById('pasos-demo'), filas = [].slice.call(lista.children);
+  var tramos = [].slice.call(document.querySelectorAll('.medidor .tramos i')), cuenta = document.getElementById('cuenta');
+  var interruptor = document.querySelector('.interruptor'), modos = [].slice.call(interruptor.querySelectorAll('button'));
+  var pestanas = [].slice.call(document.querySelectorAll('.procesos [role=tab]'));
+  var estado = { proceso: 'presupuestos', modo: 'mano' }, tocado = false;
+
+  function pinta(animar) {
+    var p = PROCESOS[estado.proceso];
+    var pasos = estado.modo === 'mano' ? p.mano.map(function (t) { return [t, 't']; }) : p.ia;
+    function aplica() {
+      var tuyos = 0;
+      pasos.forEach(function (paso, k) {
+        var q = QUIEN[paso[1]];
+        filas[k].querySelector('.texto').textContent = paso[0];
+        var et = filas[k].querySelector('.quien');
+        et.textContent = q[0]; et.className = 'quien ' + q[1];
+        tramos[k].className = q[1];
+        if (paso[1] !== 'a') tuyos++;
+      });
+      cuenta.textContent = tuyos + ' de ' + pasos.length;
+      lista.classList.remove('cambiando');
+    }
+    if (animar && !reducido) { lista.classList.add('cambiando'); setTimeout(aplica, 320); } else aplica();
+    interruptor.classList.toggle('ia', estado.modo === 'ia');
+    modos.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.modo === estado.modo ? 'true' : 'false'); });
+    pestanas.forEach(function (b) { b.setAttribute('aria-selected', b.dataset.proceso === estado.proceso ? 'true' : 'false'); b.tabIndex = b.dataset.proceso === estado.proceso ? 0 : -1; });
+  }
+  modos.forEach(function (b) { b.addEventListener('click', function () { tocado = true; if (estado.modo !== b.dataset.modo) { estado.modo = b.dataset.modo; pinta(true); } }); });
+  pestanas.forEach(function (b, i) {
+    b.addEventListener('click', function () { tocado = true; estado.proceso = b.dataset.proceso; estado.modo = 'mano'; pinta(true); });
+    b.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = pestanas[(i + d + pestanas.length) % pestanas.length]; n.focus(); n.click();
+    });
+  });
+  pinta(false);
+  // La primera vez que la sección se ve, el ejemplo pasa solo de «A mano» a «Con IA».
+  if (!reducido && 'IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      obs.disconnect();
+      setTimeout(function () { if (!tocado) { estado.modo = 'ia'; pinta(true); } }, 1400);
+    }, { threshold: 0.5 });
+    obs.observe(lista);
+  }
+
+  // ---------- Partículas de la portada: una web y un móvil hechos de puntos ----------
+  var canvas = document.getElementById('campo');
+  var movil = window.matchMedia('(max-width: 900px)').matches;
+  var campo = null;
+  try { campo = window.CampoParticulas && window.CampoParticulas({ canvas: canvas, particulas: movil ? 12000 : 24000, tam: movil ? 3.2 : 3.8, alfa: movil ? 0.5 : 0.4 }); } catch (e) { campo = null; }
+  if (!campo) { document.documentElement.classList.add('sin-webgl'); canvas.style.display = 'none'; return; }
+
+  var raton = [9, 9], prev = null, fuerza = 0, objetivo = 0, giro = [0, 0], visible = true;
+  canvas.parentNode.addEventListener('pointermove', function (e) {
+    var r = canvas.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width * 2 - 1, y = -((e.clientY - r.top) / r.height * 2 - 1);
+    if (prev) objetivo = Math.min(1, objetivo + Math.hypot(x - prev[0], y - prev[1]) * 5);
+    prev = [x, y]; raton = [x, y];
+  });
+  canvas.parentNode.addEventListener('pointerleave', function () { prev = null; });
+  new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(canvas);
+  window.addEventListener('resize', function () { campo.mide(); });
+
+  var inicio = performance.now(), ultimo = inicio;
+  function cuadro(ahora) {
+    var dt = Math.min(0.05, (ahora - ultimo) / 1000); ultimo = ahora;
+    if (visible) {
+      var t = (ahora - inicio) / 1000, intro = reducido ? 1 : Math.min(1, t / 2.4);
+      fuerza += (objetivo - fuerza) * Math.min(1, dt * 6); objetivo *= Math.pow(0.08, dt);
+      var g = reducido ? [0, 0] : [Math.sin(t * 0.25) * 0.18 - 0.12 + (raton[0] < 5 ? raton[0] * 0.12 : 0), raton[1] < 5 ? raton[1] * 0.08 : 0];
+      giro[0] += (g[0] - giro[0]) * Math.min(1, dt * 2); giro[1] += (g[1] - giro[1]) * Math.min(1, dt * 2);
+      var asp = canvas.clientWidth / Math.max(1, canvas.clientHeight);
+      campo.pinta({
+        de: 'esfera', a: 'ventana', mezcla: 1 - Math.pow(1 - intro, 3), explosion: reducido ? 0 : 0.5,
+        t: t, giro: giro, escala: Math.min(1.18, asp / 1.05), desplaza: [0, 0],
+        raton: raton, fuerza: reducido ? 0 : fuerza, movimiento: reducido ? 0 : 1
+      });
+    }
+    requestAnimationFrame(cuadro);
+  }
+  campo.precarga(['esfera', 'ventana']);
+  requestAnimationFrame(cuadro);
+})();
+</script>
+</body>
+</html>

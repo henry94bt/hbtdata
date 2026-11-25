@@ -199,6 +199,41 @@
   .redes-grandes .ico{width:22px;height:22px;color:var(--ocre)}
   .redes-grandes strong{display:block;font-weight:400;line-height:1.2}
   .redes-grandes small{font-family:var(--mono);font-size:.74rem;color:var(--tenue)}
+  /* formulario (igual que en /webs/) */
+  .formulario{border:1px solid var(--linea);border-radius:20px;padding:30px;background:rgba(8,42,51,.6);display:grid;gap:20px}
+  .formulario fieldset{border:0;display:flex;flex-wrap:wrap;gap:8px}
+  .formulario legend{font-weight:400;margin-bottom:12px;width:100%}
+  .formulario .chip{position:relative}
+  .formulario .chip input{position:absolute;opacity:0;width:1px;height:1px}
+  .formulario .chip span{display:inline-block;padding:10px 16px;border:1px solid rgba(247,243,236,.26);border-radius:999px;font-size:.9rem;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+  .formulario .chip input:checked + span{background:var(--claro);border-color:var(--claro);color:var(--fondo);font-weight:400}
+  .formulario .chip input:focus-visible + span{outline:2px solid var(--ocre);outline-offset:3px}
+  .formulario .dos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .formulario label{display:grid;gap:8px;font-weight:400;font-size:.95rem}
+  .formulario label small{color:var(--tenue);font-weight:300}
+  .formulario input[type=text],.formulario textarea{width:100%;font:inherit;font-weight:300;color:var(--claro);background:rgba(4,22,28,.6);border:1px solid var(--linea);border-radius:12px;padding:13px 14px}
+  .formulario input::placeholder,.formulario textarea::placeholder{color:rgba(247,243,236,.4)}
+  .formulario input:focus,.formulario textarea:focus{outline:none;border-color:var(--ocre)}
+  .formulario textarea{min-height:120px;resize:vertical}
+  .formulario button{justify-content:center;width:100%;padding:17px}
+  .formulario .aviso{font-size:.84rem;color:var(--tenue)}
+  .formulario .estado{font-size:.92rem;border-left:2px solid var(--suave);padding-left:12px}
+  .formulario .estado a{color:var(--suave)}
+  @media(max-width:560px){.formulario{padding:22px}.formulario .dos{grid-template-columns:1fr}}
+
+  .pildora.llena{background:var(--ocre);border-color:var(--ocre);color:var(--fondo)}
+  .pildora.llena:hover{background:#F6BE62;color:var(--fondo)}
+  .contacto .rejilla-contacto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:start}
+  .contacto .redes-grandes{grid-template-columns:1fr 1fr}
+  .contacto .rejilla-contacto .correo{font-size:clamp(1.3rem,2.5vw,2.2rem)}
+  .contacto .intro-contacto{font-family:var(--mono);font-size:.9rem;color:var(--tenue);max-width:46ch;margin:14px 0 6px}
+  .negocios{display:flex;align-items:center;gap:18px;margin-top:14px;padding:20px 22px;border:1px dashed rgba(240,168,64,.55);border-radius:14px;text-decoration:none;transition:border-color .2s,background .2s}
+  .negocios:hover{border-color:var(--ocre);background:rgba(240,168,64,.06)}
+  .negocios strong{display:block;font-weight:400}
+  .negocios small{font-family:var(--mono);font-size:.74rem;color:var(--tenue)}
+  .negocios .ico{margin-left:auto;width:16px;height:16px;color:var(--ocre)}
+  @media(max-width:900px){.contacto .rejilla-contacto{grid-template-columns:1fr;gap:40px}}
+  @media(max-width:480px){.contacto .redes-grandes{grid-template-columns:1fr}}
   footer{position:relative;z-index:2;background:var(--fondo);border-top:1px solid var(--linea);padding:24px var(--lado);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
   @media(prefers-reduced-motion:reduce){
@@ -336,6 +371,7 @@
     <li><a href="#como-trabajo"><span class="mono">03</span><span class="titular">Cómo trabajo</span></a></li>
     <li><a href="#sobre-mi"><span class="mono">04</span><span class="titular">Sobre mí</span></a></li>
     <li><a href="#contacto"><span class="mono">05</span><span class="titular">Contacto</span></a></li>
+    <li><a href="webs/"><span class="mono">06</span><span class="titular">Para negocios</span></a></li>
   </ol>
   <div class="pie-menu">
     <a class="pildora" href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg>Instagram</a>
@@ -425,8 +461,9 @@
         <h2 class="titular">¿Tienes unos datos y una pregunta?</h2>
         <p class="texto">Escríbeme si quieres comentar un proyecto, proponer un dato de aquí que merezca contarse o encargar un análisis o un dashboard.</p>
         <div class="acciones">
-          <a class="pildora" href="mailto:hbtdataanalyst@gmail.com"><svg class="ico trazo"><use href="#i-correo"/></svg>Escríbeme</a>
+          <a class="pildora" href="#contacto"><svg class="ico trazo"><use href="#i-correo"/></svg>Escríbeme</a>
           <a class="enlace" href="#proyectos">Ver todos los proyectos</a>
+          <a class="enlace" href="webs/">Para negocios</a>
         </div>
       </article>
 
@@ -503,15 +540,42 @@
   </section>
 
   <section class="seccion contacto" id="contacto">
-    <p class="mono"><b>//</b> Contacto</p>
-    <h2 class="titular" style="margin:16px 0 8px">Escríbeme.</h2>
-    <a class="correo" href="mailto:hbtdataanalyst@gmail.com">hbtdataanalyst@gmail.com</a>
-    <ul class="redes-grandes">
-      <li><a href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg><span><strong>Instagram</strong><small>@hbtdata</small></span></a></li>
-      <li><a href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg><span><strong>LinkedIn</strong><small>Henry Barrios Thornhill</small></span></a></li>
-      <li><a href="https://github.com/henry94bt"><svg class="ico"><use href="#i-github"/></svg><span><strong>GitHub</strong><small>henry94bt</small></span></a></li>
-      <li><a href="https://www.tiktok.com/@hbtdata"><svg class="ico"><use href="#i-tiktok"/></svg><span><strong>TikTok</strong><small>@hbtdata</small></span></a></li>
-    </ul>
+    <div class="rejilla-contacto">
+      <div>
+        <p class="mono"><b>//</b> Contacto</p>
+        <h2 class="titular" style="margin:16px 0 8px">Escríbeme.</h2>
+        <p class="intro-contacto">Para una oferta de trabajo, un análisis, un dashboard, un proceso con IA o una web para tu negocio. Te respondo lo antes posible.</p>
+        <a class="correo" href="mailto:hbtdataanalyst@gmail.com">hbtdataanalyst@gmail.com</a>
+        <ul class="redes-grandes">
+          <li><a href="https://instagram.com/hbtdata"><svg class="ico"><use href="#i-instagram"/></svg><span><strong>Instagram</strong><small>@hbtdata</small></span></a></li>
+          <li><a href="https://linkedin.com/in/henry-data-analyst-"><svg class="ico"><use href="#i-linkedin"/></svg><span><strong>LinkedIn</strong><small>Henry Barrios Thornhill</small></span></a></li>
+          <li><a href="https://github.com/henry94bt"><svg class="ico"><use href="#i-github"/></svg><span><strong>GitHub</strong><small>henry94bt</small></span></a></li>
+          <li><a href="https://www.tiktok.com/@hbtdata"><svg class="ico"><use href="#i-tiktok"/></svg><span><strong>TikTok</strong><small>@hbtdata</small></span></a></li>
+        </ul>
+        <a class="negocios" href="webs/"><span><strong>¿Tienes un negocio?</strong><small>Webs y procesos con IA para negocios de Canarias</small></span><svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+      </div>
+
+      <form class="formulario" data-correo="hbtdataanalyst@gmail.com" data-asunto="hbtdata.es" data-idioma="es">
+        <fieldset>
+          <legend>¿Qué necesitas?</legend>
+          <label class="chip"><input type="radio" name="necesito" value="Oferta de trabajo" checked><span>Oferta de trabajo</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Análisis o dashboard"><span>Análisis o dashboard</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Procesos con IA"><span>Procesos con IA</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Web para mi negocio"><span>Web para mi negocio</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Colaboración o prensa"><span>Colaboración o prensa</span></label>
+          <label class="chip"><input type="radio" name="necesito" value="Otra cosa"><span>Otra cosa</span></label>
+        </fieldset>
+        <div class="dos">
+          <label>Nombre<input type="text" name="nombre" required autocomplete="name" placeholder="¿Cómo te llamas?"></label>
+          <label>Correo o teléfono<input type="text" name="contacto" required autocomplete="email" placeholder="Para poder responderte"></label>
+        </div>
+        <label><span>Empresa o negocio <small>(opcional)</small></span><input type="text" name="negocio" autocomplete="organization" placeholder="Ej.: una consultora en remoto o un taller en Telde"></label>
+        <label>Cuéntame brevemente<textarea name="mensaje" placeholder="Ej.: buscamos un analista de datos para automatizar los informes de ventas."></textarea></label>
+        <button class="pildora llena" type="submit">Preparar el correo</button>
+        <p class="aviso">Al pulsar, se abre tu programa de correo con el mensaje ya escrito. Tus datos solo se usan para responderte.</p>
+        <p class="estado" role="status" hidden></p>
+      </form>
+    </div>
   </section>
 </main>
 
@@ -528,6 +592,7 @@
 
 <script src="assets/campo-datos.js"></script>
 <script src="assets/campo.js"></script>
+<script src="assets/formulario.js"></script>
 <script>
 (function () {
   'use strict';
