@@ -1,0 +1,96 @@
+/* Sección de juegos de hbtdata.es: base común a /juegos/, /juegos/test/ y /juegos/donde-esta/.
+   Misma identidad que la portada y /webs/: paleta Océano y calima, Poppins y JetBrains Mono. */
+:root{
+  --fondo:#04161C;
+  --panel:#082A33;
+  --petroleo:#0A3440;
+  --claro:#F7F3EC;
+  --tenue:rgba(247,243,236,.68);
+  --linea:rgba(247,243,236,.14);
+  --ocre:#F0A840;
+  --ocre-oscuro:#C46E14;
+  --suave:#96D6D6;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --sans:'Poppins',system-ui,sans-serif;
+  --lado:clamp(20px,4vw,56px);
+  --ancho:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--sans);font-weight:300;background:var(--fondo);color:var(--claro);line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ocre);outline-offset:4px;border-radius:4px}
+[hidden]{display:none !important}
+.ico{width:18px;height:18px;flex:none;fill:currentColor}
+.ico.trazo{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.envuelve{max-width:var(--ancho);margin:0 auto;padding:0 var(--lado)}
+.mono{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+.mono b{font-weight:500;color:var(--ocre)}
+.titular{font-weight:200;text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+.entrada{max-width:58ch;color:var(--tenue);font-size:1.05rem}
+.solo-lector{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.pildora{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border:1px solid rgba(247,243,236,.32);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--claro);background:none;cursor:pointer;transition:border-color .2s,color .2s,background .2s,opacity .2s}
+.pildora:hover{border-color:var(--ocre);color:var(--ocre)}
+.pildora.llena{background:var(--ocre);border-color:var(--ocre);color:var(--fondo)}
+.pildora.llena:hover{background:#F6BE62;color:var(--fondo)}
+.pildora:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
+.pildora .ico{width:14px;height:14px}
+.enlace{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);text-decoration:none}
+.enlace:hover{color:var(--ocre)}
+
+/* ---------- cabecera ---------- */
+.barra{position:fixed;inset:0 0 auto;z-index:1000;transition:background .3s}
+.barra .envuelve{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px;max-width:none}
+.barra.con-fondo,.barra.fija{background:rgba(4,22,28,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.firma{display:flex;align-items:center;gap:12px;text-decoration:none}
+.sello{width:34px;height:34px;border:1px solid rgba(247,243,236,.4);border-radius:50%;display:grid;place-items:center}
+.sello svg{width:15px;height:15px}
+.barra nav{display:flex;gap:24px}
+.barra nav a{color:var(--tenue);text-decoration:none}
+.barra nav a:hover,.barra nav a[aria-current]{color:var(--ocre)}
+.barra .pildora{padding:11px 18px}
+@media(max-width:820px){.barra nav{display:none}}
+@media(max-width:520px){.firma .mono span{display:none}}
+
+footer{border-top:1px solid var(--linea);padding:26px 0}
+footer .envuelve{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;max-width:none}
+footer .redes{display:flex;gap:16px}
+footer .redes a{color:var(--tenue)}
+footer .redes a:hover{color:var(--ocre)}
+
+/* ---------- piezas de juego compartidas ---------- */
+.tablero{max-width:760px;margin:0 auto;padding:110px var(--lado) 80px}
+.progreso{display:flex;gap:6px;margin:18px 0 34px}
+.progreso i{flex:1;height:4px;border-radius:4px;background:var(--linea);transition:background .3s}
+.progreso i.bien{background:var(--ocre)}
+.progreso i.mal{background:rgba(247,243,236,.38)}
+.progreso i.ahora{background:var(--suave)}
+
+.opcion{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;padding:16px 20px;border:1px solid rgba(247,243,236,.24);border-radius:14px;font-size:1.02rem;font-weight:400;transition:border-color .15s,background .15s,color .15s}
+.opcion:hover:not(:disabled){border-color:var(--ocre)}
+.opcion:disabled{cursor:default}
+.opcion.correcta{border-color:var(--ocre);background:rgba(240,168,64,.14)}
+.opcion.elegida.fallo{border-color:rgba(247,243,236,.5);background:rgba(247,243,236,.06);color:var(--tenue)}
+.opcion .marca{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+.opcion.correcta .marca{color:var(--ocre)}
+
+.respuesta{margin-top:26px;border-left:2px solid var(--suave);padding:4px 0 4px 18px}
+.respuesta.bien{border-color:var(--ocre)}
+.respuesta h3{font-weight:400;font-size:1.25rem;margin-bottom:6px}
+.respuesta p{color:var(--tenue)}
+.fuente{margin-top:12px;font-size:.84rem;color:var(--tenue)}
+.fuente a{color:var(--suave)}
+.fuente span+span::before{content:" · "}
+
+.compartir{display:grid;gap:22px;margin-top:30px}
+.compartir img{width:min(100%,360px);height:auto;aspect-ratio:4/5;border-radius:16px;border:1px solid var(--linea)}
+.compartir .botones{display:flex;flex-wrap:wrap;gap:12px}
+.aviso-copia{font-size:.88rem;color:var(--suave);min-height:1.4em}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none !important;animation:none !important}
+}

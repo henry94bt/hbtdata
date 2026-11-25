@@ -31,6 +31,35 @@ Portfolio y ficha profesional. Datos públicos de Canarias, dashboards y automat
 
 https://hbtdata.es/webs/ · Webs para negocios de Canarias (web nueva, rediseño, páginas para campañas), SEO local y medición sin cookies, dashboards y automatización de procesos con IA con revisión humana. Presupuesto sin compromiso: hbtdataanalyst@gmail.com
 
+## Juegos
+
+https://hbtdata.es/juegos/ · Juegos cortos con datos oficiales de Canarias, sin registro ni cookies:
+- **Test de Canarias** (https://hbtdata.es/juegos/test/): 10 preguntas sobre islas y municipios (Padrón del INE a 1 de enero de 2025, superficie del ISTAC, UNESCO, IGN). Cada respuesta enseña la fuente y la fecha.
+- **¿Dónde está?** (https://hbtdata.es/juegos/donde-esta/): localizar pueblos, roques, playas y lugares en un mapa de las islas; puntúa por kilómetros de distancia. Coordenadas del IGN (NGBE y BTN) y contorno de las islas del ISTAC.
+
+
+
+## Recursos de Claude
+
+https://hbtdata.es/recursos/ · Prompts y conectores de Claude que usa Henry Barrios Thornhill. Gratis, sin registro. Página personal sin relación con Anthropic.
+
+- **Limpia un CSV antes de analizarlo** (prompt): Para que Claude revise un archivo, te proponga reglas de limpieza y no toque nada sin tu permiso. https://hbtdata.es/recursos/limpiar-un-csv/
+- **Resume un informe de KPIs en cinco líneas** (prompt): Un resumen para quien no tiene tiempo: qué cambió de verdad, qué es ruido y qué mirar el mes que viene. https://hbtdata.es/recursos/resumen-de-kpis/
+- **Primer vistazo a unos datos que no conoces** (prompt): Antes de hacer gráficos: qué hay en el archivo, qué preguntas puede responder y qué no. https://hbtdata.es/recursos/primer-vistazo-a-unos-datos/
+- **Elige el gráfico adecuado (y que no engañe)** (prompt): Le cuentas qué quieres enseñar y Claude te recomienda el gráfico, te explica por qué y te avisa de lo que haría que engañe. https://hbtdata.es/recursos/elige-el-grafico/
+- **Una consulta SQL que entiendas línea a línea** (prompt): Claude escribe la consulta, la explica paso a paso y te dice con qué casos raros puede fallar. https://hbtdata.es/recursos/consulta-sql-explicada/
+- **De una exportación de redes a un informe mensual** (prompt): Pegas lo que exporta Instagram, TikTok o Meta Business y sale un informe ordenado, siempre con la misma estructura. https://hbtdata.es/recursos/informe-mensual-de-redes/
+- **Unifica nombres escritos de mil maneras** (prompt): Municipios, islas, productos o proveedores escritos de formas distintas, convertidos en una tabla de equivalencias que puedes revisar. https://hbtdata.es/recursos/unifica-categorias/
+- **Descubre qué parte de una tarea se puede automatizar** (prompt): Describes algo que haces a mano y Claude lo parte en pasos: qué puede hacerse solo, qué puede preparar la IA para que lo revises y qué tiene que seguir siendo tuyo. https://hbtdata.es/recursos/que-parte-se-puede-automatizar/
+- **La fórmula de Excel o Google Sheets que necesitas, explicada** (prompt): Le cuentas lo que quieres calcular, con qué columnas, y te da la fórmula, cómo funciona y cómo comprobarla. https://hbtdata.es/recursos/formula-de-hoja-de-calculo/
+- **Un script de Python que puedas mantener tú** (prompt): Para pedir un script pequeño que haga algo repetitivo, con comentarios, instrucciones para ejecutarlo y una prueba. https://hbtdata.es/recursos/script-de-python-explicado/
+- **De un dato a un carrusel de Instagram** (prompt): Le das un dato con su fuente y te propone un carrusel de seis diapositivas, con gancho, gráfico, contexto y cierre. https://hbtdata.es/recursos/carrusel-desde-un-dato/
+- **Diez ideas de contenido que puedas hacer de verdad** (prompt): Ideas ajustadas a lo que sabes, al tiempo que tienes y a tu público, con el formato y el primer paso de cada una. https://hbtdata.es/recursos/ideas-de-contenido/
+- **Planifica la semana con lo que de verdad cabe** (prompt): Vuelcas todo lo pendiente y Claude te ayuda a decidir qué entra esta semana, qué espera y qué sobra. https://hbtdata.es/recursos/planifica-la-semana/
+- **Resume un documento largo sin perder lo importante** (prompt): Contratos, bases de ayudas, normativas o informes de 40 páginas, resumidos con lo que te toca hacer y los plazos. https://hbtdata.es/recursos/resume-un-documento-largo/
+- **Decide entre varias opciones con una tabla** (prompt): Para comparar con criterio: móviles, ofertas de trabajo, herramientas o pisos, con pesos que decides tú. https://hbtdata.es/recursos/decide-entre-opciones/
+- **Los conectores de Claude que uso y para qué** (conectores): Qué aplicaciones tengo conectadas a Claude, qué le pido a cada una y dónde se activan. Todo enlaza a la fuente oficial. https://hbtdata.es/recursos/conectores-que-uso/
+
 ## Cómo trabajo
 
 Barras desde cero, medianas en vez de medias, y todo gráfico con fecha y fuente. El código y los datos son públicos cuando el proyecto lo permite.

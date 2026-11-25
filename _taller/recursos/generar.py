@@ -188,7 +188,7 @@ def portada(datos, lista):
     tipos_nombres = {k: v["nombre"] for k, v in datos["tipos"].items()}
     tarjetas = "".join(tarjeta(r, datos, raiz) for r in lista)
     return (cabeza(titulo, descripcion, url, jsonld, raiz)
-            + "<body>\n" + iconos() + "\n" + barra(raiz, tipos=datos["tipos"]) + f"""
+            + "<body>\n" + iconos() + "\n" + barra(raiz, tipos={k: v for k, v in datos["tipos"].items() if any(r["tipo"] == k for r in lista)}) + f"""
 <main>
   <section class="portada">
     <div class="envuelve">
@@ -382,7 +382,7 @@ def ficha(r, datos, lista):
                   for x in parecidos[:4])
 
     return (cabeza(titulo, r["resumen"], url, jsonld, raiz, noindex=r["estado"] == "borrador")
-            + '<body class="ficha-pagina">\n' + iconos() + "\n" + barra(raiz, actual=r["tipo"], tipos=datos["tipos"]) + f"""
+            + '<body class="ficha-pagina">\n' + iconos() + "\n" + barra(raiz, actual=r["tipo"], tipos={k: v for k, v in datos["tipos"].items() if any(x["tipo"] == k for x in lista)}) + f"""
 <main>
   <section class="ficha-cabeza">
     <div class="envuelve">
@@ -442,8 +442,12 @@ def actualiza_llms(lista, datos):
     txt = ruta.read_text(encoding="utf-8")
     txt = re.sub(r"\n## Recursos de Claude\n.*?(?=\n## |\Z)", "\n", txt, flags=re.S)
     lineas = [f"- **{r['titulo']}** ({datos['tipos'][r['tipo']]['uno'].lower()}): {r['resumen']} {DOMINIO}/recursos/{r['slug']}/" for r in lista]
+    corto = {"prompt": "prompts", "skill": "skills", "plugin": "conectores", "pdf": "guías en PDF"}
+    nombres = [corto[k] for k in datos["tipos"] if any(r["tipo"] == k for r in lista)]
+    tipos_txt = (", ".join(nombres[:-1]) + " y " + nombres[-1]) if len(nombres) > 1 else nombres[0]
+    tipos_txt = tipos_txt[0].upper() + tipos_txt[1:]
     bloque = ("\n## Recursos de Claude\n\n"
-              f"{DOMINIO}/recursos/ · Prompts, skills, conectores y guías en PDF de Claude que usa Henry Barrios Thornhill. "
+              f"{DOMINIO}/recursos/ · {tipos_txt} de Claude que usa Henry Barrios Thornhill. "
               "Gratis, sin registro. Página personal sin relación con Anthropic.\n\n" + "\n".join(lineas) + "\n")
     txt = txt.replace("\n## Cómo trabajo", bloque + "\n## Cómo trabajo", 1)
     ruta.write_text(txt, encoding="utf-8")

@@ -20,6 +20,8 @@ RAIZ = Path(__file__).resolve().parents[2]
 CAPTURAS = Path(sys.argv[1] if len(sys.argv) > 1 else "/tmp/capturas-recursos")
 CAPTURAS.mkdir(parents=True, exist_ok=True)
 DATOS = json.loads((Path(__file__).parent / "recursos.json").read_text(encoding="utf-8"))
+# solo los recursos que están generados (en la versión publicada no salen los borradores)
+DATOS["recursos"] = [r for r in DATOS["recursos"] if (RAIZ / "recursos" / r["slug"] / "index.html").exists()]
 
 fallos = []
 
