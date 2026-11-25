@@ -1,0 +1,770 @@
+{
+ "titulo": "Test de Canarias",
+ "url": "https://hbtdata.es/juegos/test/",
+ "partida": 10,
+ "actualizado": "2026-11-25",
+ "niveles": [
+  {
+   "desde": 0,
+   "titulo": "Recién llegado",
+   "texto": "Hay mucha isla por descubrir. Repite y verás."
+  },
+  {
+   "desde": 4,
+   "titulo": "De guagua y paseo",
+   "texto": "Te mueves bien, pero alguna isla se te escapa."
+  },
+  {
+   "desde": 7,
+   "titulo": "Canario de manual",
+   "texto": "Te sabes las islas de punta a punta."
+  },
+  {
+   "desde": 10,
+   "titulo": "Enciclopedia isleña",
+   "texto": "Ni un fallo. Esto ya es de ISTAC."
+  }
+ ],
+ "preguntas": [
+  {
+   "id": "pn-garajonay",
+   "tipo": "isla",
+   "enunciado": "¿En qué isla está el Parque Nacional de Garajonay?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "La Gomera",
+   "dato": "Garajonay está en La Gomera. Es parque nacional desde 1981 y Patrimonio Mundial desde 1986.",
+   "fuente": [
+    {
+     "nombre": "Gobierno de Canarias · Parques Nacionales de Canarias",
+     "url": "https://www.gobiernodecanarias.org/parquesnacionales/",
+     "fecha": "consultado el 25/11/2026"
+    },
+    {
+     "nombre": "MITECO · Red de Parques Nacionales (fechas de declaración)",
+     "url": "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/quienes-somos/dossier_parques_2015_tcm30-165584.pdf",
+     "fecha": "dossier de 2015"
+    },
+    {
+     "nombre": "UNESCO · Lista del Patrimonio Mundial (España)",
+     "url": "https://whc.unesco.org/es/list/?iso=es",
+     "fecha": "consultado el 25/11/2026"
+    }
+   ]
+  },
+  {
+   "id": "pn-timanfaya",
+   "tipo": "isla",
+   "enunciado": "¿En qué isla está el Parque Nacional de Timanfaya?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Lanzarote",
+   "dato": "Timanfaya está en Lanzarote. Es uno de los cuatro parques nacionales de Canarias.",
+   "fuente": {
+    "nombre": "Gobierno de Canarias · Parques Nacionales de Canarias",
+    "url": "https://www.gobiernodecanarias.org/parquesnacionales/",
+    "fecha": "consultado el 25/11/2026"
+   }
+  },
+  {
+   "id": "pn-taburiente",
+   "tipo": "isla",
+   "enunciado": "¿En qué isla está el Parque Nacional de la Caldera de Taburiente?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "La Palma",
+   "dato": "La Caldera de Taburiente está en La Palma. Es parque nacional desde 1954.",
+   "fuente": [
+    {
+     "nombre": "Gobierno de Canarias · Parques Nacionales de Canarias",
+     "url": "https://www.gobiernodecanarias.org/parquesnacionales/",
+     "fecha": "consultado el 25/11/2026"
+    },
+    {
+     "nombre": "MITECO · Red de Parques Nacionales (fechas de declaración)",
+     "url": "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/quienes-somos/dossier_parques_2015_tcm30-165584.pdf",
+     "fecha": "dossier de 2015"
+    }
+   ]
+  },
+  {
+   "id": "isla-mas-grande",
+   "tipo": "isla",
+   "enunciado": "¿Qué isla tiene más superficie?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Tenerife",
+   "dato": "Tenerife, con 2.033,53 km².",
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "isla-segunda",
+   "tipo": "isla",
+   "enunciado": "¿Cuál es la segunda isla más grande de Canarias?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Fuerteventura",
+   "dato": "Fuerteventura (1.661,30 km²), por delante de Gran Canaria (1.561,52 km²).",
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "isla-mas-gente",
+   "tipo": "isla",
+   "enunciado": "¿Qué isla tiene más habitantes?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Tenerife",
+   "dato": "Tenerife, con 961.745 habitantes. Gran Canaria tiene 870.608.",
+   "fuente": {
+    "nombre": "INE · Padrón municipal (suma de los municipios de cada isla)",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "isla-menos-gente",
+   "tipo": "isla",
+   "enunciado": "De las siete islas mayores, ¿cuál tiene menos habitantes?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "El Hierro",
+   "dato": "El Hierro, con 12.040 habitantes.",
+   "fuente": {
+    "nombre": "INE · Padrón municipal (suma de los municipios de cada isla)",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "pm-risco",
+   "tipo": "isla",
+   "enunciado": "¿En qué isla está Risco Caído, Patrimonio Mundial desde 2019?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Gran Canaria",
+   "dato": "El Paisaje cultural del Risco Caído y las montañas sagradas está en Gran Canaria.",
+   "fuente": {
+    "nombre": "UNESCO · Lista del Patrimonio Mundial (España)",
+    "url": "https://whc.unesco.org/es/list/?iso=es",
+    "fecha": "consultado el 25/11/2026"
+   }
+  },
+  {
+   "id": "pm-laguna",
+   "tipo": "isla",
+   "enunciado": "¿En qué isla está San Cristóbal de La Laguna, Patrimonio Mundial desde 1999?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Tenerife",
+   "dato": "La Laguna está en Tenerife.",
+   "fuente": {
+    "nombre": "UNESCO · Lista del Patrimonio Mundial (España)",
+    "url": "https://whc.unesco.org/es/list/?iso=es",
+    "fecha": "consultado el 25/11/2026"
+   }
+  },
+  {
+   "id": "mun-extenso",
+   "tipo": "isla",
+   "enunciado": "¿En qué isla está el municipio más extenso de Canarias?",
+   "opciones": [
+    "El Hierro",
+    "La Palma",
+    "La Gomera",
+    "Tenerife",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote"
+   ],
+   "correcta": "Fuerteventura",
+   "dato": "Es Pájara, en Fuerteventura, con 384,94 km².",
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "mm-tejeda",
+   "tipo": "masmenos",
+   "enunciado": "¿Tejeda tiene más o menos habitantes que Betancuria?",
+   "a": {
+    "nombre": "Tejeda",
+    "valor": 1806,
+    "texto": "1.806 hab."
+   },
+   "b": {
+    "nombre": "Betancuria",
+    "valor": 801,
+    "texto": "801 hab."
+   },
+   "correcta": "mas",
+   "dato": "Tejeda: 1.806 hab. · Betancuria: 801 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-arona",
+   "tipo": "masmenos",
+   "enunciado": "¿Arona tiene más o menos habitantes que Telde?",
+   "a": {
+    "nombre": "Arona",
+    "valor": 87793,
+    "texto": "87.793 hab."
+   },
+   "b": {
+    "nombre": "Telde",
+    "valor": 104168,
+    "texto": "104.168 hab."
+   },
+   "correcta": "menos",
+   "dato": "Arona: 87.793 hab. · Telde: 104.168 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-santalucia",
+   "tipo": "masmenos",
+   "enunciado": "¿Santa Lucía de Tirajana tiene más o menos habitantes que Arrecife?",
+   "a": {
+    "nombre": "Santa Lucía de Tirajana",
+    "valor": 78584,
+    "texto": "78.584 hab."
+   },
+   "b": {
+    "nombre": "Arrecife",
+    "valor": 70811,
+    "texto": "70.811 hab."
+   },
+   "correcta": "mas",
+   "dato": "Santa Lucía de Tirajana: 78.584 hab. · Arrecife: 70.811 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-artenara",
+   "tipo": "masmenos",
+   "enunciado": "¿Artenara tiene más o menos habitantes que Agulo?",
+   "a": {
+    "nombre": "Artenara",
+    "valor": 1024,
+    "texto": "1.024 hab."
+   },
+   "b": {
+    "nombre": "Agulo",
+    "valor": 1078,
+    "texto": "1.078 hab."
+   },
+   "correcta": "menos",
+   "dato": "Artenara: 1.024 hab. · Agulo: 1.078 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-adeje",
+   "tipo": "masmenos",
+   "enunciado": "¿Adeje tiene más o menos habitantes que Puerto del Rosario?",
+   "a": {
+    "nombre": "Adeje",
+    "valor": 50021,
+    "texto": "50.021 hab."
+   },
+   "b": {
+    "nombre": "Puerto del Rosario",
+    "valor": 46150,
+    "texto": "46.150 hab."
+   },
+   "correcta": "mas",
+   "dato": "Adeje: 50.021 hab. · Puerto del Rosario: 46.150 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-sanbartolome",
+   "tipo": "masmenos",
+   "enunciado": "¿San Bartolomé de Tirajana tiene más o menos habitantes que Arrecife?",
+   "a": {
+    "nombre": "San Bartolomé de Tirajana",
+    "valor": 54291,
+    "texto": "54.291 hab."
+   },
+   "b": {
+    "nombre": "Arrecife",
+    "valor": 70811,
+    "texto": "70.811 hab."
+   },
+   "correcta": "menos",
+   "dato": "San Bartolomé de Tirajana: 54.291 hab. · Arrecife: 70.811 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-laguna",
+   "tipo": "masmenos",
+   "enunciado": "¿San Cristóbal de La Laguna tiene más o menos habitantes que Santa Cruz de Tenerife?",
+   "a": {
+    "nombre": "San Cristóbal de La Laguna",
+    "valor": 161108,
+    "texto": "161.108 hab."
+   },
+   "b": {
+    "nombre": "Santa Cruz de Tenerife",
+    "valor": 211957,
+    "texto": "211.957 hab."
+   },
+   "correcta": "menos",
+   "dato": "San Cristóbal de La Laguna: 161.108 hab. · Santa Cruz de Tenerife: 211.957 hab.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-lanzarote",
+   "tipo": "masmenos",
+   "enunciado": "¿Lanzarote tiene más o menos habitantes que La Palma?",
+   "a": {
+    "nombre": "Lanzarote",
+    "valor": 167406,
+    "texto": "167.406 hab."
+   },
+   "b": {
+    "nombre": "La Palma",
+    "valor": 86194,
+    "texto": "86.194 hab."
+   },
+   "correcta": "mas",
+   "dato": "Lanzarote: 167.406 hab. · La Palma: 86.194 hab.",
+   "fuente": {
+    "nombre": "INE · Padrón municipal (suma de los municipios de cada isla)",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "mm-orotava",
+   "tipo": "masmenos",
+   "enunciado": "¿La Orotava tiene más o menos superficie que Mogán?",
+   "a": {
+    "nombre": "La Orotava",
+    "valor": 206.89,
+    "texto": "206,89 km²"
+   },
+   "b": {
+    "nombre": "Mogán",
+    "valor": 171.42,
+    "texto": "171,42 km²"
+   },
+   "correcta": "mas",
+   "dato": "La Orotava: 206,89 km² · Mogán: 171,42 km²",
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "mm-pajara",
+   "tipo": "masmenos",
+   "enunciado": "¿Pájara tiene más o menos superficie que La Gomera?",
+   "a": {
+    "nombre": "Pájara",
+    "valor": 384.94,
+    "texto": "384,94 km²"
+   },
+   "b": {
+    "nombre": "La Gomera",
+    "valor": 367.65,
+    "texto": "367,65 km²"
+   },
+   "correcta": "mas",
+   "dato": "Pájara: 384,94 km² · La Gomera: 367,65 km²",
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "or-islas-gente",
+   "tipo": "ordena",
+   "enunciado": "Ordena estas islas de más a menos habitantes",
+   "orden": "desc",
+   "elementos": [
+    {
+     "nombre": "Gran Canaria",
+     "valor": 870608,
+     "texto": "870.608 hab."
+    },
+    {
+     "nombre": "Lanzarote",
+     "valor": 167406,
+     "texto": "167.406 hab."
+    },
+    {
+     "nombre": "Fuerteventura",
+     "valor": 129541,
+     "texto": "129.541 hab."
+    },
+    {
+     "nombre": "La Palma",
+     "valor": 86194,
+     "texto": "86.194 hab."
+    }
+   ],
+   "fuente": {
+    "nombre": "INE · Padrón municipal (suma de los municipios de cada isla)",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "or-islas-sup",
+   "tipo": "ordena",
+   "enunciado": "Ordena estas islas de más a menos superficie",
+   "orden": "desc",
+   "elementos": [
+    {
+     "nombre": "Lanzarote",
+     "valor": 846.89,
+     "texto": "846,89 km²"
+    },
+    {
+     "nombre": "La Palma",
+     "valor": 706.98,
+     "texto": "706,98 km²"
+    },
+    {
+     "nombre": "La Gomera",
+     "valor": 367.65,
+     "texto": "367,65 km²"
+    },
+    {
+     "nombre": "El Hierro",
+     "valor": 267.72,
+     "texto": "267,72 km²"
+    }
+   ],
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "or-mun-gente",
+   "tipo": "ordena",
+   "enunciado": "Ordena estos municipios de más a menos habitantes",
+   "orden": "desc",
+   "elementos": [
+    {
+     "nombre": "Las Palmas de Gran Canaria",
+     "valor": 381868,
+     "texto": "381.868 hab."
+    },
+    {
+     "nombre": "San Cristóbal de La Laguna",
+     "valor": 161108,
+     "texto": "161.108 hab."
+    },
+    {
+     "nombre": "Telde",
+     "valor": 104168,
+     "texto": "104.168 hab."
+    },
+    {
+     "nombre": "Arona",
+     "valor": 87793,
+     "texto": "87.793 hab."
+    }
+   ],
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "or-mun-sup",
+   "tipo": "ordena",
+   "enunciado": "Ordena estos municipios de más a menos superficie",
+   "orden": "desc",
+   "elementos": [
+    {
+     "nombre": "Pájara",
+     "valor": 384.94,
+     "texto": "384,94 km²"
+    },
+    {
+     "nombre": "San Bartolomé de Tirajana",
+     "valor": 332.42,
+     "texto": "332,42 km²"
+    },
+    {
+     "nombre": "La Orotava",
+     "valor": 206.89,
+     "texto": "206,89 km²"
+    },
+    {
+     "nombre": "Mogán",
+     "valor": 171.42,
+     "texto": "171,42 km²"
+    }
+   ],
+   "fuente": {
+    "nombre": "ISTAC · Superficie (las islas incluyen sus islotes)",
+    "url": "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators/SUPERFICIE",
+    "fecha": "2024"
+   }
+  },
+  {
+   "id": "or-patrimonio",
+   "tipo": "ordena",
+   "enunciado": "Ordena del más antiguo al más reciente como Patrimonio Mundial",
+   "orden": "asc",
+   "elementos": [
+    {
+     "nombre": "Parque Nacional de Garajonay",
+     "valor": 1986,
+     "texto": "1986"
+    },
+    {
+     "nombre": "San Cristóbal de La Laguna",
+     "valor": 1999,
+     "texto": "1999"
+    },
+    {
+     "nombre": "Parque Nacional del Teide",
+     "valor": 2007,
+     "texto": "2007"
+    },
+    {
+     "nombre": "Risco Caído y montañas sagradas",
+     "valor": 2019,
+     "texto": "2019"
+    }
+   ],
+   "fuente": {
+    "nombre": "UNESCO · Lista del Patrimonio Mundial (España)",
+    "url": "https://whc.unesco.org/es/list/?iso=es",
+    "fecha": "consultado el 25/11/2026"
+   }
+  },
+  {
+   "id": "op-municipios",
+   "tipo": "opciones",
+   "enunciado": "¿Cuántos municipios tiene Canarias?",
+   "opciones": [
+    "82",
+    "88",
+    "94",
+    "101"
+   ],
+   "correcta": "88",
+   "dato": "Canarias tiene 88 municipios: 34 en la provincia de Las Palmas y 54 en la de Santa Cruz de Tenerife.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "op-menos-gente",
+   "tipo": "opciones",
+   "enunciado": "¿Cuál es el municipio con menos habitantes de Canarias?",
+   "opciones": [
+    "Betancuria",
+    "Artenara",
+    "Agulo",
+    "Tejeda"
+   ],
+   "correcta": "Betancuria",
+   "dato": "Betancuria, con 801 habitantes.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "op-dos-grandes",
+   "tipo": "opciones",
+   "enunciado": "¿Qué parte de la población canaria vive en Gran Canaria o en Tenerife?",
+   "opciones": [
+    "Unos 2 de cada 3",
+    "Unos 3 de cada 4",
+    "Unos 4 de cada 5",
+    "Unos 9 de cada 10"
+   ],
+   "correcta": "Unos 4 de cada 5",
+   "dato": "El 81,4 %: 1.832.353 de 2.249.976 habitantes.",
+   "fuente": {
+    "nombre": "INE · Padrón municipal (suma de los municipios de cada isla)",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "op-total",
+   "tipo": "opciones",
+   "enunciado": "¿Cuántos habitantes tiene Canarias, más o menos?",
+   "opciones": [
+    "1,8 millones",
+    "2,25 millones",
+    "2,7 millones",
+    "3,1 millones"
+   ],
+   "correcta": "2,25 millones",
+   "dato": "2.249.976 habitantes.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "op-teide",
+   "tipo": "opciones",
+   "enunciado": "¿Cuánto mide el Teide?",
+   "opciones": [
+    "3.555 m",
+    "3.715 m",
+    "3.718 m",
+    "3.812 m"
+   ],
+   "correcta": "3.715 m",
+   "dato": "La altitud oficial es 3.715 m. La cifra de 3.718 m sigue apareciendo en muchos sitios, pero no es la oficial.",
+   "fuente": {
+    "nombre": "IGN y Grafcan · altitud oficial del Teide",
+    "url": "https://pre-web.grafcan.es/files/2019/11/20191022_Medicion_Teide_ElDia.pdf",
+    "fecha": "medición del IGN (1983), confirmada por Grafcan (2011)"
+   }
+  },
+  {
+   "id": "op-segundo",
+   "tipo": "opciones",
+   "enunciado": "Después de Las Palmas de Gran Canaria, ¿cuál es el municipio con más habitantes?",
+   "opciones": [
+    "Santa Cruz de Tenerife",
+    "San Cristóbal de La Laguna",
+    "Telde",
+    "Arona"
+   ],
+   "correcta": "Santa Cruz de Tenerife",
+   "dato": "Santa Cruz de Tenerife, con 211.957 habitantes.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  },
+  {
+   "id": "op-gc-menos",
+   "tipo": "opciones",
+   "enunciado": "¿Qué municipio de Gran Canaria tiene menos habitantes?",
+   "opciones": [
+    "Artenara",
+    "Tejeda",
+    "Valleseco",
+    "Agaete"
+   ],
+   "correcta": "Artenara",
+   "dato": "Artenara, con 1.024 habitantes. Tejeda tiene 1.806.",
+   "fuente": {
+    "nombre": "INE · Cifras oficiales del Padrón municipal",
+    "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=517",
+    "fecha": "1 de enero de 2025"
+   }
+  }
+ ]
+}
