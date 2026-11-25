@@ -1,0 +1,118 @@
+{
+  "_nota": "Fuente de /recursos/. Para añadir un recurso basta con una entrada en «recursos» y volver a ejecutar generar.py. estado: «borrador» (sale con etiqueta y noindex, y no entra en la versión para publicar) o «publicado».",
+
+  "tipos": {
+    "prompt": { "nombre": "Prompts", "uno": "Prompt" },
+    "skill":  { "nombre": "Skills", "uno": "Skill" },
+    "plugin": { "nombre": "Plugins y conectores", "uno": "Conectores" },
+    "pdf":    { "nombre": "Guías en PDF", "uno": "Guía en PDF" }
+  },
+
+  "temas": {
+    "datos":          "Análisis de datos",
+    "informes":       "Informes y KPIs",
+    "limpieza":       "Limpieza de datos",
+    "automatizacion": "Automatización",
+    "redes":          "Contenido para redes",
+    "personal":       "Organización personal"
+  },
+
+  "recursos": [
+    {
+      "slug": "limpiar-un-csv",
+      "tipo": "prompt",
+      "tema": "limpieza",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Limpia un CSV antes de analizarlo",
+      "resumen": "Para que Claude revise un archivo, te proponga reglas de limpieza y no toque nada sin tu permiso.",
+      "para_que": [
+        "Antes de sacar cualquier cifra de un Excel o un CSV que no has hecho tú.",
+        "Cuando sospechas que hay duplicados, fechas mezcladas o categorías escritas de mil maneras.",
+        "Para tener por escrito qué se cambió, por si alguien pregunta."
+      ],
+      "prompt": "Te paso un archivo CSV. Antes de analizar nada, revísalo y límpialo así:\n\n1. Dime cuántas filas y columnas tiene y qué tipo de dato hay en cada columna.\n2. Señala los problemas que veas: valores vacíos, filas duplicadas, fechas en formatos distintos, números guardados como texto, espacios de más y categorías escritas de varias formas («Gran Canaria», «G. Canaria», «gran canaria»).\n3. Propón una regla para cada problema y espera a que te diga que sí antes de aplicarla.\n4. Aplica las reglas aprobadas y devuélveme el CSV limpio.\n5. Termina con una tabla de cambios: qué regla, cuántas filas tocó y un ejemplo de antes y después.\n\nNo borres filas sin decírmelo. Si algo no está claro, pregunta.",
+      "ejemplo": "Tu archivo tiene 1.284 filas y 9 columnas. He encontrado:\n\n· 37 filas duplicadas exactas.\n· La columna «fecha» mezcla 03/11/2026 y 2026-11-03.\n· «isla» tiene 11 valores distintos para 7 islas.\n\nPropuesta de reglas:\n1. Quitar las 37 duplicadas (me quedo con la primera).\n2. Pasar todas las fechas a AAAA-MM-DD.\n3. Unificar «isla» con esta tabla de equivalencias: …\n\n¿Las aplico?",
+      "consejos": [
+        "Pega solo las primeras 50 filas si el archivo es muy grande y pide las reglas; luego aplícalas tú al archivo entero.",
+        "Si los datos son de otra persona o de un cliente, quita antes nombres, teléfonos y correos."
+      ]
+    },
+    {
+      "slug": "resumen-de-kpis",
+      "tipo": "prompt",
+      "tema": "informes",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Resume un informe de KPIs en cinco líneas",
+      "resumen": "Un resumen para quien no tiene tiempo: qué cambió de verdad, qué es ruido y qué mirar el mes que viene.",
+      "para_que": [
+        "Cerrar un informe mensual de redes, ventas o web.",
+        "Explicar los números a alguien que no los mira a diario.",
+        "Separar los cambios reales de las diferencias pequeñas que no significan nada."
+      ],
+      "prompt": "Te paso los datos de este mes y los del mes pasado de [canal o negocio]. Escríbeme un resumen para alguien que no tiene tiempo:\n\n- Cinco líneas como máximo.\n- Empieza por lo que más ha cambiado, con la cifra y el porcentaje respecto al mes pasado.\n- Separa lo que es un cambio real de lo que es ruido (diferencias pequeñas o con muy pocos datos).\n- Una línea con una posible explicación, marcada como hipótesis.\n- Una línea con qué miraría el mes que viene.\n\nNo inventes datos que no estén en la tabla. Si falta algo para comparar, dilo.",
+      "ejemplo": "1. Las visitas a la web subieron un 42 % (de 1.900 a 2.700), casi todas desde Instagram.\n2. Los guardados bajaron de 120 a 112: es ruido, no un cambio.\n3. Las ventas siguen igual (31 frente a 30).\n4. Hipótesis: el carrusel del día 12 trajo visitas, pero no compradores.\n5. El mes que viene: mirar si esas visitas llegan a la página de precios.",
+      "consejos": [
+        "Sustituye [canal o negocio] antes de enviarlo.",
+        "Funciona mejor si pegas una tabla con las mismas columnas para los dos meses."
+      ]
+    },
+    {
+      "slug": "propuesta-web-canarias",
+      "tipo": "skill",
+      "tema": "automatizacion",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Propuesta digital para un negocio canario",
+      "resumen": "Una skill que, a partir del Instagram o la web de un negocio, prepara un diagnóstico, una web de muestra con su estética, un plan SEO y el mensaje para presentarlo.",
+      "para_que": [
+        "Preparar en una tarde una propuesta seria para un negocio o creador de aquí.",
+        "Tener siempre la misma estructura: diagnóstico, web, SEO, presentación y mensaje."
+      ],
+      "descarga": null,
+      "instalar": [
+        "Descarga el ZIP y no lo descomprimas.",
+        "En Claude, entra en la sección de skills de tu configuración y súbelo.",
+        "Actívala y pídele algo como «prepara una propuesta para @negocio»."
+      ],
+      "pendiente": "Falta confirmar que la skill es propia y preparar el ZIP con su README."
+    },
+    {
+      "slug": "conectores-que-uso",
+      "tipo": "plugin",
+      "tema": "automatizacion",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Los conectores de Claude que uso y para qué",
+      "resumen": "Qué aplicaciones tengo conectadas a Claude, qué le pido a cada una y dónde se activan. Todo enlaza a la fuente oficial.",
+      "para_que": [
+        "Saber qué conectar primero si empiezas.",
+        "Ver ejemplos reales de uso, no la lista entera del directorio."
+      ],
+      "elementos": [
+        { "nombre": "Buffer", "uso": "Programar las publicaciones de X de la semana sin abrir la aplicación.", "enlace": "https://buffer.com" },
+        { "nombre": "Canva", "uso": "Buscar diseños, crear versiones nuevas y exportarlas.", "enlace": "https://www.canva.com" },
+        { "nombre": "Gmail", "uso": "Buscar correos concretos y dejar borradores preparados para revisarlos yo.", "enlace": "https://mail.google.com" },
+        { "nombre": "Google Drive", "uso": "Leer documentos y hojas sin descargarlos ni pegarlos en el chat.", "enlace": "https://drive.google.com" },
+        { "nombre": "Claude in Chrome", "uso": "Tareas en webs donde tengo la sesión iniciada, como sacar datos de Search Console.", "enlace": "https://claude.com/chrome" }
+      ],
+      "fuente": { "texto": "Directorio oficial de conectores", "enlace": "https://claude.com/connectors" }
+    },
+    {
+      "slug": "guia-muestra",
+      "tipo": "pdf",
+      "tema": "datos",
+      "estado": "borrador",
+      "fecha": "2026-11-25",
+      "titulo": "Prompts para analistas de datos",
+      "resumen": "Muestra de diseño de las guías en PDF: portada, índice, fichas de prompts y pie con la fecha de versión. El tema definitivo está por decidir.",
+      "para_que": [
+        "Ver cómo quedan las guías antes de escribir la primera de verdad."
+      ],
+      "descarga": "descargas/guia-muestra.pdf",
+      "version": "0.1",
+      "pdf_temas": ["limpieza", "informes"]
+    }
+  ]
+}

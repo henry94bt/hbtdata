@@ -15,6 +15,9 @@ AddDefaultCharset UTF-8
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>
 
+# ---------- _taller/ (generadores y fuentes de /recursos/) no se sirve ----------
+RedirectMatch 404 ^/_taller(/|$)
+
 # ---------- 404 propio ----------
 ErrorDocument 404 /404.html
 

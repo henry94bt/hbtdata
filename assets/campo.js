@@ -290,6 +290,57 @@
       return f;
     },
 
+    recursos: function (N, R) {                  // /recursos/: una guía en PDF, un prompt y la flecha de descarga
+      var f = new Forma(N), piezas = [];
+      // [tipo, x0, y0, x1, y1, z, color, peso]   tipo: b = borde, r = relleno, l = línea
+      function pz(t, x0, y0, x1, y1, z, c, peso) { piezas.push([t, x0, y0, x1, y1, z, c, peso]); }
+      // la guía, detrás y a la izquierda, con la esquina doblada
+      var D0 = -1.2, D1 = -0.1, E0 = -0.86, E1 = 0.78, C = 0.24, Zd = -0.12, papel = escala(CLARO, 0.8);
+      pz('l', D0, E0, D1, E0, Zd, papel, 1.1); pz('l', D1, E0, D1, E1 - C, Zd, papel, 1.6);
+      pz('l', D1 - C, E1, D0, E1, Zd, papel, 0.9); pz('l', D0, E1, D0, E0, Zd, papel, 1.6);
+      pz('l', D1 - C, E1, D1, E1 - C, Zd, papel, 0.4);                                   // el doblez
+      pz('l', D1 - C, E1, D1 - C, E1 - C, Zd, escala(CLARO, 0.6), 0.25);
+      pz('l', D1 - C, E1 - C, D1, E1 - C, Zd, escala(CLARO, 0.6), 0.25);
+      pz('r', D0 + 0.12, E1 - 0.3, D0 + 0.64, E1 - 0.2, Zd, CLARO, 0.8);                 // título
+      [0, 1, 2, 3, 4, 5].forEach(function (i) {                                          // líneas de texto
+        var y = E1 - 0.46 - i * 0.13;
+        pz('r', D0 + 0.12, y, D1 - (i % 3 === 2 ? 0.5 : 0.25), y + 0.035, Zd, escala(CLARO, 0.5), 0.45);
+      });
+      pz('r', D0 + 0.12, E0 + 0.1, D0 + 0.42, E0 + 0.22, Zd, OCRE, 0.35);                // etiqueta PDF
+      // el prompt, delante y a la derecha
+      var P0 = -0.3, P1 = 1.18, Q0 = -0.3, Q1 = 0.56, Z = 0.28;
+      pz('b', P0, Q0, P1, Q1, Z, CLARO, 3.0);
+      pz('r', P0, Q1 - 0.11, P1, Q1, Z, escala(CLARO, 0.4), 0.9);
+      [0, 1, 2].forEach(function (i) { pz('r', P0 + 0.06 + i * 0.065, Q1 - 0.07, P0 + 0.09 + i * 0.065, Q1 - 0.04, Z + 0.01, i === 0 ? OCRE : CLARO, 0.1); });
+      pz('l', P0 + 0.12, Q1 - 0.24, P0 + 0.22, Q1 - 0.31, Z, OCRE, 0.35);              // el «>»
+      pz('l', P0 + 0.22, Q1 - 0.31, P0 + 0.12, Q1 - 0.38, Z, OCRE, 0.35);
+      pz('r', P0 + 0.3, Q1 - 0.34, P1 - 0.3, Q1 - 0.29, Z, escala(CLARO, 0.75), 0.6);
+      pz('r', P0 + 0.3, Q1 - 0.47, P1 - 0.55, Q1 - 0.42, Z, escala(CLARO, 0.55), 0.4);
+      pz('r', P0 + 0.3, Q1 - 0.6, P1 - 0.2, Q1 - 0.55, Z, escala(CLARO, 0.55), 0.5);
+      pz('r', P0 + 0.3, Q1 - 0.73, P0 + 0.36, Q1 - 0.64, Z + 0.01, OCRE, 0.12);          // cursor
+      pz('r', P1 - 0.44, Q0 + 0.07, P1 - 0.08, Q0 + 0.16, Z, SUAVE, 0.3);                // botón copiar
+      // la descarga, debajo del prompt
+      var A = 0.5, Za = 0.18;
+      pz('l', A, -0.44, A, -0.76, Za, OCRE, 0.5);
+      pz('l', A - 0.13, -0.63, A, -0.77, Za, OCRE, 0.3); pz('l', A + 0.13, -0.63, A, -0.77, Za, OCRE, 0.3);
+      pz('l', A - 0.26, -0.88, A + 0.26, -0.88, Za, SUAVE, 0.45);
+      pz('l', A - 0.26, -0.88, A - 0.26, -0.8, Za, SUAVE, 0.12); pz('l', A + 0.26, -0.88, A + 0.26, -0.8, Za, SUAVE, 0.12);
+      var acum = acumula(piezas.map(function (p) { return p[7]; }));
+      for (var i = 0; i < N; i++) {
+        var p = piezas[elige(acum, R())], x, y, w = p[3] - p[1], h = p[4] - p[2];
+        if (p[0] === 'b') {
+          var t = R() * 2 * (w + h);
+          if (t < w) { x = p[1] + t; y = p[2]; } else if (t < w + h) { x = p[3]; y = p[2] + t - w; }
+          else if (t < 2 * w + h) { x = p[3] - (t - w - h); y = p[4]; } else { x = p[1]; y = p[4] - (t - 2 * w - h); }
+          x += gauss(R) * 0.004; y += gauss(R) * 0.004;
+        } else if (p[0] === 'l') {
+          var u = R(); x = p[1] + w * u + gauss(R) * 0.004; y = p[2] + h * u + gauss(R) * 0.004;
+        } else { x = p[1] + R() * w; y = p[2] + R() * h; }
+        f.pon(x, y + 0.04, p[5] + gauss(R) * 0.02, p[6]);
+      }
+      return f;
+    },
+
     picos: function (N, R) {                     // la cumbre más alta de cada isla, desde el nivel del mar
       var f = new Forma(N), P = DATOS.picos || [1501, 2426, 1487, 3715, 1949, 807, 670];
       var n = P.length, ancho = 2.3, gap = 0.09, bw = (ancho - gap * (n - 1)) / n, base = -0.78;
