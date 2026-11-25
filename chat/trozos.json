@@ -1,0 +1,369 @@
+{
+  "generado": "2026-11-25T13:29:24.772Z",
+  "trozos": [
+    {
+      "url": "https://hbtdata.es/#inicio",
+      "titulo": "Portfolio · Datos explicados con cosas de aquí.",
+      "texto": "//00 hbtdata / Datos de Canarias\nDatos explicados con cosas de aquí.\nSoy Henry Barrios Thornhill, analista de datos en Gran Canaria. Construyo mis propias herramientas con datos públicos y enseño cómo están hechas.\n//01 Canarias en datos\nSiete islas. Muchos datos.\nGasolina, fútbol, historias y quinielas. Datos de aquí que se comparten por aquí, contados para que se entiendan a la primera.\n//02 Proyecto / Canarias Gas Tracker\nLa gasolina más barata de las islas.\nCada punto es una gasolinera real, de turquesa (más barata) a ocre (más cara). Los precios salen cada día de la API del Ministerio y GitHub Actions actualiza la web solo.\nGasolina 95 / precios del 13 oct. 2026 / Ministerio\n//03 Proyecto / Moleiro y el Mundial\nMoleiro frente al resto.\n¿Cuánto produce Alberto Moleiro comparado con otros jugadores de las cinco grandes ligas? Un pipeline en Python baja los datos de FBref y un dashboard en Power BI los pone a hablar.\nCódigo y dashboard\n//04 Proyecto / Historia para Gandules",
+      "idioma": "es",
+      "id": "655a16fdee0cfc1a50a5"
+    },
+    {
+      "url": "https://hbtdata.es/#inicio",
+      "titulo": "Portfolio · Datos explicados con cosas de aquí.",
+      "texto": "121 historias en su sitio.\nCada vídeo de @historiaparagandules , la cuenta de Luis Cabrera, anclado al lugar del que habla. Con filtros por isla y categoría, buscador y un juego para adivinar dónde pasó cada historia.\n//05 Proyecto / La Quiniela\nUno, equis, dos.\nEl panel de una quiniela entre tres amigos: los resultados van a una hoja de Google publicada como CSV y la web calcula aciertos, mejor jornada y evolución.\nAbrir el panel\n//06 Por dentro / Fábrica de contenido\nLos carruseles salen de un script.\nLos carruseles, reels y stories de @hbtdata no se maquetan a mano: los genera un conjunto de scripts con la identidad de la marca y gráficos propios. Estas partículas, también son código.\nVerlo en Instagram\n//07 Cómo trabajo / Reglas fijas\nLas barras empiezan en cero.\nAquí, en el nivel del mar: la cumbre más alta de cada isla, de oeste a este. Para los precios uso medianas y todo gráfico lleva fecha y fuente. De estos picos sale también el logo.",
+      "idioma": "es",
+      "id": "5a936a0bcc70adf48d62"
+    },
+    {
+      "url": "https://hbtdata.es/#inicio",
+      "titulo": "Portfolio · Datos explicados con cosas de aquí.",
+      "texto": "Altura máxima en metros / IGN y Wikipedia, oct. 2026\n//08 hbtdata / Contacto\n¿Tienes unos datos y una pregunta?\nEscríbeme si quieres comentar un proyecto, proponer un dato de aquí que merezca contarse o encargar un análisis o un dashboard.\nEscríbeme\nVer todos los proyectos\nPara negocios",
+      "idioma": "es",
+      "id": "4a33fe58fbb0f51e8676"
+    },
+    {
+      "url": "https://hbtdata.es/#proyectos",
+      "titulo": "Portfolio · Proyectos",
+      "texto": "// Lo que he construido\nProyectos\nProyectos reales con datos públicos. Cada uno funciona hoy y se puede abrir.\n01 HTML / JavaScript / API pública / GitHub Actions\nCanarias Gas Tracker\nLas gasolineras más baratas de las islas, con filtro por isla y por combustible. Se alimenta de la API de precios del Ministerio y se actualiza sola cada día.\nAbrir la web Código\n02 Python / FBref / Power BI\nMoleiro frente al resto del Mundial\n¿Cuánto produce Alberto Moleiro comparado con otros jugadores de las cinco grandes ligas? Un pipeline en Python que baja los datos de FBref y un dashboard en Power BI para leerlos.\nCódigo y dashboard\n03 Python / Leaflet / JavaScript / Pipeline de datos\nEl mapa de Historia para Gandules\nUn mapa con 121 historias de @historiaparagandules , la cuenta de Luis Cabrera: cada vídeo anclado al lugar del que habla, con filtros, buscador y un juego para adivinar dónde ocurrió. Los datos salen de un pipeline en Python y la web solo lee un JSON.\nAbrir el mapa Código",
+      "idioma": "es",
+      "id": "a08efce3d1d98a4f7326"
+    },
+    {
+      "url": "https://hbtdata.es/#proyectos",
+      "titulo": "Portfolio · Proyectos",
+      "texto": "04 HTML / JavaScript / Google Sheets\nLa Quiniela entre amigos\nUn panel para una quiniela de tres amigos: los resultados se rellenan en una hoja de Google publicada como CSV y la página calcula aciertos, media por jornada, mejor jornada y evolución acumulada.\nAbrir el panel Código\n05 Python / Pillow / matplotlib / ffmpeg\nLa fábrica de contenido\nLos carruseles, reels y stories de @hbtdata salen de un conjunto de scripts con la identidad de la marca, gráficos propios y las reglas de siempre: barras desde cero, medianas, fecha y fuente.\nVerlo en Instagram",
+      "idioma": "es",
+      "id": "a9ac799ed9b6e2a66e6c"
+    },
+    {
+      "url": "https://hbtdata.es/#sobre-mi",
+      "titulo": "Portfolio · Henry Barrios Thornhill",
+      "texto": "// Sobre mí\nHenry Barrios Thornhill\nHenry Barrios Thornhill (hbtdata) es analista de datos de Gran Canaria que programa con IA y autor de Abre tu sobre (abretusobre.es).\nSoy de Las Palmas de Gran Canaria. Estudié ADE y un máster en Big Data, y trabajo con datos desde hace unos años: análisis, automatización de informes y dashboards.\nHoy lo hago en una agencia de comunicación de Gran Canaria y, en mi tiempo libre, construyo lo que ves arriba. Me gusta que un dato se entienda a la primera y que lo que hago se pueda abrir, tocar y comprobar.\nY fuera de la pantalla, varias veces al año me voy de voluntario con la Fundación Foresta a plantar especies autóctonas por Canarias.\nPython SQL Power BI Pandas Folium Git y GitHub Excel avanzado Español e inglés nativos\nActualidad La Pepa Studio Datos, automatización e informes.\nVarias veces al año Voluntariado en la Fundación Foresta Jornadas de reforestación: plantación de especies autóctonas y mantenimiento forestal.",
+      "idioma": "es",
+      "id": "137bb822a69eb335d55f"
+    },
+    {
+      "url": "https://hbtdata.es/#sobre-mi",
+      "titulo": "Portfolio · Henry Barrios Thornhill",
+      "texto": "2025 Salescaling, analista de datos Pipelines en Python y preparación de datos para LLMs.\n2024 The Wise Dreams, analista de datos Mapas interactivos y dashboards de KPIs.\n2023–2024 Máster en Big Data & Analytics INESDI Business School.\n2023 Finalista del Datathon 5G Beach Challenge SPEGC.\n2012–2018 Grado en ADE ULPGC, con Erasmus en Wrocław.",
+      "idioma": "es",
+      "id": "25082b45345dbd2c0013"
+    },
+    {
+      "url": "https://hbtdata.es/#contacto",
+      "titulo": "Portfolio · Escríbeme.",
+      "texto": "// Contacto\nEscríbeme.\nPara una oferta de trabajo, un análisis, un dashboard, un proceso con IA o una web para tu negocio. Te respondo lo antes posible.\nhbtdataanalyst@gmail.com\nInstagram @hbtdata\nLinkedIn Henry Barrios Thornhill\nGitHub henry94bt\nTikTok @hbtdata\n¿Tienes un negocio? Webs y procesos con IA para negocios de Canarias",
+      "idioma": "es",
+      "id": "ca5c85782bf205f57c4b"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#inicio",
+      "titulo": "Webs para negocios · Webs para negocios de aquí.",
+      "texto": "//webs + IA Para negocios de Canarias\nWebs para negocios de aquí.\nWebs rápidas que salen en Google, y tareas repetitivas que se hacen solas con IA. Lo hago yo, un analista de datos de Las Palmas, y te lo explico sin tecnicismos.\nTrato directo\nSin compromiso\nTu dominio, a tu nombre",
+      "idioma": "es",
+      "id": "f99163c1da8459c9675a"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#te-suena",
+      "titulo": "Webs para negocios · Lo bueno de tu negocio no se ve desde Google.",
+      "texto": "// ¿Te suena?\nLo bueno de tu negocio no se ve desde Google.\nAntes de llamarte o de ir, la gente te busca en el móvil. Y mientras tanto, se te van las horas en tareas que nadie ve.\n01 Te buscan en Google y sale otro.\nTu competencia aparece primero, aunque tú lleves más años en el barrio.\n02 Todo depende de Instagram.\nSi cambia el algoritmo o te bloquean la cuenta, desapareces de un día para otro.\n03 Tu web es de hace diez años.\nEn el móvil no se ve bien y el horario que sale sigue siendo el de antes.\n04 No sabes si alguien la visita.\nPagas el dominio y el hosting cada año, pero no sabes si te trae algún cliente.\n05 Copias y pegas a todas horas.\nDel correo al Excel, del Excel a la factura, de la factura a la gestoría. Cada semana, lo mismo.\n06 Tus números, en veinte Excel.\nHaces el mismo informe a mano cada mes y nunca terminas de fiarte de él.",
+      "idioma": "es",
+      "id": "1ddbf826ef7af620d8d1"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#procesos",
+      "titulo": "Webs para negocios · Lo que repites cada semana, que se haga solo.",
+      "texto": "// Procesos con IA\nLo que repites cada semana, que se haga solo.\nLa IA se encarga de lo repetitivo: leer, ordenar, copiar y preparar borradores. Lo que sale a tus clientes o toca tu dinero sigue pasando por ti. Elige un proceso y compáralo.\nPresupuestos Talleres, reformas\nInforme del mes Cualquier negocio\nCitas y reservas Clínicas, peluquerías\nFacturas y gastos Autónomos, pymes\nA mano\nCon IA\nPasos que haces tú 5 de 5\nLees el correo o el WhatsApp con lo que piden Tú\nCopias los datos a mano en un Excel Tú\nBuscas tus tarifas y calculas el precio Tú\nEscribes la respuesta desde cero Tú\nApuntas cuándo volver a escribir Tú\nEjemplos ilustrativos\nAntes de automatizar nada, miramos juntos cómo trabajas",
+      "idioma": "es",
+      "id": "f96f34ed447af54eccc4"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#servicios",
+      "titulo": "Webs para negocios · Qué puedo hacer por tu negocio.",
+      "texto": "// Servicios\nQué puedo hacer por tu negocio.\nWebs, y también lo que viene detrás: que te encuentren, saber cuánta gente lo hace y quitarte de encima el trabajo repetitivo.\nWeb\nWeb para tu negocio\nUnas pocas páginas que explican qué haces, dónde estás y cómo contactarte.\nPensada primero para el móvil\nWhatsApp, mapa y horario a la vista\nPreparada para salir en Google\nEn español y en inglés, si tienes clientes de fuera\nLanding\nPágina para una campaña\nUna sola página con un objetivo: una oferta, un evento, un curso o un lanzamiento.\nUn mensaje y un botón claros\nLista para anuncios y redes\nSabes cuánta gente la abre\nRediseño\nTu web, renovada\nLa web que ya tienes, más rápida, más clara y bien hecha para el móvil.\nMantienes tu dominio\nTextos revisados contigo\nSin perder lo que ya tienes en Google\nProcesos con IA\nTareas que se hacen solas\nLo que repites cada semana, hecho con IA y automatizaciones, con tu revisión donde hace falta.\nCorreos y pedidos leídos y ordenados",
+      "idioma": "es",
+      "id": "ae8b4e2143ed3bf927ce"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#servicios",
+      "titulo": "Webs para negocios · Qué puedo hacer por tu negocio.",
+      "texto": "Borradores de respuesta que tú apruebas\nDatos que pasan de un sitio a otro sin tocarlos\nDashboards\nTus números, en un panel\nVentas, reservas o pedidos en un panel que se actualiza solo y se entiende a la primera.\nDesde Excel, Google Sheets o tu programa\nEn Power BI o en una web privada\nSe acabó copiar y pegar cada mes\nGoogle y medición\nQue te encuentren, y saber cuántos\nLo que hace falta para aparecer en las búsquedas de tu zona y medir qué funciona.\nSearch Console y ficha de Google\nVisitas medidas sin cookies\nUn informe al mes, en lenguaje claro\n// ¿Y el precio?\nDepende de lo que necesites.\nCada negocio pide algo distinto, así que no hay tarifa cerrada. Me cuentas tu caso y te digo precio y plazo antes de empezar, por escrito y sin compromiso.\nCuántas páginas, procesos o informes son\nSi ya tienes textos, fotos y datos ordenados\nCon qué programas trabajas hoy\nSi quieres medición, informes o mantenimiento",
+      "idioma": "es",
+      "id": "961e05265f245b94b355"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#mantenimiento",
+      "titulo": "Webs para negocios · Tu web, siempre al día.",
+      "texto": "// Después de publicar\nTu web, siempre al día.\nCambiar el horario de verano, subir la carta nueva o saber cuánta gente te visitó este mes. Si quieres, me encargo yo y tú no tienes que pelearte con nada.\nPuntual Cuando lo necesites Me pides un cambio y te digo lo que cuesta antes de hacerlo.\nMensual Me ocupo yo Cambios del mes, copias de seguridad y un informe de visitas.\nUn mes de mantenimiento Ejemplo\nHorario de Navidad actualizado Hecho\nCarta nueva con precios de enero Hecho\nCopia de seguridad de la web Hecho\nRevisión de velocidad en el móvil Hecho\nInforme de visitas del mes En curso",
+      "idioma": "es",
+      "id": "8a1e708bf64804214aad"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#webs",
+      "titulo": "Webs para negocios · Webs que ya están funcionando.",
+      "texto": "// Webs hechas\nWebs que ya están funcionando.\nProyectos míos y para creadores de aquí, todos en línea. Puedes abrirlos y tocarlos.\nWeb propia / abretusobre.es\nAbre tu sobre\nUn test de humor de tres minutos con su propia identidad: diseño, ilustraciones, versión para compartir en stories y seguimiento semanal en Search Console.\nDiseño / SEO / Medición sin cookies\nPara un creador / @historiaparagandules\nEl mapa de Historia para Gandules\nLos vídeos de la cuenta de Luis Cabrera, cada uno en el lugar del que habla, con filtros, buscador y un juego para adivinar dónde pasó cada historia.\nMapa interactivo / Datos / Juego\nWeb con datos / Canarias Gas Tracker\nLa gasolina más barata de las islas\nUna web que se actualiza sola cada día con los precios oficiales del Ministerio, con filtros por isla y por combustible. Nadie la toca: un proceso automático hace el trabajo.\nDatos en directo / Automatización\nWeb propia / hbtdata.es\nMi portfolio de datos",
+      "idioma": "es",
+      "id": "000991c4d2215a4a2acf"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#webs",
+      "titulo": "Webs para negocios · Webs que ya están funcionando.",
+      "texto": "Una portada con partículas que cambian de forma al bajar: el logo, las islas, las gasolineras reales. Hecha a mano, sin plantillas, en español y en inglés.\nDiseño / Animación / SEO\n¿Y lo de tu negocio?",
+      "idioma": "es",
+      "id": "b26363981323f7afe72d"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#como-trabajo",
+      "titulo": "Webs para negocios · Trabajar conmigo es sencillo.",
+      "texto": "// Cómo trabajo\nTrabajar conmigo es sencillo.\nSin reuniones eternas ni palabras raras. Tú te ocupas de tu negocio; yo, de que la web lo cuente bien y de que lo repetitivo se haga solo.\nMe cuentas qué necesitas\nPor correo, por Instagram o con el formulario de abajo. Con lo básico me vale.\nMiro cómo trabajas\nQué haces a mano, con qué programas y dónde se te va el tiempo. Antes de proponer nada.\nTe propongo un plan\nQué incluye, cuánto cuesta y cuándo estará. Por escrito, para que no haya sorpresas.\nLo construyo y lo probamos\nTe enseño avances y lo probamos juntos con casos reales antes de darlo por bueno.\nSe pone en marcha y se mide\nSale a funcionar y medimos si te ahorra tiempo o te trae clientes, para ajustar lo que haga falta.",
+      "idioma": "es",
+      "id": "a0a7b348bf6a89adb3ad"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#por-que",
+      "titulo": "Webs para negocios · Soy Henry.",
+      "texto": "// Por qué conmigo\nSoy Henry.\nSoy analista de datos en Las Palmas de Gran Canaria. Llevo años haciendo informes, dashboards y automatizaciones, y programo con IA a diario.\nLo que me diferencia: no me quedo en que la web sea bonita o en que la IA sea moderna. Quiero que te ahorre horas o te traiga clientes, y eso se mide.\nHablas con quien lo hace\nSin intermediarios: me escribes a mí y te contesto yo.\nMedido desde el primer día\nSabes cuánta gente entra y cuánto tiempo te ahorras.\nSoy de aquí, y bilingüe\nSé cómo se busca en Canarias y hablo como tus clientes, también los que vienen de fuera.\nEs tuyo de verdad\nEl dominio, las cuentas y los accesos quedan a tu nombre.\nIA con cabeza\nSe usa donde ahorra tiempo, y lo importante lo revisas tú.\nRápido y ligero\nHecho a medida, sin plantillas pesadas ni herramientas que no necesitas.",
+      "idioma": "es",
+      "id": "d8464f0b97045e8d521e"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Cuánto cuesta?",
+      "texto": "¿Cuánto cuesta?\nDepende de cuántas páginas o procesos sean y de lo que tengan que hacer. Te digo el precio antes de empezar, por escrito, y sin compromiso.",
+      "idioma": "es",
+      "id": "5319fb4e2db4c9a5558e"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Cuánto se tarda?",
+      "texto": "¿Cuánto se tarda?\nDepende del tamaño y de lo rápido que tengamos textos, fotos o datos. En la propuesta va una fecha de entrega.",
+      "idioma": "es",
+      "id": "174de0a620fc454d8a90"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Qué hace la IA y qué hago yo?",
+      "texto": "¿Qué hace la IA y qué hago yo?\nLa IA se encarga de lo repetitivo: leer, ordenar, copiar y preparar borradores. Lo que sale a tus clientes o toca tu dinero pasa antes por ti, y siempre sabes qué se hace solo.",
+      "idioma": "es",
+      "id": "4aa93f1f2f42be00fe9c"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Qué pasa con mis datos?",
+      "texto": "¿Qué pasa con mis datos?\nSe usan solo los que hagan falta. Antes de empezar te explico dónde se guardan, qué herramienta los procesa y quién puede verlos.",
+      "idioma": "es",
+      "id": "2e4256d6414f869e2d54"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · No tengo textos ni fotos, ¿es un problema?",
+      "texto": "No tengo textos ni fotos, ¿es un problema?\nNo. Te ayudo a escribir los textos a partir de lo que me cuentes, y vemos juntos qué fotos hacen falta.",
+      "idioma": "es",
+      "id": "59387e9d6a758a39dbf4"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Me ayudas con el dominio y el hosting?",
+      "texto": "¿Me ayudas con el dominio y el hosting?\nSí. Te ayudo a contratarlos a tu nombre, para que sean tuyos aunque algún día dejemos de trabajar juntos.",
+      "idioma": "es",
+      "id": "d0c9b15b4e5dd733e2c0"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Saldré en Google?",
+      "texto": "¿Saldré en Google?\nLa web sale preparada para que Google la entienda y la dejo dada de alta en sus herramientas. Nadie puede prometerte el primer puesto, pero sí medir cómo vas y mejorar.",
+      "idioma": "es",
+      "id": "d52022d6443d37269ace"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Puedes hacer la web también en inglés?",
+      "texto": "¿Puedes hacer la web también en inglés?\nSí. Hablo inglés como nativo, así que la versión inglesa la escribo yo, no una traducción automática. Va muy bien para apartamentos vacacionales, restaurantes o cualquier negocio con clientes de fuera.",
+      "idioma": "es",
+      "id": "886e7b85915b55f137b9"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#dudas",
+      "titulo": "Webs para negocios · ¿Trabajas solo en Gran Canaria?",
+      "texto": "¿Trabajas solo en Gran Canaria?\nNo. Trabajo con negocios de cualquier isla y en remoto; si estás cerca, también podemos vernos.",
+      "idioma": "es",
+      "id": "ac40e1f274e5ffa537fd"
+    },
+    {
+      "url": "https://hbtdata.es/webs/",
+      "titulo": "Webs para negocios · ¿Qué te quita más tiempo esta semana?",
+      "texto": "// ¿Empezamos?\n¿Qué te quita más tiempo esta semana?\nCuéntamelo: una web que no funciona, un informe eterno o un correo que respondes veinte veces. Te contesto con una propuesta sin compromiso.",
+      "idioma": "es",
+      "id": "fa970e60d08896f16561"
+    },
+    {
+      "url": "https://hbtdata.es/webs/#contacto",
+      "titulo": "Webs para negocios · Cuéntame tu negocio.",
+      "texto": "// Contacto\nCuéntame tu negocio.\nRellena esto en un minuto o escríbeme por donde prefieras. Cuanto más me cuentes, mejor te podré ayudar.\nCorreo hbtdataanalyst@gmail.com\nInstagram Mensaje directo a @hbtdata\nLinkedIn Henry Barrios Thornhill\nTe respondo lo antes posible. Sin compromiso.",
+      "idioma": "es",
+      "id": "8e250e0fa1e3a6dd3dc4"
+    },
+    {
+      "url": "https://hbtdata.es/webs/",
+      "titulo": "Webs para negocios · Otros",
+      "texto": "Para\ncafeterías\ntalleres\npeluquerías\nclínicas\nfisios\nacademias\nrestaurantes\napartamentos vacacionales\ntiendas de barrio\nasesorías\ncreadores de contenido",
+      "idioma": "es",
+      "id": "1f32862a4f05e8acfc23"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/#inicio",
+      "titulo": "Juegos · Juegos con cosas de aquí.",
+      "texto": "//juegos Datos de Canarias\nJuegos con cosas de aquí.\nJuegos cortos para poner a prueba lo que sabes de las islas. Los datos son oficiales y cada respuesta trae su fuente. Al final te llevas una tarjeta con tu resultado para retar a quien quieras.\nHacer el test\nJugar con el mapa\nDatos oficiales\nSin registro\nSin cookies",
+      "idioma": "es",
+      "id": "e20aedd40ea4e67f4bee"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/#juegos",
+      "titulo": "Juegos · Dos juegos para empezar.",
+      "texto": "//02 Elige\nDos juegos para empezar.\n// ¿más o menos?\n¿Tejeda tiene más o menos habitantes que Betancuria?\nMás Menos\nTejeda: 1.806 · Betancuria: 801 · INE, 1/1/2025\n//01 Test\nTest de Canarias\nDiez preguntas sobre islas, municipios, habitantes y superficie: «¿qué isla…?», «¿más o menos?», «ordena» y alguna curiosidad.\n10 preguntas · 3 min Jugar\n//02 Mapa\n¿Dónde está?\nTe damos un pueblo, un roque o una playa y tú lo marcas en el mapa. Cuantos menos kilómetros de error, más puntos. Puedes jugar por isla o por tipo de sitio.\n5 o 10 sitios · 7 islas Jugar\n//03 En camino Hay más juegos en la cocina. Si tienes una idea con datos de Canarias, cuéntamela.\nProponer una idea",
+      "idioma": "es",
+      "id": "2a4dd03ee9cd06955361"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/#como-estan-hechos",
+      "titulo": "Juegos · Jugar, sí. Inventar, no.",
+      "texto": "//03 Cómo están hechos\nJugar, sí. Inventar, no.\nSon juegos, pero con las mismas reglas que el resto de hbtdata: datos con fuente, fecha visible y nada que no se pueda comprobar.\n01 Datos oficiales\nHabitantes del Padrón del INE, superficies del ISTAC y coordenadas del Instituto Geográfico Nacional. Si un dato no se encuentra en una fuente fiable, la pregunta no entra.\n02 Fuente y fecha en cada respuesta\nDespués de responder ves el dato real, de dónde sale y a qué fecha se refiere. Los datos se regeneran con un script cuando sale un padrón nuevo.\n03 Sin cookies ni registro\nNo hay cuentas ni analítica de terceros. El mapa se dibuja con el contorno de las islas, sin servicios de mapas externos.",
+      "idioma": "es",
+      "id": "38f3317ac7bf42914f83"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/test/",
+      "titulo": "Test de Canarias · ¿Cuánto sabes de las islas?",
+      "texto": "//juegos Test de Canarias\n¿Cuánto sabes de las islas?\nDiez preguntas con datos oficiales: islas, municipios, habitantes, superficie y algún lugar con historia. Después de cada respuesta ves el dato real con su fuente y su fecha.\nEmpezar\nO juega a ¿Dónde está?\n10 preguntas\nUnos 3 minutos\nSin registro ni cookies\n// ¿qué isla? Pincha la isla En el mapa o en la lista.\n// ¿más o menos? Uno frente a otro ¿Tejeda o Betancuria?\n// ordena De mayor a menor Habitantes, superficie…\n// curiosidad Cuatro opciones Y una sola buena.",
+      "idioma": "es",
+      "id": "cabd3ff9b0f1524c388f"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/test/",
+      "titulo": "Test de Canarias · Inicio",
+      "texto": "//resultado Test de Canarias\nCompartir\nDescargar imagen\nCopiar texto\nOtra partida\nJugar a ¿Dónde está?\nDatos del Padrón municipal del INE (1 de enero de 2025), la superficie del ISTAC , la UNESCO, el Gobierno de Canarias y el IGN. Las preguntas cambian en cada partida.",
+      "idioma": "es",
+      "id": "c31fd32dd04762ed791d"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/donde-esta/",
+      "titulo": "¿Dónde está? · ¿Dónde está?",
+      "texto": "//juegos El mapa\n¿Dónde está?\nTe damos un sitio de Canarias y tú lo marcas en el mapa. Cuanto más cerca, más puntos. El mapa no lleva nombres, así que nada de chivatazos.\nIsla\nQué buscar\nSitios por partida\n5\n10\nCargando el mapa…\nEmpezar",
+      "idioma": "es",
+      "id": "8f40f1966efbfafbe1cd"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/donde-esta/",
+      "titulo": "¿Dónde está? · Inicio",
+      "texto": "//resultado ¿Dónde está?\nCompartir\nImagen\nTexto\nOtra partida\nHacer el test\nCoordenadas: IGN (Nomenclátor Geográfico Básico de España y Base Topográfica Nacional). Contorno de las islas: ISTAC.",
+      "idioma": "es",
+      "id": "379f19925bf4258275dd"
+    },
+    {
+      "url": "https://hbtdata.es/en/#inicio",
+      "titulo": "Portfolio (English) · Data explained with things from here.",
+      "texto": "//00 hbtdata / Data from the Canary Islands\nData explained with things from here.\nI'm Henry Barrios Thornhill, a data analyst in Gran Canaria, in the Canary Islands. I build my own tools with public data and show how they are made.\nEnter\n//01 The Canary Islands in data\nSeven islands. Lots of data.\nFuel, football, local history and football pools. Data from the islands that people here actually share, told so it makes sense at first glance.\n//02 Project / Canarias Gas Tracker\nThe cheapest fuel on the islands.\nEach dot is a real petrol station, from turquoise (cheapest) to ochre (most expensive). Prices come every day from the Spanish government's public API, and GitHub Actions updates the site on its own.\nUnleaded 95 / prices on 13 Oct 2026 / Spanish government\n//03 Project / Moleiro and the World Cup\nMoleiro against the rest.",
+      "idioma": "en",
+      "id": "4f5b17dd957875415b8b"
+    },
+    {
+      "url": "https://hbtdata.es/en/#inicio",
+      "titulo": "Portfolio (English) · Data explained with things from here.",
+      "texto": "How much does Canarian footballer Alberto Moleiro produce compared with other players in Europe's top five leagues? A Python pipeline pulls the data from FBref and a Power BI dashboard makes it talk.\nCode and dashboard\n//04 Project / Historia para Gandules\n121 stories, each in its place.\nEvery video from @historiaparagandules , Luis Cabrera's account of Canarian stories, pinned to the place it talks about. With island and category filters, a search box and a game to guess where each story happened.\n//05 Project / La Quiniela\nOne, X, two.\nThe dashboard for a football pools game (the Spanish quiniela ) between three friends: results go into a Google Sheet published as CSV, and the site works out correct picks, best matchday and progress over time.\nOpen the dashboard\n//06 Behind the scenes / Content factory\nThe carousels come out of a script.",
+      "idioma": "en",
+      "id": "2144350cae24708cfdac"
+    },
+    {
+      "url": "https://hbtdata.es/en/#inicio",
+      "titulo": "Portfolio (English) · Data explained with things from here.",
+      "texto": "The carousels, reels and stories on @hbtdata are not laid out by hand: a set of scripts generates them with the brand identity and custom charts. These particles are code too.\nSee it on Instagram\n//07 How I work / Fixed rules\nBars start at zero.\nHere, at sea level: the highest peak on each island, from west to east. For prices I use medians, and every chart carries a date and a source. These peaks are also where the logo comes from.\nHighest point in metres / IGN and Wikipedia, Oct 2026\n//08 hbtdata / Contact\nGot some data and a question?\nWrite to me if you'd like to talk about a project, suggest a local dataset worth telling, or commission an analysis or a dashboard. I reply in English and Spanish.\nWrite to me\nSee all projects",
+      "idioma": "en",
+      "id": "093afb4d7ff683ee1c93"
+    },
+    {
+      "url": "https://hbtdata.es/en/#proyectos",
+      "titulo": "Portfolio (English) · Projects",
+      "texto": "// What I've built\nProjects\nReal projects with public data. Every one of them works today and you can open it. The tools themselves are in Spanish.\n01 HTML / JavaScript / Public API / GitHub Actions\nCanarias Gas Tracker\nThe cheapest petrol stations on the islands, with filters by island and fuel type. It runs on the Spanish government's fuel price API and updates itself every day.\nOpen the site Code\n02 Python / FBref / Power BI\nMoleiro against the rest of the World Cup\nHow much does Alberto Moleiro produce compared with other players in Europe's top five leagues? A Python pipeline that pulls the data from FBref, and a Power BI dashboard to read it.\nCode and dashboard\n03 Python / Leaflet / JavaScript / Data pipeline\nThe Historia para Gandules map",
+      "idioma": "en",
+      "id": "f248e3bf7bb16d0fcafd"
+    },
+    {
+      "url": "https://hbtdata.es/en/#proyectos",
+      "titulo": "Portfolio (English) · Projects",
+      "texto": "A map of 121 stories from @historiaparagandules , Luis Cabrera's account: each video pinned to the place it talks about, with filters, a search box and a game to guess where it happened. The data comes out of a Python pipeline and the site only reads a JSON file.\nOpen the map Code\n04 HTML / JavaScript / Google Sheets\nLa Quiniela: football pools among friends\nA dashboard for a football pools game between three friends: results are entered in a Google Sheet published as CSV, and the page works out correct picks, average per matchday, best matchday and cumulative progress.\nOpen the dashboard Code\n05 Python / Pillow / matplotlib / ffmpeg\nThe content factory\nThe carousels, reels and stories on @hbtdata come out of a set of scripts with the brand identity, custom charts and the usual rules: bars from zero, medians, date and source.\nSee it on Instagram",
+      "idioma": "en",
+      "id": "4067d5eb6189546b10cc"
+    },
+    {
+      "url": "https://hbtdata.es/en/#sobre-mi",
+      "titulo": "Portfolio (English) · Henry Barrios Thornhill",
+      "texto": "// About me\nHenry Barrios Thornhill\nHenry Barrios Thornhill (hbtdata) is a data analyst from Gran Canaria, Spain, who codes with AI, and the creator of Abre tu sobre (abretusobre.es).\nI'm from Las Palmas de Gran Canaria. I studied Business Administration and then a Master's in Big Data, and I've been working with data for a few years now: analysis, report automation and dashboards.\nToday I do it at a communications agency in Gran Canaria and, in my spare time, I build what you see above. I like a number to make sense at first glance, and I like what I make to be something you can open, play with and check.\nAway from the screen, several times a year I volunteer with Fundación Foresta, planting native species across the Canary Islands.\nPython SQL Power BI Pandas Folium Git & GitHub Advanced Excel Native English & Spanish\nNow La Pepa Studio Data, automation and reporting.",
+      "idioma": "en",
+      "id": "c9061a785ad6ec100daf"
+    },
+    {
+      "url": "https://hbtdata.es/en/#sobre-mi",
+      "titulo": "Portfolio (English) · Henry Barrios Thornhill",
+      "texto": "Several times a year Volunteer at Fundación Foresta Reforestation days: planting native species and forest maintenance.\n2025 Salescaling, data analyst Python pipelines and data preparation for LLMs.\n2024 The Wise Dreams, data analyst Interactive maps and KPI dashboards.\n2023–2024 Master's in Big Data & Analytics INESDI Business School.\n2023 Finalist, 5G Beach Challenge Datathon SPEGC.\n2012–2018 Bachelor's in Business Administration ULPGC, with an Erasmus exchange in Wrocław.",
+      "idioma": "en",
+      "id": "b4d699efa7abd7332a65"
+    },
+    {
+      "url": "https://hbtdata.es/en/#contacto",
+      "titulo": "Portfolio (English) · Write to me.",
+      "texto": "// Contact\nWrite to me.\nFor a job offer, an analysis, a dashboard or an AI-powered process. I reply in English and Spanish, as soon as I can.\nhbtdataanalyst@gmail.com\nInstagram @hbtdata\nLinkedIn Henry Barrios Thornhill\nGitHub henry94bt\nTikTok @hbtdata\nRunning a business in the Canary Islands? Websites and AI processes for local businesses (in Spanish)",
+      "idioma": "en",
+      "id": "bfb642ddf7644aa35163"
+    },
+    {
+      "url": "https://hbtdata.es/",
+      "titulo": "Resumen · hbtdata",
+      "texto": "> Henry Barrios Thornhill (hbtdata) es analista de datos de Gran Canaria que programa con IA y autor de Abre tu sobre (abretusobre.es).\n\nPortfolio y ficha profesional. Datos públicos de Canarias, dashboards y automatización. \"Datos explicados con cosas de aquí\".",
+      "idioma": "es",
+      "id": "cb634755d43ed88648eb"
+    },
+    {
+      "url": "https://hbtdata.es/",
+      "titulo": "Resumen · Persona",
+      "texto": "- Nombre completo: Henry Barrios Thornhill\n- Alias: hbtdata\n- Puesto: analista de datos (ADE + Máster en Big Data & Analytics)\n- Idiomas: español e inglés nativos\n- Ubicación: Las Palmas de Gran Canaria, España\n- Web: https://hbtdata.es\n- Email: hbtdataanalyst@gmail.com\n- Instagram: https://www.instagram.com/hbtdata/\n- LinkedIn: https://www.linkedin.com/in/henry-data-analyst-/\n- GitHub: https://github.com/henry94bt\n- X: https://x.com/hbtdata\n- TikTok: https://www.tiktok.com/@hbtdata",
+      "idioma": "es",
+      "id": "1c594b6d6c734609e961"
+    },
+    {
+      "url": "https://hbtdata.es/",
+      "titulo": "Resumen · Proyectos",
+      "texto": "- **Abre tu sobre** (2026): test de humor de 3 minutos. 20 situaciones y un sobre con 4 cromos. https://www.abretusobre.es\n- **Canarias Gas Tracker**: gasolineras más baratas de las islas, con la API del Ministerio y actualización diaria. https://henry94bt.github.io/canarias-gas-tracker/\n- **Moleiro frente al resto**: pipeline en Python (FBref) y dashboard en Power BI comparando a Alberto Moleiro con las cinco grandes ligas.\n- **Historia para Gandules**: mapa de 121 historias de Canarias con Leaflet. https://henry94bt.github.io/historiaparagandul/site/mapa.html\n- **La Quiniela**: panel de resultados entre amigos sobre una hoja de Google publicada como CSV. https://henry94bt.github.io/quiniela-millonarios/",
+      "idioma": "es",
+      "id": "8007190ad47f69b25344"
+    },
+    {
+      "url": "https://hbtdata.es/webs/",
+      "titulo": "Resumen · Webs y procesos con IA para negocios",
+      "texto": "https://hbtdata.es/webs/ · Webs para negocios de Canarias (web nueva, rediseño, páginas para campañas), SEO local y medición sin cookies, dashboards y automatización de procesos con IA con revisión humana. Presupuesto sin compromiso: hbtdataanalyst@gmail.com",
+      "idioma": "es",
+      "id": "923f49f0736d5196511a"
+    },
+    {
+      "url": "https://hbtdata.es/juegos/",
+      "titulo": "Resumen · Juegos",
+      "texto": "https://hbtdata.es/juegos/ · Juegos cortos con datos oficiales de Canarias, sin registro ni cookies:\n- **Test de Canarias** (https://hbtdata.es/juegos/test/): 10 preguntas sobre islas y municipios (Padrón del INE a 1 de enero de 2025, superficie del ISTAC, UNESCO, IGN). Cada respuesta enseña la fuente y la fecha.\n- **¿Dónde está?** (https://hbtdata.es/juegos/donde-esta/): localizar pueblos, roques, playas y lugares en un mapa de las islas; puntúa por kilómetros de distancia. Coordenadas del IGN (NGBE y BTN) y contorno de las islas del ISTAC.",
+      "idioma": "es",
+      "id": "ac60b8e15792a300933a"
+    },
+    {
+      "url": "https://hbtdata.es/",
+      "titulo": "Resumen · Cómo trabajo",
+      "texto": "Barras desde cero, medianas en vez de medias, y todo gráfico con fecha y fuente. El código y los datos son públicos cuando el proyecto lo permite.",
+      "idioma": "es",
+      "id": "7e902abdf17904d37bcf"
+    },
+    {
+      "url": "https://hbtdata.es/en/",
+      "titulo": "Resumen · English",
+      "texto": "> Henry Barrios Thornhill (hbtdata) is a data analyst from Gran Canaria, Spain, who codes with AI, and the creator of Abre tu sobre (abretusobre.es).\n\nEnglish version of the portfolio: https://hbtdata.es/en/ — data explained with things from the Canary Islands: public data, dashboards and automation. The projects listed above are built in Spanish.\n\nFor businesses in the Canary Islands (page in Spanish): https://hbtdata.es/webs/ — websites, local SEO, dashboards and AI process automation.",
+      "idioma": "en",
+      "id": "99ded653028701e456bd"
+    }
+  ]
+}

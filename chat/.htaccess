@@ -1,0 +1,2 @@
+# La carpeta chat/ es código del Worker y del indexador: no se sirve en la web.
+Require all denied

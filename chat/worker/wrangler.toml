@@ -1,0 +1,41 @@
+# Worker del chat de hbtdata.es
+# Despliegue: desde chat/worker, `npx wrangler deploy` (ver chat/LEEME.md)
+
+name = "hbtdata-chat"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+# Workers AI: embeddings y modelo que responde (10.000 neuronas/día gratis)
+[ai]
+binding = "AI"
+
+# Base de datos vectorial con los trozos de la web
+# Se crea una vez con:
+#   npx wrangler vectorize create hbtdata-chat --dimensions=1024 --metric=cosine
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "hbtdata-chat"
+
+# Límite por IP: 8 preguntas por minuto (period solo admite 10 o 60 segundos)
+[[ratelimits]]
+name = "LIMITADOR"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 8
+  period = 60
+
+[vars]
+# Webs desde las que se puede usar el chat (separadas por comas)
+ORIGENES = "https://hbtdata.es,https://www.hbtdata.es,http://localhost:8000,http://127.0.0.1:8000"
+# Modelo que redacta (disponible en el plan gratis y barato en neuronas)
+MODELO = "@cf/google/gemma-4-26b-a4b-it"
+# Modelo de embeddings multilingüe (1024 dimensiones; si se cambia, hay que
+# recrear el índice con las dimensiones del nuevo modelo)
+MODELO_EMBEDDINGS = "@cf/baai/bge-m3"
+# Parecido mínimo (0 a 1) para responder con el modelo. Por debajo, texto fijo.
+# Calibrarlo con: node chat/indexar.mjs --probar "pregunta"
+UMBRAL = "0.55"
+
+# ADMIN_TOKEN es un secreto, no va aquí:
+#   npx wrangler secret put ADMIN_TOKEN
