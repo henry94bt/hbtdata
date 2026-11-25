@@ -106,6 +106,11 @@ section{padding:96px 0;position:relative}
 .tarjeta .pie{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--linea)}
 .tarjeta .pie .ico{width:16px;height:16px;color:var(--ocre)}
 .vacio{padding:40px 0;color:var(--tenue)}
+.pide{color:var(--tenue);font-size:.95rem}
+.pide a,.vacio a{color:var(--claro);text-underline-offset:3px}
+.pide a:hover,.vacio a:hover{color:var(--ocre)}
+.redes-botones{display:flex;flex-wrap:wrap;gap:8px}
+.redes-botones .pildora{padding:10px 14px;font-size:.66rem;letter-spacing:.1em}
 
 /* ---------- cómo se usa ---------- */
 .usos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--linea);border-left:1px solid var(--linea);list-style:none}

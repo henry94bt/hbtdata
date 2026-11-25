@@ -186,7 +186,7 @@ def html_guia(r, datos):
   <h2 class="titular">Hay más en la web.</h2>
   <p class="url">{DOMINIO}/recursos</p>
   <p>Prompts, skills, conectores y otras guías, cada uno con su página y su botón de copiar. Gratis y sin registro.</p>
-  <p>Si echas algo en falta, pídemelo en TikTok o Instagram: @hbtdata.</p>
+  <p>Si echas algo en falta, pídemelo en Instagram o TikTok (@hbtdata) o en LinkedIn.</p>
   <div class="final">
     <p>{e(FRASE)}</p>
     <p>{e(AVISO)}</p>

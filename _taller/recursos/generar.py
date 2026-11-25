@@ -22,6 +22,12 @@ DOMINIO = "https://hbtdata.es"
 MARCA = "<!-- GENERADO por _taller/recursos/generar.py: no editar a mano -->"
 OG = f"{DOMINIO}/assets/og-recursos.png"
 TIKTOK = "https://www.tiktok.com/@hbtdata"
+INSTAGRAM = "https://instagram.com/hbtdata"
+LINKEDIN = "https://linkedin.com/in/henry-data-analyst-"
+# las tres redes por igual en todas las llamadas a la acción
+REDES = [("Instagram", INSTAGRAM, "i-instagram"), ("TikTok", TIKTOK, "i-tiktok"), ("LinkedIn", LINKEDIN, "i-linkedin")]
+REDES_TEXTO = (f'<a href="{INSTAGRAM}">Instagram</a>, <a href="{TIKTOK}">TikTok</a> '
+               f'o <a href="{LINKEDIN}">LinkedIn</a>')
 AVISO = ("Página personal, sin relación con Anthropic. «Claude» se nombra solo para describir "
          "para qué sirve cada recurso. Los conectores enlazan a su fuente oficial: aquí no se redistribuye nada ajeno.")
 
@@ -105,7 +111,7 @@ def barra(raiz, actual=None, tipos=None):
     </a>
     <nav class="mono" aria-label="Tipos de recurso">
 {enlaces}    </nav>
-    <a class="pildora" href="{TIKTOK}"><svg class="ico"><use href="#i-tiktok"/></svg>Sígueme</a>
+    <a class="pildora" href="{raiz}#contacto">Contacto</a>
   </div>
 </header>
 """
@@ -117,8 +123,8 @@ def pie(raiz):
   <div class="envuelve">
     <span class="mono">hbt<b>data</b> / Recursos de Claude / Las Palmas de Gran Canaria</span>
     <nav class="redes" aria-label="Redes">
-      <a href="https://instagram.com/hbtdata" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
-      <a href="https://linkedin.com/in/henry-data-analyst-" aria-label="LinkedIn"><svg class="ico"><use href="#i-linkedin"/></svg></a>
+      <a href="{INSTAGRAM}" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+      <a href="{LINKEDIN}" aria-label="LinkedIn"><svg class="ico"><use href="#i-linkedin"/></svg></a>
       <a href="https://github.com/henry94bt" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a>
       <a href="{TIKTOK}" aria-label="TikTok"><svg class="ico"><use href="#i-tiktok"/></svg></a>
     </nav>
@@ -192,7 +198,7 @@ def portada(datos, lista):
         <p class="entrada">Prompts, skills, conectores y guías en PDF que uso de verdad para analizar datos, hacer informes y quitarme tareas de encima. Cópialos, descárgalos y adáptalos a lo tuyo.</p>
         <div class="acciones">
           <a class="pildora llena" href="#lista">Ver los recursos</a>
-          <a class="enlace" href="{TIKTOK}">¿Te falta alguno? Pídemelo por TikTok</a>
+          <p class="pide">¿Te falta alguno? Pídemelo en {REDES_TEXTO}.</p>
         </div>
         <ul class="sellos mono"><li>Gratis</li><li>Sin registro</li><li>Probado antes de subirlo</li></ul>
       </div>
@@ -211,7 +217,7 @@ def portada(datos, lista):
     <div class="envuelve">
       <ul class="rejilla">
 {tarjetas}      </ul>
-      <p class="vacio" hidden>Todavía no hay nada con esa combinación. Prueba con otro tema o <a href="{TIKTOK}">pídemelo por TikTok</a>.</p>
+      <p class="vacio" hidden>Todavía no hay nada con esa combinación. Prueba con otro tema o pídemelo en {REDES_TEXTO}.</p>
     </div>
   </section>
 
@@ -403,8 +409,8 @@ def ficha(r, datos, lista):
       </div>
       <div class="caja">
         <span class="mono">¿Te ha servido?</span>
-        <p>En TikTok enseño cómo lo uso y qué subo nuevo.</p>
-        <a class="pildora" href="{TIKTOK}"><svg class="ico"><use href="#i-tiktok"/></svg>@hbtdata</a>
+        <p>Cuento cómo lo uso y qué subo nuevo en mis redes.</p>
+        <div class="redes-botones">{"".join(f'<a class="pildora" href="{u}"><svg class="ico"><use href="#{i}"/></svg>{n}</a>' for n, u, i in REDES)}</div>
       </div>
     </aside>
   </div>
