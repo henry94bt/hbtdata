@@ -128,7 +128,7 @@ def pie(raiz):
       <a href="https://github.com/henry94bt" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a>
       <a href="{TIKTOK}" aria-label="TikTok"><svg class="ico"><use href="#i-tiktok"/></svg></a>
     </nav>
-    <a class="mono enlace" href="{raiz}">© 2026 Henry Barrios Thornhill / Volver al portfolio</a>
+    <span class="mono"><a class="enlace" href="{raiz}">© 2026 Henry Barrios Thornhill / Volver al portfolio</a> / <a class="enlace" href="{raiz}privacidad/">Privacidad</a></span>
   </div>
 </footer>
 """
