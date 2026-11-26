@@ -17,6 +17,8 @@ AddDefaultCharset UTF-8
 
 # ---------- _taller/ (generadores y fuentes de /recursos/) no se sirve ----------
 RedirectMatch 404 ^/_taller(/|$)
+# ---------- .github/ (flujos de GitHub Actions) tampoco ----------
+RedirectMatch 404 ^/\.github(/|$)
 
 # ---------- 404 propio ----------
 ErrorDocument 404 /404.html

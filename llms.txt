@@ -31,13 +31,25 @@ Portfolio y ficha profesional. Datos públicos de Canarias, dashboards y automat
 
 https://hbtdata.es/webs/ · Webs para negocios de Canarias (web nueva, rediseño, páginas para campañas), SEO local y medición sin cookies, dashboards y automatización de procesos con IA con revisión humana. Presupuesto sin compromiso: hbtdataanalyst@gmail.com
 
+## Datos de Canarias
+
+https://hbtdata.es/datos/ · Preguntas de Canarias respondidas con datos públicos, cada gráfico con su fuente y su fecha. Las páginas de gasolina se regeneran cada mañana con los precios del Geoportal de carburantes (Ministerio para la Transición Ecológica y el Reto Demográfico): ranking de gasolineras, mapa, mediana por municipio y evolución diaria desde abril de 2026.
+
+- **¿En qué isla está más barata la gasolina?** https://hbtdata.es/datos/gasolina/
+- **¿Dónde está la gasolina más barata de Lanzarote?** https://hbtdata.es/datos/gasolina/lanzarote/
+- **¿Dónde está la gasolina más barata de Fuerteventura?** https://hbtdata.es/datos/gasolina/fuerteventura/
+- **¿Dónde está la gasolina más barata de Gran Canaria?** https://hbtdata.es/datos/gasolina/gran-canaria/
+- **¿Dónde está la gasolina más barata de Tenerife?** https://hbtdata.es/datos/gasolina/tenerife/
+- **¿Dónde está la gasolina más barata de La Gomera?** https://hbtdata.es/datos/gasolina/la-gomera/
+- **¿Dónde está la gasolina más barata de La Palma?** https://hbtdata.es/datos/gasolina/la-palma/
+- **¿Dónde está la gasolina más barata de El Hierro?** https://hbtdata.es/datos/gasolina/el-hierro/
+- Datos abiertos (CSV): https://hbtdata.es/datos/gasolina/precios.csv (precios del día por gasolinera) y https://hbtdata.es/datos/gasolina/historico.csv (mediana diaria por isla y combustible)
+
 ## Juegos
 
 https://hbtdata.es/juegos/ · Juegos cortos con datos oficiales de Canarias, sin registro ni cookies:
 - **Test de Canarias** (https://hbtdata.es/juegos/test/): 10 preguntas sobre islas y municipios (Padrón del INE a 1 de enero de 2025, superficie del ISTAC, UNESCO, IGN). Cada respuesta enseña la fuente y la fecha.
 - **¿Dónde está?** (https://hbtdata.es/juegos/donde-esta/): localizar pueblos, roques, playas y lugares en un mapa de las islas; puntúa por kilómetros de distancia. Coordenadas del IGN (NGBE y BTN) y contorno de las islas del ISTAC.
-
-
 
 ## Recursos de Claude
 
