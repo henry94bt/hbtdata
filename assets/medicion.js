@@ -20,7 +20,7 @@
 (function () {
   'use strict';
 
-  var CODIGO = '';            // p. ej. 'hbtdata' → https://hbtdata.goatcounter.com
+  var CODIGO = 'hbtdata';     // panel: https://hbtdata.goatcounter.com
   var DOMINIO = 'hbtdata.es';
 
   function trozo(v) {
