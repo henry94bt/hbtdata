@@ -35,6 +35,44 @@
     <loc>https://hbtdata.es/juegos/donde-esta/</loc>
     <lastmod>2026-11-25</lastmod>
   </url>
+  <!-- datos -->
+  <url>
+    <loc>https://hbtdata.es/datos/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/lanzarote/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/fuerteventura/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/gran-canaria/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/tenerife/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/la-gomera/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/la-palma/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://hbtdata.es/datos/gasolina/el-hierro/</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <!-- /datos -->
   <!-- recursos -->
   <url>
     <loc>https://hbtdata.es/recursos/</loc>

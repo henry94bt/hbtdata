@@ -2,6 +2,10 @@
 
 Herramientas para generar partes de hbtdata.es. No se publica: `.htaccess` devuelve 404 para `/_taller/`.
 
+## datos/ → hbtdata.es/datos/
+
+Ver [`datos/README.md`](datos/README.md). Se regenera sola cada mañana con `.github/workflows/datos-gasolina.yml`.
+
 ## recursos/ → hbtdata.es/recursos/
 
 | Archivo | Qué hace |
