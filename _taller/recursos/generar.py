@@ -241,6 +241,7 @@ def portada(datos, lista):
 """ + pie(raiz) + f"""
 <script src="{raiz}assets/campo.js"></script>
 <script src="{raiz}recursos/recursos.js"></script>
+<script defer src="{raiz}assets/medicion.js"></script>
 </body>
 </html>
 """)
@@ -419,6 +420,7 @@ def ficha(r, datos, lista):
 
 """ + pie(raiz) + f"""
 <script src="{raiz}recursos/recursos.js"></script>
+<script defer src="{raiz}assets/medicion.js"></script>
 </body>
 </html>
 """)

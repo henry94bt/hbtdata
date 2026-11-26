@@ -289,6 +289,7 @@
       el.repaso.appendChild(li);
     });
     muestra('final');
+    if (window.hbtMedir) window.hbtMedir('juego_fin', { juego: 'test', resultado: n + '/' + total });
     var casillas = aciertos.map(Boolean);
     var texto = datos.titulo + ': ' + n + '/' + total + ' · ' + nivel.titulo + '\n' + casillas.map(function (c) { return c ? '🟧' : '⬛'; }).join('') + '\n¿Y tú cuánto sabes?';
     J.fuentesListas().then(function () {
