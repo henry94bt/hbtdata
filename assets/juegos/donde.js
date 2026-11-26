@@ -180,6 +180,7 @@
   // ---------- resultado ----------
   function final() {
     var total = jugadas.reduce(function (a, j) { return a + j.puntos; }, 0), max = jugadas.length * 1000, pc = total / max;
+    if (window.hbtMedir) window.hbtMedir('juego_fin', { juego: 'donde-esta', resultado: Math.round(pc * 10) * 10 + '%' });
     var nivel = pc >= 0.85 ? 'Te lo sabes de memoria' : pc >= 0.6 ? 'Buen ojo' : pc >= 0.35 ? 'Vas bien encaminado' : 'Toca darse un paseo por las islas';
     capaRonda.clearLayers();
     var b = L.latLngBounds([]);
