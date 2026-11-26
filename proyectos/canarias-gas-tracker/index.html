@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canarias Gas Tracker: cómo está hecho · hbtdata</title>
+<meta name="description" content="Cómo funciona el Canarias Gas Tracker, el mapa con los precios diarios de las gasolineras de Canarias: datos abiertos del Ministerio, Python y GitHub Actions. Y lo que aprendí.">
+<link rel="canonical" href="https://hbtdata.es/proyectos/canarias-gas-tracker/">
+<meta name="author" content="Henry Barrios Thornhill">
+<meta name="theme-color" content="#04161C">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="hbtdata">
+<meta property="og:url" content="https://hbtdata.es/proyectos/canarias-gas-tracker/">
+<meta property="og:title" content="Canarias Gas Tracker: la gasolina más barata de las islas">
+<meta property="og:description" content="Un mapa que se actualiza solo cada mañana con los precios de las gasolineras de Canarias. Cómo está hecho y qué aprendí.">
+<meta property="og:image" content="https://hbtdata.es/assets/og-gas-tracker.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Canarias Gas Tracker: la gasolina más barata de las islas, con las gasolineras de Canarias dibujadas como puntos">
+<meta property="article:published_time" content="2026-11-26">
+<meta property="article:author" content="https://hbtdata.es/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hbtdata">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230A3440'/%3E%3Cg fill='%23F7F3EC'%3E%3Crect x='8' y='29.8' width='5.1' height='10.2' rx='1.4'/%3E%3Crect x='14.7' y='20.2' width='5.1' height='19.8' rx='1.4'/%3E%3Crect x='21.4' y='8' width='5.1' height='32' rx='1.4' fill='%23F0A840'/%3E%3Crect x='28.2' y='14.4' width='5.1' height='25.6' rx='1.4'/%3E%3Crect x='34.9' y='25.3' width='5.1' height='14.7' rx='1.4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/fuentes/fuentes.css">
+<link rel="stylesheet" href="../../assets/juegos/juegos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#pagina",
+      "url": "https://hbtdata.es/proyectos/canarias-gas-tracker/",
+      "name": "Canarias Gas Tracker: cómo está hecho",
+      "inLanguage": "es-ES",
+      "isPartOf": { "@id": "https://hbtdata.es/#web" },
+      "about": { "@id": "https://henry94bt.github.io/canarias-gas-tracker/#app" },
+      "mainEntity": { "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#articulo" },
+      "breadcrumb": { "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#migas" },
+      "primaryImageOfPage": { "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#captura" }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#articulo",
+      "headline": "Canarias Gas Tracker: la gasolina más barata de las islas",
+      "description": "Qué problema resuelve el Canarias Gas Tracker, cómo funciona por dentro (API del Ministerio, Python, Folium y GitHub Actions) y lo que aprendí: el bloqueo de la API a GitHub Actions, las teselas del mapa y los umbrales por cuartiles.",
+      "inLanguage": "es-ES",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": { "@id": "https://hbtdata.es/#person" },
+      "publisher": { "@id": "https://hbtdata.es/#person" },
+      "image": [
+        "https://hbtdata.es/assets/og-gas-tracker.png",
+        "https://hbtdata.es/assets/gas-tracker.png"
+      ],
+      "mainEntityOfPage": { "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#pagina" },
+      "about": [
+        { "@id": "https://henry94bt.github.io/canarias-gas-tracker/#app" },
+        { "@id": "https://github.com/henry94bt/canarias-gas-tracker#codigo" }
+      ],
+      "keywords": "gasolina Canarias, precios carburantes Canarias, gasolineras baratas Gran Canaria, datos abiertos, Python, GitHub Actions, Folium"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#captura",
+      "url": "https://hbtdata.es/assets/gas-tracker.png",
+      "contentUrl": "https://hbtdata.es/assets/gas-tracker.png",
+      "width": 1280,
+      "height": 1150,
+      "caption": "Tabla de las diez gasolineras más baratas y mapa del Canarias Gas Tracker, 22 de octubre de 2026"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#migas",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "hbtdata", "item": "https://hbtdata.es/" },
+        { "@type": "ListItem", "position": 2, "name": "Canarias Gas Tracker", "item": "https://hbtdata.es/proyectos/canarias-gas-tracker/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://henry94bt.github.io/canarias-gas-tracker/#app",
+      "name": "Canarias Gas Tracker",
+      "url": "https://henry94bt.github.io/canarias-gas-tracker/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "es-ES",
+      "isAccessibleForFree": true,
+      "description": "Mapa de las gasolineras de Canarias con los precios de gasolina 95 y diésel de cada día, las diez más baratas por isla y la variación respecto al día anterior. Datos abiertos del Ministerio para la Transición Ecológica, actualizados cada mañana con GitHub Actions.",
+      "image": "https://hbtdata.es/assets/gas-tracker.png",
+      "author": { "@id": "https://hbtdata.es/#person" },
+      "creator": { "@id": "https://hbtdata.es/#person" },
+      "subjectOf": { "@id": "https://hbtdata.es/proyectos/canarias-gas-tracker/#articulo" }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/henry94bt/canarias-gas-tracker#codigo",
+      "name": "canarias-gas-tracker",
+      "codeRepository": "https://github.com/henry94bt/canarias-gas-tracker",
+      "programmingLanguage": ["Python", "JavaScript"],
+      "runtimePlatform": "GitHub Actions",
+      "author": { "@id": "https://hbtdata.es/#person" },
+      "targetProduct": { "@id": "https://henry94bt.github.io/canarias-gas-tracker/#app" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hbtdata.es/#person",
+      "name": "Henry Barrios Thornhill",
+      "alternateName": "hbtdata",
+      "url": "https://hbtdata.es/"
+    }
+  ]
+}
+</script>
+<style>
+  .articulo{max-width:820px;margin:0 auto;padding:120px var(--lado) 40px}
+  .migas{display:flex;flex-wrap:wrap;gap:8px}
+  .migas a{text-decoration:none}
+  .migas a:hover{color:var(--ocre)}
+  .articulo h1{font-size:clamp(2.5rem,7.4vw,4.6rem);margin:18px 0 24px}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+  .ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:44px;border:1px solid var(--linea);border-radius:14px;overflow:hidden;background:var(--linea)}
+  .ficha div{background:var(--fondo);padding:16px 18px}
+  .ficha .ancha{grid-column:span 2}
+  @media(max-width:620px){.ficha{grid-template-columns:repeat(2,1fr)}}
+  .ficha dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+  .ficha dd{margin-top:4px;font-weight:400}
+
+  .bloque{margin-top:96px}
+  .bloque>.mono{margin-bottom:10px}
+  .bloque h2{font-size:clamp(1.9rem,4.6vw,2.8rem);margin-bottom:22px}
+  .bloque p{color:var(--tenue);max-width:64ch}
+  .bloque p+p{margin-top:14px}
+  .bloque strong{font-weight:400;color:var(--claro)}
+  .bloque a{color:var(--suave)}
+  .bloque a:hover{color:var(--ocre)}
+  .bloque a.pildora{color:var(--claro)}
+  .bloque a.pildora.llena{color:var(--fondo)}
+  code{font-family:var(--mono);font-size:.86em;color:var(--claro);background:rgba(247,243,236,.07);padding:1px 6px;border-radius:5px}
+
+  /* pasos */
+  .pasos{list-style:none;margin-top:30px;display:grid;gap:0;border-top:1px solid var(--linea)}
+  .pasos li{display:grid;grid-template-columns:64px 1fr;gap:6px 18px;padding:20px 0;border-bottom:1px solid var(--linea)}
+  .pasos .num{font-family:var(--mono);font-size:.74rem;color:var(--ocre);letter-spacing:.1em;padding-top:4px}
+  .pasos h3{font-weight:400;font-size:1.12rem}
+  .pasos p{grid-column:2;margin-top:2px !important}
+  @media(max-width:560px){.pasos li{grid-template-columns:34px 1fr;gap:4px 10px}}
+
+  /* lista con punto ocre */
+  .puntos-lista{list-style:none;margin-top:22px;display:grid;gap:10px}
+  .puntos-lista li{display:flex;gap:12px;align-items:baseline;color:var(--tenue);max-width:64ch}
+  .puntos-lista li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--ocre);transform:translateY(-2px)}
+
+  /* captura */
+  .captura{margin-top:34px}
+  .captura img{width:100%;height:auto;border-radius:14px;border:1px solid var(--linea)}
+  .captura figcaption,.grafico figcaption{margin-top:12px;font-size:.84rem;color:var(--tenue);max-width:68ch}
+
+  /* aprendizajes */
+  .leccion{margin-top:46px;padding-left:20px;border-left:2px solid var(--linea)}
+  .leccion.clave{border-color:var(--ocre)}
+  .leccion h3{font-weight:400;font-size:1.3rem;margin-bottom:10px;color:var(--claro)}
+
+  /* gráficos */
+  .grafico{margin:38px 0 8px;padding:24px clamp(16px,3vw,28px) 22px;border:1px solid var(--linea);border-radius:16px;background:linear-gradient(180deg,rgba(10,52,64,.55),rgba(10,52,64,.2))}
+  .grafico h3{font-weight:400;font-size:1.2rem;margin-bottom:6px}
+  .leyenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);margin-bottom:18px}
+  .leyenda .g::before,.leyenda .d::before,.leyenda .si::before,.leyenda .no::before{content:"";display:inline-block;width:10px;height:10px;margin-right:7px;vertical-align:-1px}
+  .leyenda .g::before{background:var(--ocre);border-radius:50%}
+  .leyenda .d::before{background:var(--suave);border-radius:50%}
+  .leyenda .si::before{background:var(--suave);border-radius:2px}
+  .leyenda .no::before{border:1px solid rgba(247,243,236,.35);border-radius:2px;width:8px;height:8px}
+
+  .puntos{display:grid;gap:4px}
+  .fila-p{display:grid;grid-template-columns:minmax(118px,150px) 1fr 104px;align-items:center;gap:14px;min-height:34px}
+  .fila-p .isla{font-size:.95rem;white-space:nowrap}
+  .fila-p .isla small{font-family:var(--mono);font-size:.68rem;color:var(--tenue)}
+  .pista{position:relative;height:22px;background:linear-gradient(var(--linea),var(--linea)) center/100% 1px no-repeat}
+  .pista i{position:absolute;top:50%;width:13px;height:13px;border-radius:50%;transform:translate(-50%,-50%)}
+  .pista i.g{background:var(--ocre);box-shadow:0 0 0 2px var(--fondo)}
+  .pista i.d{background:var(--suave);box-shadow:0 0 0 2px var(--fondo)}
+  .cifras{font-family:var(--mono);font-size:.74rem;text-align:right;white-space:nowrap}
+  .cifras b{font-weight:500}
+  .cifras b.g{color:var(--ocre)}
+  .cifras b.d{color:var(--suave)}
+  .eje{min-height:24px}
+  .eje .pista{background:none;border-top:1px solid rgba(247,243,236,.3);height:20px}
+  .eje .pista span{position:absolute;top:5px;transform:translateX(-50%);font-family:var(--mono);font-size:.66rem;color:var(--tenue)}
+  .eje .pista span:first-child{transform:none}
+  .eje .pista span:last-child{transform:translateX(-100%)}
+  @media(max-width:560px){
+    .fila-p{grid-template-columns:1fr 92px;gap:2px 10px}
+    .fila-p .pista{grid-column:1/-1;grid-row:2}
+    .fila-p .cifras{grid-row:1;grid-column:2}
+    .eje{grid-template-columns:1fr}
+    .eje>span:not(.pista){display:none}
+    .eje .pista{grid-row:1}
+    .puntos{gap:10px}
+  }
+
+  details{margin-top:16px}
+  summary{cursor:pointer;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+  summary:hover{color:var(--ocre)}
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.88rem}
+  th,td{padding:7px 8px;border-bottom:1px solid var(--linea);text-align:right;font-weight:300}
+  th:first-child{text-align:left}
+  thead th{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);font-weight:500}
+
+  .dias{position:relative;padding-top:30px}
+  .meses,.rejilla{display:grid;grid-template-columns:repeat(var(--semanas),1fr);column-gap:3px}
+  .meses{position:absolute;top:0;left:0;right:0}
+  .meses span{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tenue);white-space:nowrap}
+  .rejilla{position:relative;grid-template-rows:repeat(7,auto);grid-auto-flow:column;row-gap:3px}
+  .rejilla i{display:block;aspect-ratio:1;border-radius:2px}
+  .rejilla i.si{background:var(--suave)}
+  .rejilla i.no{box-shadow:inset 0 0 0 1px rgba(247,243,236,.32)}
+  .corte{position:absolute;top:-8px;bottom:-8px;border-left:2px solid var(--ocre);margin-left:-2.5px}
+  .corte b{position:absolute;top:100%;margin-top:4px;left:6px;font-family:var(--mono);font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ocre);white-space:nowrap;background:var(--fondo);padding:0 4px;border-radius:3px}
+  .cifras-dias{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:40px !important;font-size:.92rem}
+  .cifras-dias b{font-weight:400;color:var(--claro)}
+  @media(max-width:560px){.rejilla,.meses{column-gap:2px}.rejilla{row-gap:2px}}
+
+  .cierre{margin-top:96px;padding:34px clamp(20px,4vw,40px);border-radius:18px;background:var(--petroleo);border:1px solid var(--linea)}
+  .cierre h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:14px}
+  .cierre .acciones{margin-top:24px}
+  .fecha{margin-top:56px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="volcan" viewBox="0 0 100 100">
+    <rect x="0"  y="68" width="16" height="32"  rx="4.5" fill="currentColor"/>
+    <rect x="21" y="38" width="16" height="62"  rx="4.5" fill="currentColor"/>
+    <rect x="42" y="0"  width="16" height="100" rx="4.5" fill="#F0A840"/>
+    <rect x="63" y="20" width="16" height="80"  rx="4.5" fill="currentColor"/>
+    <rect x="84" y="54" width="16" height="46"  rx="4.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-fuera" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+</svg>
+
+<header class="barra fija">
+  <div class="envuelve">
+    <a class="firma" href="../../" aria-label="hbtdata, ir al portfolio">
+      <span class="sello"><svg viewBox="0 0 100 100" style="color:var(--claro)"><use href="#volcan"/></svg></span>
+      <span class="mono" style="color:var(--claro)">hbt<b>data</b><span> / Proyectos</span></span>
+    </a>
+    <a class="pildora" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+  </div>
+</header>
+
+<main class="articulo">
+  <nav class="migas mono" aria-label="Estás en">
+    <a href="../../">hbtdata</a><span aria-hidden="true">/</span>
+    <a href="../../#proyectos">Proyectos</a><span aria-hidden="true">/</span>
+    <span aria-current="page"><b>Canarias Gas Tracker</b></span>
+  </nav>
+
+  <h1 class="titular">La gasolina más barata de las islas.</h1>
+  <p class="entrada">Un mapa con las cerca de 430 gasolineras de Canarias y lo que cuesta el litro en cada una, sacado de los datos abiertos del Ministerio. Se actualiza solo cada mañana, sin servidores y sin pagar nada. Aquí cuento qué problema resuelve, cómo funciona por dentro y lo que aprendí haciéndolo.</p>
+
+  <div class="acciones">
+    <a class="pildora llena" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+    <a class="pildora" href="https://github.com/henry94bt/canarias-gas-tracker"><svg class="ico"><use href="#i-github"/></svg>Código en GitHub</a>
+  </div>
+
+  <dl class="ficha">
+    <div><dt>En marcha</dt><dd>Desde abril de 2026</dd></div>
+    <div><dt>Cada día</dt><dd>~430 gasolineras, 7 islas</dd></div>
+    <div><dt>Histórico</dt><dd>168 días, 72.087 filas</dd></div>
+    <div><dt>Coste</dt><dd>0 €</dd></div>
+    <div class="ancha"><dt>Hecho con</dt><dd>Python, pandas, Folium (Leaflet) y GitHub Actions</dd></div>
+  </dl>
+
+  <section class="bloque" id="problema">
+    <p class="mono"><b>01</b> &nbsp;Qué problema resuelve</p>
+    <h2 class="titular">El mismo litro, 33 céntimos de diferencia.</h2>
+    <p>Canarias tiene su propio régimen fiscal y cada isla su propia logística, así que el precio cambia mucho de una isla a otra y de una gasolinera a la de al lado. El 25 de noviembre de 2026, en Gran Canaria, el litro de gasolina 95 iba de <strong>1,289 €</strong> a <strong>1,621 €</strong>: 33 céntimos, unos 16 € en un depósito de 50 litros.</p>
+    <p>El dato existe: el Ministerio para la Transición Ecológica publica cada día el precio de todas las gasolineras de España. Pero llega en bruto: un archivo enorme con comas decimales, sin la isla, sin el precio de ayer y sin un mapa para mirarlo. El Gas Tracker hace ese trabajo cada mañana: se queda con Canarias, lo limpia, lo compara con el día anterior y lo pone en un mapa.</p>
+
+    <!-- auto:islas -->
+    <figure class="grafico" aria-labelledby="t-islas">
+      <h3 id="t-islas">¿Qué isla tiene la gasolina más barata?</h3>
+      <p class="leyenda"><span class="g">Gasolina 95</span> <span class="d">Diésel</span> <span>· € por litro, mediana del día</span></p>
+      <div class="puntos" role="img" aria-label="Mediana de la gasolina 95 por isla el 25 de noviembre de 2026, de más barata a más cara: Fuerteventura 1,456 €, Gran Canaria 1,459 €, Lanzarote 1,464 €, Tenerife 1,499 €, La Palma 1,570 €, La Gomera 1,729 €, El Hierro 1,759 €.">
+      <div class="fila-p"><span class="isla">Fuerteventura <small>(24)</small></span><span class="pista"><i class="d" style="left:30.67%"></i><i class="g" style="left:9.33%"></i></span><span class="cifras"><b class="g">1,456</b> <b class="d">1,584</b></span></div>
+      <div class="fila-p"><span class="isla">Gran Canaria <small>(156)</small></span><span class="pista"><i class="d" style="left:43.17%"></i><i class="g" style="left:9.83%"></i></span><span class="cifras"><b class="g">1,459</b> <b class="d">1,659</b></span></div>
+      <div class="fila-p"><span class="isla">Lanzarote <small>(36)</small></span><span class="pista"><i class="d" style="left:33.08%"></i><i class="g" style="left:10.67%"></i></span><span class="cifras"><b class="g">1,464</b> <b class="d">1,599</b></span></div>
+      <div class="fila-p"><span class="isla">Tenerife <small>(184)</small></span><span class="pista"><i class="d" style="left:48.17%"></i><i class="g" style="left:16.50%"></i></span><span class="cifras"><b class="g">1,499</b> <b class="d">1,689</b></span></div>
+      <div class="fila-p"><span class="isla">La Palma <small>(20)</small></span><span class="pista"><i class="d" style="left:65.33%"></i><i class="g" style="left:28.25%"></i></span><span class="cifras"><b class="g">1,570</b> <b class="d">1,792</b></span></div>
+      <div class="fila-p"><span class="isla">La Gomera <small>(7)</small></span><span class="pista"><i class="d" style="left:91.50%"></i><i class="g" style="left:54.83%"></i></span><span class="cifras"><b class="g">1,729</b> <b class="d">1,949</b></span></div>
+      <div class="fila-p"><span class="isla">El Hierro <small>(4)</small></span><span class="pista"><i class="d" style="left:95.83%"></i><i class="g" style="left:59.83%"></i></span><span class="cifras"><b class="g">1,759</b> <b class="d">1,975</b></span></div>
+      <div class="fila-p eje" aria-hidden="true"><span></span><span class="pista"><span style="left:0.00%">1,40</span><span style="left:16.67%">1,50</span><span style="left:33.33%">1,60</span><span style="left:50.00%">1,70</span><span style="left:66.67%">1,80</span><span style="left:83.33%">1,90</span><span style="left:100.00%">2,00</span></span><span></span></div>
+      </div>
+      <details>
+        <summary>Ver los datos</summary>
+        <table>
+          <thead><tr><th scope="col">Isla</th><th scope="col">Gasolina 95</th><th scope="col">Diésel</th><th scope="col">Gasolineras</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">Fuerteventura</th><td>1,456 €</td><td>1,584 €</td><td>24</td></tr>
+          <tr><th scope="row">Gran Canaria</th><td>1,459 €</td><td>1,659 €</td><td>156</td></tr>
+          <tr><th scope="row">Lanzarote</th><td>1,464 €</td><td>1,599 €</td><td>36</td></tr>
+          <tr><th scope="row">Tenerife</th><td>1,499 €</td><td>1,689 €</td><td>184</td></tr>
+          <tr><th scope="row">La Palma</th><td>1,570 €</td><td>1,792 €</td><td>20</td></tr>
+          <tr><th scope="row">La Gomera</th><td>1,729 €</td><td>1,949 €</td><td>7</td></tr>
+          <tr><th scope="row">El Hierro</th><td>1,759 €</td><td>1,975 €</td><td>4</td></tr>
+          </tbody>
+        </table>
+      </details>
+      <figcaption>Mediana del precio por litro el 25 de noviembre de 2026; entre paréntesis, las gasolineras con precio de gasolina 95 ese día. El eje no empieza en cero porque las diferencias son de céntimos. En El Hierro y La Gomera hay tan pocas gasolineras que un solo cambio mueve la mediana. Fuente: Ministerio para la Transición Ecológica (Geoportal de carburantes), histórico del Canarias Gas Tracker.</figcaption>
+    </figure>
+    <!-- /auto:islas -->
+
+    <p>Fuerteventura, Gran Canaria y Lanzarote rondan 1,46 € el litro de gasolina 95; La Gomera y El Hierro pasan de 1,72 €. En las islas grandes, lo que más cuenta es elegir bien la gasolinera.</p>
+    <p>Las cifras de hoy, isla por isla y gasolinera a gasolinera, están en <a href="../../datos/gasolina/">¿En qué isla está más barata la gasolina hoy?</a></p>
+  </section>
+
+  <section class="bloque" id="como-funciona">
+    <p class="mono"><b>02</b> &nbsp;Cómo funciona</p>
+    <h2 class="titular">Un robot que madruga.</h2>
+    <p>Por dentro es un proceso de datos de los de siempre (descargar, limpiar, analizar y publicar) metido en un solo script de Python, <code>mapa_pro.py</code>, que GitHub Actions ejecuta cada mañana: a las 7 en invierno y a las 8 en verano, hora canaria. No hay servidor ni base de datos: el propio repositorio de GitHub guarda el histórico y GitHub Pages publica la web.</p>
+    <ol class="pasos">
+      <li><span class="num">01</span><h3>Descarga</h3><p>Pide a la API REST del Ministerio la lista de todas las gasolineras de España con sus precios. Si no contesta, lo vuelve a intentar (más abajo cuento por qué).</p></li>
+      <li><span class="num">02</span><h3>Limpieza</h3><p>Se queda con las provincias 35 y 38, convierte las comas decimales en números y descarta las gasolineras sin coordenadas. Si quedan menos de 100, la respuesta está incompleta y no sigue.</p></li>
+      <li><span class="num">03</span><h3>La isla</h3><p>La API da el municipio, pero no la isla. Una función la deduce buscando trozos del nombre del municipio en mayúsculas (TELDE, ARONA, TÍAS…), para que no la descoloquen las tildes ni las variantes.</p></li>
+      <li><span class="num">04</span><h3>Histórico</h3><p>Añade los precios del día a <code>historico_precios.csv</code> y, con el día anterior, calcula cuánto subió o bajó cada gasolinera.</p></li>
+      <li><span class="num">05</span><h3>Mapa</h3><p>Folium, que dibuja mapas de Leaflet desde Python, genera un único <code>index.html</code> con el mapa, la tabla de las más baratas y los filtros en JavaScript.</p></li>
+      <li><span class="num">06</span><h3>Publicación</h3><p>GitHub Actions sube el mapa y el histórico al repositorio, y GitHub Pages los publica. Nadie tiene que tocar nada.</p></li>
+    </ol>
+  </section>
+
+  <section class="bloque" id="el-mapa">
+    <p class="mono"><b>03</b> &nbsp;El mapa</p>
+    <h2 class="titular">Lo que ves al abrirlo.</h2>
+    <ul class="puntos-lista">
+      <li>Las diez gasolineras más baratas, de toda Canarias o de una isla, en gasolina 95 o en diésel.</li>
+      <li>Todas las gasolineras en el mapa, agrupadas por zonas, con una capa por isla que se enciende y se apaga.</li>
+      <li>Un color según el precio del día: verde para la cuarta parte más barata, rojo para la cuarta parte más cara y naranja para el resto.</li>
+      <li>Al pulsar una gasolinera: dirección, precios y una flecha ▲▼ con lo que cambió desde el día anterior.</li>
+      <li>Un buscador por isla para encontrar una gasolinera o un pueblo.</li>
+    </ul>
+    <figure class="captura">
+      <img src="../../assets/gas-tracker.png" width="1280" height="1150" loading="lazy" alt="El Canarias Gas Tracker: arriba, la tabla con las diez gasolineras más baratas de Canarias; debajo, el mapa de las islas con las gasolineras agrupadas en círculos de colores y el panel de capas por isla">
+      <figcaption>Captura del 22 de octubre de 2026. Los números de los círculos son las gasolineras de cada zona.</figcaption>
+    </figure>
+    <div class="acciones">
+      <a class="pildora llena" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+    </div>
+  </section>
+
+  <section class="bloque" id="lo-que-aprendi">
+    <p class="mono"><b>04</b> &nbsp;Lo que aprendí</p>
+    <h2 class="titular">Lo que no sale en los tutoriales.</h2>
+
+    <div class="leccion clave">
+      <h3>Una API pública no es una API que siempre conteste.</h3>
+      <p>El servidor del Ministerio rechazaba muchas de las peticiones que llegaban desde GitHub Actions, que funciona en máquinas de los centros de datos de Microsoft Azure. Y lo peor no fue el bloqueo, sino que no avisaba: el script fallaba, escribía un aviso y terminaba sin error, así que GitHub daba la ejecución por buena. <strong>Entre el 29 de abril y el 26 de mayo no se guardó ni un solo día.</strong></p>
+      <p>La solución fue diseñar contando con el fallo. Si la API no contesta, el script lo vuelve a intentar a los 5, 10 y 15 minutos, media hora en total. Si llegan menos de 100 gasolineras, da la respuesta por mala. Y si al final no consigue datos, no toca nada de lo publicado y termina con error, para que el fallo se vea.</p>
+
+      <!-- auto:dias -->
+    <figure class="grafico" aria-labelledby="t-dias">
+      <h3 id="t-dias">¿Qué días guardó precios el robot?</h3>
+      <p class="leyenda"><span class="si">Con datos</span> <span class="no">Sin datos</span></p>
+      <div class="dias" role="img" aria-label="Del 14 de abril de 2026 al 25 de noviembre de 2026: antes de los reintentos hubo datos 11 de 45 días; desde el 29 de mayo de 2026, 157 de 181.">
+        <div class="meses" style="--semanas:33" aria-hidden="true"><span style="grid-column:1">abr</span><span style="grid-column:3">may</span><span style="grid-column:8">jun</span><span style="grid-column:12">jul</span><span style="grid-column:16">ago</span><span style="grid-column:21">sept</span><span style="grid-column:25">oct</span><span style="grid-column:29">nov</span></div>
+        <div class="rejilla" style="--semanas:33"><i class="fuera"></i><i class="si" title="14 abr: con datos"></i><i class="si" title="15 abr: con datos"></i><i class="si" title="16 abr: con datos"></i><i class="si" title="17 abr: con datos"></i><i class="si" title="18 abr: con datos"></i><i class="si" title="19 abr: con datos"></i><i class="no" title="20 abr: sin datos"></i><i class="no" title="21 abr: sin datos"></i><i class="no" title="22 abr: sin datos"></i><i class="no" title="23 abr: sin datos"></i><i class="si" title="24 abr: con datos"></i><i class="si" title="25 abr: con datos"></i><i class="no" title="26 abr: sin datos"></i><i class="si" title="27 abr: con datos"></i><i class="si" title="28 abr: con datos"></i><i class="no" title="29 abr: sin datos"></i><i class="no" title="30 abr: sin datos"></i><i class="no" title="1 may: sin datos"></i><i class="no" title="2 may: sin datos"></i><i class="no" title="3 may: sin datos"></i><i class="no" title="4 may: sin datos"></i><i class="no" title="5 may: sin datos"></i><i class="no" title="6 may: sin datos"></i><i class="no" title="7 may: sin datos"></i><i class="no" title="8 may: sin datos"></i><i class="no" title="9 may: sin datos"></i><i class="no" title="10 may: sin datos"></i><i class="no" title="11 may: sin datos"></i><i class="no" title="12 may: sin datos"></i><i class="no" title="13 may: sin datos"></i><i class="no" title="14 may: sin datos"></i><i class="no" title="15 may: sin datos"></i><i class="no" title="16 may: sin datos"></i><i class="no" title="17 may: sin datos"></i><i class="no" title="18 may: sin datos"></i><i class="no" title="19 may: sin datos"></i><i class="no" title="20 may: sin datos"></i><i class="no" title="21 may: sin datos"></i><i class="no" title="22 may: sin datos"></i><i class="no" title="23 may: sin datos"></i><i class="no" title="24 may: sin datos"></i><i class="no" title="25 may: sin datos"></i><i class="no" title="26 may: sin datos"></i><i class="si" title="27 may: con datos"></i><i class="no" title="28 may: sin datos"></i><i class="si" title="29 may: con datos"></i><i class="si" title="30 may: con datos"></i><i class="si" title="31 may: con datos"></i><i class="si" title="1 jun: con datos"></i><i class="si" title="2 jun: con datos"></i><i class="si" title="3 jun: con datos"></i><i class="si" title="4 jun: con datos"></i><i class="si" title="5 jun: con datos"></i><i class="si" title="6 jun: con datos"></i><i class="no" title="7 jun: sin datos"></i><i class="si" title="8 jun: con datos"></i><i class="si" title="9 jun: con datos"></i><i class="si" title="10 jun: con datos"></i><i class="si" title="11 jun: con datos"></i><i class="si" title="12 jun: con datos"></i><i class="si" title="13 jun: con datos"></i><i class="si" title="14 jun: con datos"></i><i class="si" title="15 jun: con datos"></i><i class="si" title="16 jun: con datos"></i><i class="si" title="17 jun: con datos"></i><i class="si" title="18 jun: con datos"></i><i class="si" title="19 jun: con datos"></i><i class="no" title="20 jun: sin datos"></i><i class="si" title="21 jun: con datos"></i><i class="si" title="22 jun: con datos"></i><i class="si" title="23 jun: con datos"></i><i class="si" title="24 jun: con datos"></i><i class="si" title="25 jun: con datos"></i><i class="no" title="26 jun: sin datos"></i><i class="no" title="27 jun: sin datos"></i><i class="si" title="28 jun: con datos"></i><i class="si" title="29 jun: con datos"></i><i class="si" title="30 jun: con datos"></i><i class="si" title="1 jul: con datos"></i><i class="si" title="2 jul: con datos"></i><i class="si" title="3 jul: con datos"></i><i class="si" title="4 jul: con datos"></i><i class="si" title="5 jul: con datos"></i><i class="si" title="6 jul: con datos"></i><i class="si" title="7 jul: con datos"></i><i class="si" title="8 jul: con datos"></i><i class="si" title="9 jul: con datos"></i><i class="si" title="10 jul: con datos"></i><i class="si" title="11 jul: con datos"></i><i class="no" title="12 jul: sin datos"></i><i class="si" title="13 jul: con datos"></i><i class="si" title="14 jul: con datos"></i><i class="si" title="15 jul: con datos"></i><i class="si" title="16 jul: con datos"></i><i class="si" title="17 jul: con datos"></i><i class="si" title="18 jul: con datos"></i><i class="no" title="19 jul: sin datos"></i><i class="si" title="20 jul: con datos"></i><i class="no" title="21 jul: sin datos"></i><i class="si" title="22 jul: con datos"></i><i class="si" title="23 jul: con datos"></i><i class="si" title="24 jul: con datos"></i><i class="si" title="25 jul: con datos"></i><i class="si" title="26 jul: con datos"></i><i class="si" title="27 jul: con datos"></i><i class="si" title="28 jul: con datos"></i><i class="si" title="29 jul: con datos"></i><i class="si" title="30 jul: con datos"></i><i class="si" title="31 jul: con datos"></i><i class="si" title="1 ago: con datos"></i><i class="si" title="2 ago: con datos"></i><i class="si" title="3 ago: con datos"></i><i class="si" title="4 ago: con datos"></i><i class="si" title="5 ago: con datos"></i><i class="no" title="6 ago: sin datos"></i><i class="si" title="7 ago: con datos"></i><i class="si" title="8 ago: con datos"></i><i class="si" title="9 ago: con datos"></i><i class="no" title="10 ago: sin datos"></i><i class="si" title="11 ago: con datos"></i><i class="si" title="12 ago: con datos"></i><i class="si" title="13 ago: con datos"></i><i class="si" title="14 ago: con datos"></i><i class="no" title="15 ago: sin datos"></i><i class="si" title="16 ago: con datos"></i><i class="si" title="17 ago: con datos"></i><i class="si" title="18 ago: con datos"></i><i class="si" title="19 ago: con datos"></i><i class="si" title="20 ago: con datos"></i><i class="no" title="21 ago: sin datos"></i><i class="no" title="22 ago: sin datos"></i><i class="si" title="23 ago: con datos"></i><i class="si" title="24 ago: con datos"></i><i class="si" title="25 ago: con datos"></i><i class="si" title="26 ago: con datos"></i><i class="si" title="27 ago: con datos"></i><i class="si" title="28 ago: con datos"></i><i class="si" title="29 ago: con datos"></i><i class="si" title="30 ago: con datos"></i><i class="si" title="31 ago: con datos"></i><i class="si" title="1 sept: con datos"></i><i class="si" title="2 sept: con datos"></i><i class="si" title="3 sept: con datos"></i><i class="si" title="4 sept: con datos"></i><i class="si" title="5 sept: con datos"></i><i class="no" title="6 sept: sin datos"></i><i class="si" title="7 sept: con datos"></i><i class="si" title="8 sept: con datos"></i><i class="no" title="9 sept: sin datos"></i><i class="no" title="10 sept: sin datos"></i><i class="si" title="11 sept: con datos"></i><i class="no" title="12 sept: sin datos"></i><i class="si" title="13 sept: con datos"></i><i class="si" title="14 sept: con datos"></i><i class="si" title="15 sept: con datos"></i><i class="si" title="16 sept: con datos"></i><i class="si" title="17 sept: con datos"></i><i class="si" title="18 sept: con datos"></i><i class="si" title="19 sept: con datos"></i><i class="si" title="20 sept: con datos"></i><i class="si" title="21 sept: con datos"></i><i class="si" title="22 sept: con datos"></i><i class="si" title="23 sept: con datos"></i><i class="no" title="24 sept: sin datos"></i><i class="si" title="25 sept: con datos"></i><i class="si" title="26 sept: con datos"></i><i class="si" title="27 sept: con datos"></i><i class="no" title="28 sept: sin datos"></i><i class="si" title="29 sept: con datos"></i><i class="si" title="30 sept: con datos"></i><i class="si" title="1 oct: con datos"></i><i class="si" title="2 oct: con datos"></i><i class="si" title="3 oct: con datos"></i><i class="si" title="4 oct: con datos"></i><i class="si" title="5 oct: con datos"></i><i class="si" title="6 oct: con datos"></i><i class="si" title="7 oct: con datos"></i><i class="si" title="8 oct: con datos"></i><i class="si" title="9 oct: con datos"></i><i class="si" title="10 oct: con datos"></i><i class="no" title="11 oct: sin datos"></i><i class="si" title="12 oct: con datos"></i><i class="si" title="13 oct: con datos"></i><i class="si" title="14 oct: con datos"></i><i class="si" title="15 oct: con datos"></i><i class="si" title="16 oct: con datos"></i><i class="si" title="17 oct: con datos"></i><i class="si" title="18 oct: con datos"></i><i class="si" title="19 oct: con datos"></i><i class="si" title="20 oct: con datos"></i><i class="no" title="21 oct: sin datos"></i><i class="si" title="22 oct: con datos"></i><i class="si" title="23 oct: con datos"></i><i class="no" title="24 oct: sin datos"></i><i class="si" title="25 oct: con datos"></i><i class="si" title="26 oct: con datos"></i><i class="si" title="27 oct: con datos"></i><i class="si" title="28 oct: con datos"></i><i class="si" title="29 oct: con datos"></i><i class="si" title="30 oct: con datos"></i><i class="no" title="31 oct: sin datos"></i><i class="no" title="1 nov: sin datos"></i><i class="si" title="2 nov: con datos"></i><i class="si" title="3 nov: con datos"></i><i class="si" title="4 nov: con datos"></i><i class="si" title="5 nov: con datos"></i><i class="si" title="6 nov: con datos"></i><i class="si" title="7 nov: con datos"></i><i class="no" title="8 nov: sin datos"></i><i class="si" title="9 nov: con datos"></i><i class="si" title="10 nov: con datos"></i><i class="si" title="11 nov: con datos"></i><i class="si" title="12 nov: con datos"></i><i class="si" title="13 nov: con datos"></i><i class="si" title="14 nov: con datos"></i><i class="si" title="15 nov: con datos"></i><i class="si" title="16 nov: con datos"></i><i class="si" title="17 nov: con datos"></i><i class="si" title="18 nov: con datos"></i><i class="si" title="19 nov: con datos"></i><i class="si" title="20 nov: con datos"></i><i class="si" title="21 nov: con datos"></i><i class="si" title="22 nov: con datos"></i><i class="si" title="23 nov: con datos"></i><i class="si" title="24 nov: con datos"></i><i class="si" title="25 nov: con datos"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><span class="corte" style="left:calc(6 / 33 * 100%)"><b>29 may · reintentos</b></span></div>
+      </div>
+      <p class="cifras-dias"><span>Antes: <b>11 de 45</b> días</span> <span>Después: <b>157 de 181</b> días (87&nbsp;%)</span></p>
+      <figcaption>Cada cuadro es un día, del 14 de abril de 2026 al 25 de noviembre de 2026; cada columna, una semana de lunes a domingo. La línea marca el 29 de mayo de 2026, cuando entraron los reintentos. Fuente: historico_precios.csv del Canarias Gas Tracker.</figcaption>
+    </figure>
+    <!-- /auto:dias -->
+
+      <p>No lo arregla del todo: algún día al mes la API sigue sin contestar ni a la media hora. Ese día el mapa enseña los últimos precios buenos, con la fecha de actualización arriba, y el hueco se queda en el histórico tal cual, sin rellenarlo con datos inventados.</p>
+    </div>
+
+    <div class="leccion">
+      <h3>El fondo del mapa también es una dependencia.</h3>
+      <p>Un día el mapa apareció tapado por un aviso: «API KEY REQUIRED». Los datos estaban bien; lo que fallaba eran las teselas, las imágenes que forman el fondo del mapa. Eran las de CARTO, que empezaron a pedir clave. El arreglo fue una línea en <code>mapa_pro.py</code>: pasar a las teselas de OpenStreetMap, con su atribución. La lección es que todo lo que una página carga de fuera puede romperse sin que tú cambies nada, así que no basta con que el robot termine en verde: hay que mirar de vez en cuando la web publicada.</p>
+    </div>
+
+    <div class="leccion">
+      <h3>Umbrales que se mueven con los precios.</h3>
+      <p>Un color fijo («rojo si pasa de 1,45 €») se queda viejo en cuanto se mueven los precios, y se mueven: la mediana de la gasolina 95 en Canarias pasó de 1,409 € en julio a 1,559 € en octubre. Por eso el color se calcula cada día con cuartiles: verde es la cuarta parte más barata de ese día, cueste lo que cueste.</p>
+    </div>
+
+    <div class="leccion">
+      <h3>Lo que más vale es el histórico.</h3>
+      <p>El mapa enseña el día de hoy, pero el CSV que se va llenando cada mañana ya tiene más de 72.000 filas desde abril. Es lo que permite saber si una gasolinera subió o bajó y lo que hace posible lo siguiente: la evolución del precio por isla y por marca, y avisos cuando una gasolinera toca su mínimo.</p>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <h2 class="titular">Pruébalo.</h2>
+    <p class="entrada">Abre el mapa y busca tu gasolinera. El código y el histórico están en GitHub, a la vista. Y si necesitas algo parecido con tus datos (un mapa, un panel o un proceso que se haga solo), escríbeme.</p>
+    <div class="acciones">
+      <a class="pildora llena" href="https://henry94bt.github.io/canarias-gas-tracker/">Abrir el mapa <svg class="ico trazo"><use href="#i-fuera"/></svg></a>
+      <a class="pildora" href="../../#contacto">Escríbeme</a>
+      <a class="pildora" href="../../webs/">Para negocios</a>
+    </div>
+  </section>
+
+  <p class="mono fecha">Publicado el 26 de noviembre de 2026 · Henry Barrios Thornhill (hbtdata)</p>
+</main>
+
+<footer>
+  <div class="envuelve">
+    <span class="mono">hbt<b>data</b> / Datos de Canarias</span>
+    <span class="mono"><a class="enlace" href="../../">© 2026 Henry Barrios Thornhill / Volver al portfolio</a> / <a class="enlace" href="../../privacidad/">Privacidad</a></span>
+  </div>
+</footer>
+
+<script defer src="../../assets/medicion.js"></script>
+</body>
+</html>
