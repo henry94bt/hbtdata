@@ -86,9 +86,7 @@ def cabeza(titulo, descripcion, url, jsonld, raiz, noindex=False):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#04161C">
 <link rel="icon" href="{FAVICON}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{raiz}assets/fuentes/fuentes.css">
 <link rel="stylesheet" href="{raiz}recursos/recursos.css">
 <script type="application/ld+json">
 {json.dumps(jsonld, ensure_ascii=False, indent=2)}
@@ -128,7 +126,7 @@ def pie(raiz):
       <a href="https://github.com/henry94bt" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a>
       <a href="{TIKTOK}" aria-label="TikTok"><svg class="ico"><use href="#i-tiktok"/></svg></a>
     </nav>
-    <a class="mono enlace" href="{raiz}">© 2026 Henry Barrios Thornhill / Volver al portfolio</a>
+    <span class="mono"><a class="enlace" href="{raiz}">© 2026 Henry Barrios Thornhill / Volver al portfolio</a> / <a class="enlace" href="{raiz}privacidad/">Privacidad</a></span>
   </div>
 </footer>
 """
