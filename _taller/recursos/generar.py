@@ -86,9 +86,7 @@ def cabeza(titulo, descripcion, url, jsonld, raiz, noindex=False):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#04161C">
 <link rel="icon" href="{FAVICON}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{raiz}assets/fuentes/fuentes.css">
 <link rel="stylesheet" href="{raiz}recursos/recursos.css">
 <script type="application/ld+json">
 {json.dumps(jsonld, ensure_ascii=False, indent=2)}
